@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" style="background-color: #f8f9fc; font-family: 'Segoe UI', Arial, sans-serif; margin: 10px;">
+  <style>
+    .entity { fill: #ffffff; stroke: #2c3e50; stroke-width: 1.5; rx: 8; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1)); }
+    .entity-title { fill: #2c3e50; font-weight: bold; font-size: 14px; text-anchor: middle; dominant-baseline: hanging; }
+    .entity-pk { fill: #e67e22; font-weight: bold; }
+    .entity-fk { fill: #2980b9; font-style: italic; }
+    .attr-text { font-size: 10px; font-family: monospace; }
+    .relation-line { stroke: #3498db; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .cardinality { fill: #e67e22; font-size: 9px; font-weight: bold; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7.5" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#3498db" />
+    </marker>
+  </defs>
+  
+  <!-- Преподаватель -->
+  <rect x="20" y="20" width="200" height="160" class="entity" />
+  <text x="120" y="38" class="entity-title">Преподаватель</text>
+  <line x1="30" y1="50" x2="210" y2="50" stroke="#bdc3c7" stroke-width="1" />
+  <text x="30" y="65" class="attr-text"><tspan class="entity-pk">PK</tspan> id_преподавателя</text>
+  <text x="30" y="80" class="attr-text">фамилия</text>
+  <text x="30" y="95" class="attr-text">имя</text>
+  <text x="30" y="110" class="attr-text">отчество</text>
+  <text x="30" y="125" class="attr-text">телефон</text>
+  <text x="30" y="140" class="attr-text">email</text>
+  <text x="30" y="155" class="attr-text">квалификация</text>
+  
+  <!-- Курс -->
+  <rect x="580" y="20" width="200" height="160" class="entity" />
+  <text x="680" y="38" class="entity-title">Курс</text>
+  <line x1="590" y1="50" x2="770" y2="50" stroke="#bdc3c7" stroke-width="1" />
+  <text x="590" y="65" class="attr-text"><tspan class="entity-pk">PK</tspan> id_курса</text>
+  <text x="590" y="80" class="attr-text">название</text>
+  <text x="590" y="95" class="attr-text">описание</text>
+  <text x="590" y="110" class="attr-text">продолжительность</text>
+  <text x="590" y="125" class="attr-text">стоимость</text>
+  <text x="590" y="140" class="attr-text">уровень</text>
+  
+  <!-- Группа -->
+  <rect x="280" y="160" width="240" height="200" class="entity" />
+  <text x="400" y="178" class="entity-title">Группа</text>
+  <line x1="290" y1="190" x2="510" y2="190" stroke="#bdc3c7" stroke-width="1" />
+  <text x="290" y="205" class="attr-text"><tspan class="entity-pk">PK</tspan> id_группы</text>
+  <text x="290" y="220" class="attr-text">название</text>
+  <text x="290" y="235" class="attr-text"><tspan class="entity-fk">FK</tspan> id_курса</text>
+  <text x="290" y="250" class="attr-text"><tspan class="entity-fk">FK</tspan> id_преподавателя</text>
+  <text x="290" y="265" class="attr-text">дата_начала</text>
+  <text x="290" y="280" class="attr-text">дата_конца</text>
+  <text x="290" y="295" class="attr-text">макс_размер</text>
+  <text x="290" y="310" class="attr-text">статус</text>
+  <text x="290" y="325" class="attr-text"> </text>
+  
+  <!-- Связи -->
+  <path d="M 220 100 L 280 100 L 280 240" class="relation-line" />
+  <text x="250" y="95" class="cardinality">1</text>
+  <text x="265" y="235" class="cardinality">N</text>
+  
+  <path d="M 580 100 L 520 100 L 520 240" class="relation-line" />
+  <text x="550" y="95" class="cardinality">1</text>
+  <text x="505" y="235" class="cardinality">N</text>
+  
+  <text x="240" y="170" class="cardinality" style="fill: #16a085; font-size: 9px;">преподает</text>
+  <text x="540" y="170" class="cardinality" style="fill: #16a085; font-size: 9px;">включает</text>
+</svg>

@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1130" style="background-color: #f8f9fc; font-family: 'Segoe UI', 'Arial', sans-serif;">
+  <style>
+    .entity { fill: #ffffff; stroke: #2c3e50; stroke-width: 1.2; rx: 6; filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.08)); }
+    .entity-title { fill: #2c3e50; font-weight: bold; font-size: 12px; text-anchor: middle; dominant-baseline: hanging; }
+    .entity-pk { fill: #e67e22; font-weight: bold; }
+    .entity-fk { fill: #2980b9; font-style: italic; }
+    .attr-text { font-size: 8px; font-family: monospace; }
+    .relation-line { stroke: #3498db; stroke-width: 1.2; fill: none; marker-end: url(#arrowhead); }
+    .cardinality { fill: #e67e22; font-size: 8px; font-weight: bold; }
+    .group-label { fill: #7f8c8d; font-size: 11px; font-weight: bold; text-anchor: start; }
+    .group-bg { fill: #ecf0f1; opacity: 0.3; rx: 12; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5.5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#3498db" />
+    </marker>
+  </defs>
+  
+  <!-- Группа 1: Ядро учебной части -->
+  <rect x="15" y="15" width="770" height="240" class="group-bg" />
+  <text x="25" y="30" class="group-label">📚 Учебное ядро</text>
+  
+  <!-- Преподаватель -->
+  <rect x="25" y="45" width="170" height="135" class="entity" />
+  <text x="110" y="60" class="entity-title">Преподаватель</text>
+  <line x1="32" y1="70" x2="188" y2="70" stroke="#bdc3c7" stroke-width="1" />
+  <text x="32" y="82" class="attr-text"><tspan class="entity-pk">PK</tspan> id_преподавателя</text>
+  <text x="32" y="94" class="attr-text">фамилия | имя | отчество</text>
+  <text x="32" y="106" class="attr-text">телефон | email</text>
+  <text x="32" y="118" class="attr-text">квалификация</text>
+  
+  <!-- Курс -->
+  <rect x="605" y="45" width="170" height="135" class="entity" />
+  <text x="690" y="60" class="entity-title">Курс</text>
+  <line x1="612" y1="70" x2="768" y2="70" stroke="#bdc3c7" stroke-width="1" />
+  <text x="612" y="82" class="attr-text"><tspan class="entity-pk">PK</tspan> id_курса</text>
+  <text x="612" y="94" class="attr-text">название | описание</text>
+  <text x="612" y="106" class="attr-text">продолжительность</text>
+  <text x="612" y="118" class="attr-text">стоимость | уровень</text>
+  
+  <!-- Группа -->
+  <rect x="270" y="105" width="260" height="140" class="entity" />
+  <text x="400" y="120" class="entity-title">Группа</text>
+  <line x1="277" y1="130" x2="523" y2="130" stroke="#bdc3c7" stroke-width="1" />
+  <text x="277" y="142" class="attr-text"><tspan class="entity-pk">PK</tspan> id_группы | название</text>
+  <text x="277" y="154" class="attr-text"><tspan class="entity-fk">FK</tspan> id_курса | <tspan class="entity-fk">FK</tspan> id_преподавателя</text>
+  <text x="277" y="166" class="attr-text">дата_начала | дата_конца</text>
+  <text x="277" y="178" class="attr-text">макс_размер | статус</text>
+  
+  <!-- Связи группы -->
+  <path d="M 195 113 L 270 113 L 270 165" class="relation-line" />
+  <text x="220" y="108" class="cardinality">1</text>
+  <text x="255" y="160" class="cardinality">N</text>
+  <path d="M 605 113 L 530 113 L 530 165" class="relation-line" />
+  <text x="568" y="108" class="cardinality">1</text>
+  <text x="515" y="160" class="cardinality">N</text>
+  
+  <!-- Группа 2: Клиентская и финансовая часть -->
+  <rect x="15" y="265" width="770" height="280" class="group-bg" />
+  <text x="25" y="280" class="group-label">💰 Клиенты и финансы</text>
+  
+  <!-- Клиент -->
+  <rect x="450" y="295" width="230" height="190" class="entity" />
+  <text x="565" y="310" class="entity-title">Клиент</text>
+  <line x1="457" y1="320" x2="673" y2="320" stroke="#bdc3c7" stroke-width="1" />
+  <text x="457" y="332" class="attr-text"><tspan class="entity-pk">PK</tspan> id_клиента</text>
+  <text x="457" y="344" class="attr-text">фамилия | имя | отчество</text>
+  <text x="457" y="356" class="attr-text">дата_рождения | телефон</text>
+  <text x="457" y="368" class="attr-text">email | адрес</text>
+  <text x="457" y="380" class="attr-text">дата_регистрации</text>
+  
+  <!-- Договор -->
+  <rect x="35" y="320" width="200" height="150" class="entity" />
+  <text x="135" y="335" class="entity-title">Договор</text>
+  <line x1="42" y1="345" x2="228" y2="345" stroke="#bdc3c7" stroke-width="1" />
+  <text x="42" y="357" class="attr-text"><tspan class="entity-pk">PK</tspan> id_договора</text>
+  <text x="42" y="369" class="attr-text">номер_договора</text>
+  <text x="42" y="381" class="attr-text"><tspan class="entity-fk">FK</tspan> id_клиента | <tspan class="entity-fk">FK</tspan> id_группы</text>
+  <text x="42" y="393" class="attr-text">дата_заключения | сумма</text>
+  <text x="42" y="405" class="attr-text">статус</text>
+  
+  <!-- Оплата -->
+  <rect x="35" y="490" width="200" height="135" class="entity" />
+  <text x="135" y="505" class="entity-title">Оплата</text>
+  <line x1="42" y1="515" x2="228" y2="515" stroke="#bdc3c7" stroke-width="1" />
+  <text x="42" y="527" class="attr-text"><tspan class="entity-pk">PK</tspan> id_оплаты</text>
+  <text x="42" y="539" class="attr-text"><tspan class="entity-fk">FK</tspan> id_договора</text>
+  <text x="42" y="551" class="attr-text">дата_оплаты | сумма</text>
+  <text x="42" y="563" class="attr-text">способ_оплаты | статус</text>
+  
+  <!-- Сертификат -->
+  <rect x="520" y="490" width="230" height="135" class="entity" />
+  <text x="635" y="505" class="entity-title">Сертификат</text>
+  <line x1="527" y1="515" x2="743" y2="515" stroke="#bdc3c7" stroke-width="1" />
+  <text x="527" y="527" class="attr-text"><tspan class="entity-pk">PK</tspan> id_сертификата</text>
+  <text x="527" y="539" class="attr-text">номер_сертификата</text>
+  <text x="527" y="551" class="attr-text"><tspan class="entity-fk">FK</tspan> id_клиента | <tspan class="entity-fk">FK</tspan> id_курса</text>
+  <text x="527" y="563" class="attr-text">дата_выдачи | оценка</text>
+  
+  <!-- Связи финансового блока -->
+  <path d="M 235 395 L 450 395" class="relation-line" />
+  <text x="340" y="390" class="cardinality">N</text>
+  <text x="430" y="390" class="cardinality">1</text>
+  <path d="M 135 470 L 135 490" class="relation-line" />
+  <text x="120" y="480" class="cardinality">1</text>
+  <text x="120" y="485" class="cardinality">N</text>
+  <path d="M 635 475 L 635 490" class="relation-line" />
+  <text x="620" y="482" class="cardinality">N</text>
+  <text x="620" y="487" class="cardinality">1</text>
+  <path d="M 635 295 L 635 490" class="relation-line" stroke-dasharray="4,2" />
+  <path d="M 590 490 L 590 220 L 605 220" class="relation-line" stroke-dasharray="4,2" />
+  
+  <!-- Группа 3: Учебный процесс -->
+  <rect x="15" y="555" width="770" height="260" class="group-bg" />
+  <text x="25" y="570" class="group-label">📖 Учебный процесс</text>
+  
+  <!-- Занятие -->
+  <rect x="25" y="585" width="220" height="170" class="entity" />
+  <text x="135" y="600" class="entity-title">Занятие</text>
+  <line x1="32" y1="610" x2="238" y2="610" stroke="#bdc3c7" stroke-width="1" />
+  <text x="32" y="622" class="attr-text"><tspan class="entity-pk">PK</tspan> id_занятия</text>
+  <text x="32" y="634" class="attr-text"><tspan class="entity-fk">FK</tspan> id_группы</text>
+  <text x="32" y="646" class="attr-text">номер_занятия | дата_занятия</text>
+  <text x="32" y="658" class="attr-text">время_начала | время_конца</text>
+  <text x="32" y="670" class="attr-text">аудитория | тема_занятия</text>
+  
+  <!-- Посещаемость -->
+  <rect x="290" y="620" width="200" height="135" class="entity" />
+  <text x="390" y="635" class="entity-title">Посещаемость</text>
+  <line x1="297" y1="645" x2="483" y2="645" stroke="#bdc3c7" stroke-width="1" />
+  <text x="297" y="657" class="attr-text"><tspan class="entity-pk">PK</tspan> id_посещаемости</text>
+  <text x="297" y="669" class="attr-text"><tspan class="entity-fk">FK</tspan> id_клиента | <tspan class="entity-fk">FK</tspan> id_занятия</text>
+  <text x="297" y="681" class="attr-text">статус | причина</text>
+  
+  <!-- Успеваемость -->
+  <rect x="530" y="620" width="210" height="150" class="entity" />
+  <text x="635" y="635" class="entity-title">Успеваемость</text>
+  <line x1="537" y1="645" x2="733" y2="645" stroke="#bdc3c7" stroke-width="1" />
+  <text x="537" y="657" class="attr-text"><tspan class="entity-pk">PK</tspan> id_успеваемости</text>
+  <text x="537" y="669" class="attr-text"><tspan class="entity-fk">FK</tspan> id_клиента | <tspan class="entity-fk">FK</tspan> id_занятия</text>
+  <text x="537" y="681" class="attr-text">оценка</text>
+  <text x="537" y="693" class="attr-text">домашнее_задание</text>
+  <text x="537" y="705" class="attr-text">проверено</text>
+  
+  <!-- Связи учебного процесса -->
+  <path d="M 245 670 L 290 670" class="relation-line" />
+  <text x="267" y="665" class="cardinality">1</text>
+  <text x="285" y="665" class="cardinality">N</text>
+  <path d="M 490 688 L 530 688" class="relation-line" />
+  <text x="510" y="683" class="cardinality">1</text>
+  <text x="525" y="683" class="cardinality">N</text>
+  
+  <!-- Связь клиента с посещаемостью и успеваемостью -->
+  <path d="M 565 395 L 565 540 L 390 540 L 390 620" class="relation-line" stroke-dasharray="4,2" />
+  <path d="M 565 395 L 565 540 L 635 540 L 635 620" class="relation-line" stroke-dasharray="4,2" />
+  
+  <!-- Связь группы с занятиями -->
+  <path d="M 400 245 L 400 540 L 135 540 L 135 585" class="relation-line" />
+  <text x="385" y="380" class="cardinality">1</text>
+  <text x="150" y="570" class="cardinality">N</text>
+  
+  <!-- Легенда -->
+  <rect x="620" y="820" width="170" height="85" fill="white" stroke="#bdc3c7" stroke-width="1" rx="5" />
+  <text x="630" y="835" fill="#2c3e50" font-size="9" font-weight="bold">Условные обозначения</text>
+  <text x="630" y="850" fill="#e67e22" font-size="8">■ PK</text>
+  <text x="630" y="865" fill="#2980b9" font-size="8">■ FK</text>
+  <text x="630" y="880" fill="#3498db" font-size="8">→ Связи 1:N</text>
+  <text x="630" y="895" fill="#7f8c8d" font-size="8">--- Связи с другими блоками</text>
+  
+  <!-- Заголовок -->
+  <text x="400" y="10" text-anchor="middle" fill="#2c3e50" font-size="14" font-weight="bold">Схема базы данных учебного центра</text>
+</svg>
