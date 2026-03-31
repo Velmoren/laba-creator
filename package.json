@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "markdown-to-docx": "^1.2.0"
+    "markdown-to-docx": "^1.2.0",
+    "docx": "^8.5.0"
+  },
+  "scripts": {
+    "build-docx": "node scripts/generator.js"
   }
 }

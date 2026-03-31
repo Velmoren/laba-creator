@@ -1,0 +1,1 @@
+This is test file number 3 with some random text data to test compression efficiency. It should be large enough to see the difference between algorithms.
