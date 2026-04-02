@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Table, TableRow, TableCell, BorderStyle, WidthType, PageBreak, TableLayoutType, ShadingType, VerticalAlign } = require('docx');
+const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Table, TableRow, TableCell, BorderStyle, WidthType, TableLayoutType, ShadingType, VerticalAlign } = require('docx');
 
 // Получаем ID из аргументов командной строки (по умолчанию 1)
 const entryId = process.argv[2] || '1';
@@ -63,7 +63,7 @@ async function generateLabs() {
                     new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "\nпо дисциплине «Операционные системы реального времени»", italic: true })] }),
                     new Paragraph({ text: "\n\n\n\n\n\n" }),
                     new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Москва 2026", bold: true })] }),
-                    new PageBreak(),
+                    new Paragraph({ text: "", pageBreakBefore: true }),
                     ...parseMarkdown(content),
                 ],
             }],

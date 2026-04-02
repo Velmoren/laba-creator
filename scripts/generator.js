@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const zlib = require('zlib');
-const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Table, TableRow, TableCell, BorderStyle, WidthType, PageBreak, TableOfContents, ShadingType, VerticalAlign, TableLayoutType, ImageRun, ExternalHyperlink } = require('docx');
+const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Table, TableRow, TableCell, BorderStyle, WidthType, TableOfContents, ShadingType, VerticalAlign, TableLayoutType, ImageRun, ExternalHyperlink } = require('docx');
 
 // Получаем ID из аргументов командной строки (по умолчанию 1)
 const entryId = process.argv[2] || '1';
@@ -32,13 +32,13 @@ async function generateDoc() {
             paragraphStyles: [
                 { id: "Normal", name: "Normal", quickFormat: true, run: { size: 28, font: "Times New Roman" }, paragraph: { spacing: { line: 360, before: 0, after: 0 }, alignment: AlignmentType.JUSTIFIED, indent: { firstLine: 709 } } },
                 { id: "Caption", name: "Caption", run: { size: 24, font: "Times New Roman", bold: true }, paragraph: { spacing: { before: 300, after: 120 }, alignment: AlignmentType.CENTER, indent: { firstLine: 0 } } },
-                { id: "Heading1", name: "Heading 1", run: { size: 32, bold: true, allCaps: true, color: "000000" }, paragraph: { alignment: AlignmentType.CENTER, spacing: { before: 600, after: 300, line: 240 }, pageBreakBefore: true, indent: { firstLine: 0 }, keepWithNext: true } },
-                { id: "Heading2", name: "Heading 2", run: { size: 28, bold: true, color: "000000" }, paragraph: { alignment: AlignmentType.LEFT, spacing: { before: 480, after: 240, line: 240 }, indent: { firstLine: 0 }, keepWithNext: true } },
-                { id: "Heading3", name: "Heading 3", run: { size: 28, bold: true, color: "000000" }, paragraph: { alignment: AlignmentType.LEFT, spacing: { before: 400, after: 200, line: 240 }, indent: { firstLine: 0 }, keepWithNext: true } },
+                { id: "Heading1", name: "Heading 1", run: { size: 32, bold: true, allCaps: true, color: "000000" }, paragraph: { alignment: AlignmentType.CENTER, spacing: { before: 600, after: 300, line: 240 }, pageBreakBefore: true, indent: { firstLine: 0 }, keepWithNext: true, outlineLevel: 0 } },
+                { id: "Heading2", name: "Heading 2", run: { size: 28, bold: true, color: "000000" }, paragraph: { alignment: AlignmentType.LEFT, spacing: { before: 480, after: 240, line: 240 }, indent: { firstLine: 0 }, keepWithNext: true, outlineLevel: 1 } },
+                { id: "Heading3", name: "Heading 3", run: { size: 28, bold: true, color: "000000" }, paragraph: { alignment: AlignmentType.LEFT, spacing: { before: 400, after: 200, line: 240 }, indent: { firstLine: 0 }, keepWithNext: true, outlineLevel: 2 } },
                 { id: "CodeBlock", name: "Code Block", run: { size: 17, font: "Consolas", color: "2B2B2B" }, paragraph: { spacing: { before: 240, after: 240, line: 200 }, alignment: AlignmentType.LEFT, indent: { left: 400 }, shading: { type: ShadingType.CLEAR, fill: "FDFDFD" } } },
                 { id: "List", name: "List Paragraph", basedOn: "Normal", paragraph: { spacing: { line: 360, before: 40, after: 40 }, indent: { left: 1000, hanging: 300 } } },
                 { id: "Bibliography", name: "Bibliography", basedOn: "Normal", paragraph: { spacing: { line: 360, before: 120 }, indent: { left: 709, hanging: 709 } } },
-                { id: "Hyperlink", name: "Hyperlink", run: { color: "0563C1", underline: { type: BorderStyle.SINGLE } } },
+                { id: "Hyperlink", name: "Hyperlink", run: { color: "0563C1", underline: { type: "single" } } },
             ],
         },
         sections: [{
@@ -60,10 +60,12 @@ async function generateDoc() {
                 new Paragraph({ text: "\n\n\n" }),
                 new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Москва 2025", bold: true })] }),
 
-                new PageBreak(),
+                // Разрыв страницы через параграф вместо PageBreak
+                new Paragraph({ text: "", pageBreakBefore: true }),
                 new Paragraph({ text: "СОДЕРЖАНИЕ", heading: HeadingLevel.HEADING_1, alignment: AlignmentType.CENTER }),
                 new TableOfContents("Содержание", { hyperlink: true, headingStyleRange: "1-3" }),
-                new PageBreak(),
+                // Разрыв страницы через параграф вместо PageBreak
+                new Paragraph({ text: "", pageBreakBefore: true }),
 
                 ...(await parseChapters()),
             ],
@@ -88,7 +90,15 @@ async function renderDiagram(code) {
             res.on('end', () => {
                 const buffer = Buffer.concat(chunks);
                 if (res.statusCode === 200 && buffer.length > 500) {
-                    resolve(new Paragraph({ alignment: AlignmentType.CENTER, children: [new ImageRun({ data: buffer, transformation: { width: 600, height: 400 } })], spacing: { before: 200, after: 200 } }));
+                    resolve(new Paragraph({ 
+                        alignment: AlignmentType.CENTER, 
+                        children: [new ImageRun({ 
+                            data: buffer, 
+                            transformation: { width: 600, height: 400 },
+                            type: 'png'
+                        })], 
+                        spacing: { before: 200, after: 200 } 
+                    }));
                 } else {
                     resolve(new Paragraph({ text: "[Диаграмма Mermaid]", alignment: AlignmentType.CENTER }));
                 }
@@ -256,9 +266,9 @@ async function parseChapters() {
                 inTable = false; tableRows = [];
             }
 
-            if (trimmed.startsWith('# ')) nodes.push(new Paragraph({ text: trimmed.replace('# ', ''), style: "Heading1" }));
-            else if (trimmed.startsWith('## ')) nodes.push(new Paragraph({ text: trimmed.replace('## ', ''), style: "Heading2" }));
-            else if (trimmed.startsWith('### ')) nodes.push(new Paragraph({ text: trimmed.replace('### ', ''), style: "Heading3" }));
+            if (trimmed.startsWith('# ')) nodes.push(new Paragraph({ text: trimmed.replace('# ', ''), style: "Heading1", heading: HeadingLevel.HEADING_1 }));
+            else if (trimmed.startsWith('## ')) nodes.push(new Paragraph({ text: trimmed.replace('## ', ''), style: "Heading2", heading: HeadingLevel.HEADING_2 }));
+            else if (trimmed.startsWith('### ')) nodes.push(new Paragraph({ text: trimmed.replace('### ', ''), style: "Heading3", heading: HeadingLevel.HEADING_3 }));
             else if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
                 nodes.push(new Paragraph({ style: "List", children: [new TextRun({ text: "•  " }), ...parseInlineText(trimmed.slice(2))] }));
             }

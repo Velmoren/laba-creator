@@ -1,9 +1,12 @@
 {
   "dependencies": {
-    "markdown-to-docx": "^1.2.0",
-    "docx": "^8.5.0"
+    "docx": "8.5.0",
+    "markdown-to-docx": "^1.2.0"
   },
   "scripts": {
-    "build-docx": "node scripts/generator.js"
+    "build-docx": "node scripts/generator.js",
+    "build-labs": "node scripts/generate_labs.js",
+    "validate": "node scripts/validate_docx.js",
+    "build-all": "npm run build-docx && npm run build-labs && npm run validate"
   }
 }
