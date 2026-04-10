@@ -1,0 +1,11 @@
+A photorealistic screenshot of a Microsoft Windows 11 Command Prompt (`cmd.exe`) window running `psql`. The window has a solid black background and a white monospaced font (Consolas). The window title bar at the top says 'Command Prompt - psql'. The text inside the window reads:
+`postgres=# CREATE DATABASE practice_db;`
+`CREATE DATABASE`
+`postgres=# \c practice_db`
+`You are now connected to database "practice_db" as user "postgres".`
+`practice_db=# CREATE USER db_admin WITH PASSWORD 'admin123';`
+`CREATE ROLE`
+`practice_db=# ALTER DATABASE practice_db OWNER TO db_admin;`
+`ALTER DATABASE`
+`practice_db=#`
+The text rendering includes the slight pixelation typical of the classic Windows console. No extra UI elements, just the window border and the exact text specified.

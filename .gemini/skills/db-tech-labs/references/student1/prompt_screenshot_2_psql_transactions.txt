@@ -1,0 +1,12 @@
+A completely authentic screenshot of a terminal window demonstrating a PostgreSQL transaction block. The background is a very dark grey, the text is a light gray/white monospaced font. The sequence of commands and responses is exactly as follows:
+`test=# BEGIN;`
+`BEGIN`
+`test=*# INSERT INTO groups VALUES ('A-101', 3);`
+`INSERT 0 1`
+`test=*# UPDATE students SET g_no = 'A-101';`
+`UPDATE 3`
+`test=*# COMMIT;`
+`COMMIT`
+`test=# CREATE VIEW high_scores AS SELECT s.name, c.title, e.score FROM students s JOIN exams e ON s.s_id=e.s_id JOIN courses c ON e.c_no=c.c_no WHERE e.score = 5;`
+`CREATE VIEW`
+Notice that the prompt changes from `test=#` to `test=*#` during the transaction. The text formatting is strict, linear, and looks exactly like a real command-line output. No background images, just the pure terminal interface.

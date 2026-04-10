@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Table, TableRow, TableCell, BorderStyle, WidthType, TableLayoutType, ShadingType, VerticalAlign } = require('docx');
+const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Table, TableRow, TableCell, BorderStyle, WidthType, TableLayoutType, ShadingType, VerticalAlign, ExternalHyperlink } = require('docx');
 
 // Получаем ID из аргументов командной строки (по умолчанию 1)
 const entryId = process.argv[2] || '1';
@@ -60,7 +60,7 @@ async function generateLabs() {
                     new Paragraph({ text: "\n\n\n" }),
                     new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "МЕТОДИЧЕСКИЕ УКАЗАНИЯ", bold: true, size: 36 })] }),
                     new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: `К ЛАБОРАТОРНОЙ РАБОТЕ №${lrNumber}`, bold: true, size: 28 })] }),
-                    new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "\nпо дисциплине «Операционные системы реального времени»", italic: true })] }),
+                    new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "\nпо дисциплине «Технологии баз данных»", italic: true })] }),
                     new Paragraph({ text: "\n\n\n\n\n\n" }),
                     new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Москва 2026", bold: true })] }),
                     new Paragraph({ text: "", pageBreakBefore: true }),
@@ -70,7 +70,7 @@ async function generateLabs() {
         });
 
             const buffer = await Packer.toBuffer(doc);
-            fs.writeFileSync(path.join(labOutputPath, `Методичка_ЛР${lrNumber}.docx`), buffer);
+            fs.writeFileSync(path.join(labOutputPath, `Отчет_ЛР${lrNumber}.docx`), buffer);
         }
 
         // Копируем все остальные файлы из src в dist (кроме .md)
@@ -130,17 +130,18 @@ function parseMarkdown(text) {
         }
 
         if (trimmed.startsWith('# ')) {
-            nodes.push(new Paragraph({ text: trimmed.replace('# ', ''), heading: HeadingLevel.HEADING_1, style: "Heading1" }));
+            nodes.push(new Paragraph({ children: parseInlineText(trimmed.replace('# ', ''), 32, true), heading: HeadingLevel.HEADING_1, style: "Heading1" }));
         } else if (trimmed.startsWith('## ')) {
-            nodes.push(new Paragraph({ text: trimmed.replace('## ', ''), heading: HeadingLevel.HEADING_2, style: "Heading2" }));
+            nodes.push(new Paragraph({ children: parseInlineText(trimmed.replace('## ', ''), 28, true), heading: HeadingLevel.HEADING_2, style: "Heading2" }));
         } else if (trimmed.startsWith('### ')) {
-            nodes.push(new Paragraph({ text: trimmed.replace('### ', ''), heading: HeadingLevel.HEADING_3, bold: true }));
+            nodes.push(new Paragraph({ children: parseInlineText(trimmed.replace('### ', ''), 28, true), heading: HeadingLevel.HEADING_3 }));
         } else if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
-            nodes.push(new Paragraph({ text: `• ${trimmed.slice(2)}`, indent: { left: 720, hanging: 360 } }));
+            nodes.push(new Paragraph({ children: [new TextRun({text: '• ', size: 28}), ...parseInlineText(trimmed.slice(2).trim(), 28)], indent: { left: 720, hanging: 360 } }));
         } else if (trimmed.match(/^\d+\./)) {
-            nodes.push(new Paragraph({ text: trimmed, indent: { left: 720, hanging: 360 } }));
+            const numMatch = trimmed.match(/^\d+\./)[0];
+            nodes.push(new Paragraph({ children: [new TextRun({text: numMatch + ' ', size: 28}), ...parseInlineText(trimmed.slice(numMatch.length).trim(), 28)], indent: { left: 720, hanging: 360 } }));
         } else {
-            nodes.push(new Paragraph({ text: trimmed, style: "Normal" }));
+            nodes.push(new Paragraph({ children: parseInlineText(trimmed, 28), style: "Normal" }));
         }
     }
     if (inTable) nodes.push(createTable(tableRows));
