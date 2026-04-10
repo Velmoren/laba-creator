@@ -1,0 +1,24 @@
+Generate an image of a Windows 11 desktop with a single dark terminal window. 
+Background: standard Windows 11 blue background (slightly blurred). 
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+novoselz@drum $ gcc daemon_sim.c -o sys_daemon
+novoselz@drum $ ./sys_daemon &
+[1] 12345
+Process with PID 12345 is now running in an infinite loop.
+novoselz@drum $ ps -p 12345 -o pid,ni,comm
+  PID  NI COMMAND
+12345   0 sys_daemon
+novoselz@drum $ renice +15 -p 12345
+12345: old priority 0, new priority 15
+novoselz@drum $ crontab -l
+*/2 * * * * /home/novoselz/workspace/cron_jobs/auto_archive.sh
+novoselz@drum $ ls -lh /home/novoselz/cron_archives/
+total 8K
+-rw-r--r--  1 novoselz  novoselz  4.2K May 21 14:04 labs_snapshot_21_05_14_04.tar.gz
+novoselz@drum $ kill 12345
+[1]  + Terminated               ./sys_daemon
+novoselz@drum $ 
+
+The image must be professional, showcasing process and schedule management.

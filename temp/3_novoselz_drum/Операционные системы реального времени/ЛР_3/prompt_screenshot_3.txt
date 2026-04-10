@@ -1,0 +1,20 @@
+Generate an image of a Windows 11 desktop. 
+Background: standard Windows 11 blue background (slightly blurred). 
+Terminal: Single dark terminal window, minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+novoselz@drum $ su -
+Password:
+root@drum # pw groupadd lab_group
+root@drum # pw useradd lab_tester -m -G lab_group
+root@drum # id lab_tester
+uid=1005(lab_tester) gid=1005(lab_tester) groups=1005(lab_tester),1006(lab_group)
+root@drum # touch /home/novoselz/osrv_labs/lab3/data.txt
+root@drum # chown lab_tester:lab_group /home/novoselz/osrv_labs/lab3/data.txt
+root@drum # chmod 640 /home/novoselz/osrv_labs/lab3/data.txt
+root@drum # ls -l /home/novoselz/osrv_labs/lab3/data.txt
+-rw-r-----  1 lab_tester  lab_group  0 May 21 11:50 /home/novoselz/osrv_labs/lab3/data.txt
+root@drum # exit
+novoselz@drum $ 
+
+The image must look professional, clean, and focus on the command execution in the terminal.

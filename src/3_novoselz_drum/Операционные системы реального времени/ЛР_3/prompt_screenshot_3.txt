@@ -1,0 +1,20 @@
+Generate an image of a Windows 11 desktop. 
+Background: standard Windows 11 blue background (slightly blurred). 
+Terminal: Single dark terminal window, minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+novoselz@drum $ su -
+Password:
+root@drum # pw groupadd sysadmins
+root@drum # pw useradd guest_user -m -G sysadmins
+root@drum # id guest_user
+uid=1005(guest_user) gid=1005(guest_user) groups=1005(guest_user),1006(sysadmins)
+root@drum # touch /home/novoselz/workspace/security/confidential.dat
+root@drum # chown guest_user:sysadmins /home/novoselz/workspace/security/confidential.dat
+root@drum # chmod 640 /home/novoselz/workspace/security/confidential.dat
+root@drum # ls -l /home/novoselz/workspace/security/confidential.dat
+-rw-r-----  1 guest_user  sysadmins  0 May 21 11:50 /home/novoselz/workspace/security/confidential.dat
+root@drum # exit
+novoselz@drum $ 
+
+The image must look professional, clean, and focus on the command execution in the terminal.

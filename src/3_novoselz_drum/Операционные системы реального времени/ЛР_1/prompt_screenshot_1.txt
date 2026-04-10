@@ -1,0 +1,23 @@
+Generate an image of a Windows 11 desktop. 
+The background is the "standard Windows 11 blue background" (slightly blurred). 
+In the center, there is a single dark terminal window (PuTTY or Windows Terminal style). 
+The terminal content is minimalist FreeBSD: solid black background, white monospaced font. 
+No modern Windows icons, taskbars, or window borders are visible - just the terminal and the background.
+
+Terminal content:
+novoselz@drum $ mkdir -p ~/workspace/fs_practice/backups ~/workspace/fs_practice/data
+novoselz@drum $ echo "System Core Data" > ~/workspace/fs_practice/primary_file.bin
+novoselz@drum $ ln ~/workspace/fs_practice/primary_file.bin ~/workspace/fs_practice/backups/hard_copy
+novoselz@drum $ ln -s /home/novoselz/workspace/fs_practice/primary_file.bin ~/workspace/fs_practice/backups/soft_link
+novoselz@drum $ ls -li ~/workspace/fs_practice/backups/
+total 4
+987654 -rw-r--r--  2 novoselz  novoselz  17 May 21 09:15 hard_copy
+987655 lrwxr-xr-x  1 novoselz  novoselz  43 May 21 09:16 soft_link -> /home/novoselz/workspace/fs_practice/primary_file.bin
+novoselz@drum $ rm ~/workspace/fs_practice/primary_file.bin
+novoselz@drum $ cat ~/workspace/fs_practice/backups/soft_link
+cat: /home/novoselz/workspace/fs_practice/backups/soft_link: No such file or directory
+novoselz@drum $ cat ~/workspace/fs_practice/backups/hard_copy
+System Core Data
+novoselz@drum $ 
+
+The image must look clean and focus on the terminal text.

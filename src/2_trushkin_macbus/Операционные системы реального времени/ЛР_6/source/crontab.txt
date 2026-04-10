@@ -1,0 +1,1 @@
+*/2 * * * * backup_cron.sh

@@ -4,94 +4,116 @@ const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Table
 
 // Получаем ID из аргументов командной строки (по умолчанию 1)
 const entryId = process.argv[2] || '1';
-const sourceBaseDir = path.join('src', entryId, 'лабораторные');
-const outputBaseDir = path.join('dist', entryId, 'labs');
 const PAGE_WIDTH_DXA = 9355;
-
-if (!fs.existsSync(outputBaseDir)) fs.mkdirSync(outputBaseDir, { recursive: true });
 
 async function generateLabs() {
     console.log(`Generating Labs for Entry ID: ${entryId}...`);
-    if (!fs.existsSync(sourceBaseDir)) {
-        console.error(`Error: Source directory ${sourceBaseDir} not found!`);
+    
+    // Ищем папку студента, которая начинается с [entryId]_ или равна [entryId]
+    const srcRoot = 'src';
+    const allDirs = fs.readdirSync(srcRoot).filter(d => fs.statSync(path.join(srcRoot, d)).isDirectory());
+    const studentFolderName = allDirs.find(d => d === entryId || d.startsWith(`${entryId}_`));
+
+    if (!studentFolderName) {
+        console.error(`Error: Student directory for ID ${entryId} not found in src/`);
         process.exit(1);
     }
 
-    const labDirs = fs.readdirSync(sourceBaseDir).filter(d => fs.statSync(path.join(sourceBaseDir, d)).isDirectory());
+    const sourceBaseDir = path.join(srcRoot, studentFolderName);
+    const outputBaseDir = path.join('dist', studentFolderName, 'labs');
 
-    for (const labDirName of labDirs) {
-        console.log(`Processing ${labDirName}...`);
-        const labSourcePath = path.join(sourceBaseDir, labDirName);
-        const labOutputPath = path.join(outputBaseDir, labDirName);
-        
-        if (!fs.existsSync(labOutputPath)) fs.mkdirSync(labOutputPath, { recursive: true });
+    if (!fs.existsSync(outputBaseDir)) fs.mkdirSync(outputBaseDir, { recursive: true });
 
-        const files = fs.readdirSync(labSourcePath);
-        const mdFile = files.find(f => f.endsWith('.md'));
-        
-        if (mdFile) {
-            const content = fs.readFileSync(path.join(labSourcePath, mdFile), 'utf8');
-            const lrMatch = labDirName.match(/\d+/);
-            const lrNumber = lrMatch ? lrMatch[0] : 'X';
+    const themeDirs = fs.readdirSync(sourceBaseDir).filter(d => fs.statSync(path.join(sourceBaseDir, d)).isDirectory() && !d.startsWith('.'));
 
-            // Генерируем DOCX
-            const doc = new Document({
-                // ... (styles remains same)
-            styles: {
-                default: {
-                    document: {
-                        run: { size: 28, font: "Times New Roman" },
-                        paragraph: { spacing: { line: 360 }, alignment: AlignmentType.JUSTIFIED },
+    for (const themeName of themeDirs) {
+        const themePath = path.join(sourceBaseDir, themeName);
+        const labDirs = fs.readdirSync(themePath).filter(d => fs.statSync(path.join(themePath, d)).isDirectory() && !d.startsWith('.'));
+
+        for (const labDirName of labDirs) {
+            console.log(`Processing [${themeName}] ${labDirName}...`);
+            const labSourcePath = path.join(themePath, labDirName);
+            const labOutputPath = path.join(outputBaseDir, themeName, labDirName);
+            
+            if (!fs.existsSync(labOutputPath)) fs.mkdirSync(labOutputPath, { recursive: true });
+
+            const files = fs.readdirSync(labSourcePath);
+            const mdFile = files.find(f => f.endsWith('.md'));
+            
+            if (mdFile) {
+                const content = fs.readFileSync(path.join(labSourcePath, mdFile), 'utf8');
+                const lrMatch = labDirName.match(/\d+/);
+                const lrNumber = lrMatch ? lrMatch[0] : 'X';
+
+                // Генерируем DOCX
+                const doc = new Document({
+                    styles: {
+                        default: {
+                            document: {
+                                run: { size: 28, font: "Times New Roman" },
+                                paragraph: { spacing: { line: 360 }, alignment: AlignmentType.JUSTIFIED },
+                            },
+                        },
+                        paragraphStyles: [
+                            { id: "Normal", name: "Normal", quickFormat: true, run: { size: 28, font: "Times New Roman" }, paragraph: { spacing: { line: 360 }, indent: { firstLine: 709 } } },
+                            { id: "Heading1", name: "Heading 1", run: { size: 32, bold: true, allCaps: true }, paragraph: { alignment: AlignmentType.CENTER, spacing: { before: 400, after: 200 } } },
+                            { id: "Heading2", name: "Heading 2", run: { size: 28, bold: true }, paragraph: { spacing: { before: 300, after: 150 } } },
+                        ],
                     },
-                },
-                paragraphStyles: [
-                    { id: "Normal", name: "Normal", quickFormat: true, run: { size: 28, font: "Times New Roman" }, paragraph: { spacing: { line: 360 }, indent: { firstLine: 709 } } },
-                    { id: "Heading1", name: "Heading 1", run: { size: 32, bold: true, allCaps: true }, paragraph: { alignment: AlignmentType.CENTER, spacing: { before: 400, after: 200 } } },
-                    { id: "Heading2", name: "Heading 2", run: { size: 28, bold: true }, paragraph: { spacing: { before: 300, after: 150 } } },
-                ],
-            },
-            sections: [{
-                properties: { page: { margin: { top: 1134, bottom: 1134, left: 1701, right: 850 } } },
-                children: [
-                    // ТИТУЛЬНЫЙ БЛОК (Упрощенный для методички)
-                    new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "МИНЦИФРЫ РОССИИ", bold: true })] }),
-                    new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "МТУСИ", bold: true })] }),
-                    new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Кафедра ИСУА", bold: true })] }),
-                    new Paragraph({ text: "\n\n\n" }),
-                    new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "МЕТОДИЧЕСКИЕ УКАЗАНИЯ", bold: true, size: 36 })] }),
-                    new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: `К ЛАБОРАТОРНОЙ РАБОТЕ №${lrNumber}`, bold: true, size: 28 })] }),
-                    new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "\nпо дисциплине «Технологии баз данных»", italic: true })] }),
-                    new Paragraph({ text: "\n\n\n\n\n\n" }),
-                    new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Москва 2026", bold: true })] }),
-                    new Paragraph({ text: "", pageBreakBefore: true }),
-                    ...parseMarkdown(content),
-                ],
-            }],
-        });
+                    sections: [{
+                        properties: { page: { margin: { top: 1134, bottom: 1134, left: 1701, right: 850 } } },
+                        children: [
+                            // ТИТУЛЬНЫЙ БЛОК (Упрощенный для методички)
+                            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "МИНЦИФРЫ РОССИИ", bold: true })] }),
+                            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "МТУСИ", bold: true })] }),
+                            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Кафедра ИСУА", bold: true })] }),
+                            new Paragraph({ text: "\n\n\n" }),
+                            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "ОТЧЕТ", bold: true, size: 36 })] }),
+                            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: `К ЛАБОРАТОРНОЙ РАБОТЕ №${lrNumber}`, bold: true, size: 28 })] }),
+                            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: `\nпо дисциплине «${themeName}»`, italic: true })] }),
+                            new Paragraph({ text: "\n\n\n\n\n\n" }),
+                            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Москва 2026", bold: true })] }),
+                            new Paragraph({ text: "", pageBreakBefore: true }),
+                            ...parseMarkdown(content),
+                        ],
+                    }],
+                });
 
-            const buffer = await Packer.toBuffer(doc);
-            fs.writeFileSync(path.join(labOutputPath, `Отчет_ЛР${lrNumber}.docx`), buffer);
-        }
-
-        // Копируем все остальные файлы из src в dist (кроме .md)
-        files.forEach(file => {
-            if (!file.endsWith('.md')) {
-                const srcFile = path.join(labSourcePath, file);
-                const destFile = path.join(labOutputPath, file);
-                
-                if (fs.statSync(srcFile).isDirectory()) {
-                    copyFolderRecursiveSync(srcFile, labOutputPath);
-                } else {
-                    fs.copyFileSync(srcFile, destFile);
-                }
+                const buffer = await Packer.toBuffer(doc);
+                fs.writeFileSync(path.join(labOutputPath, `Отчет_ЛР${lrNumber}.docx`), buffer);
             }
-        });
+
+            // Копируем все остальные файлы из src в dist (кроме .md и промптов)
+            files.forEach(file => {
+                if (!file.endsWith('.md') && !file.startsWith('prompt_screenshot')) {
+                    const srcFile = path.join(labSourcePath, file);
+                    const destFile = path.join(labOutputPath, file);
+                    
+                    if (fs.statSync(srcFile).isDirectory()) {
+                        if (file === 'source') {
+                            // Извлекаем содержимое папки source на уровень выше
+                            fs.readdirSync(srcFile).forEach(sFile => {
+                                const curSource = path.join(srcFile, sFile);
+                                if (fs.statSync(curSource).isDirectory()) {
+                                    copyFolderRecursiveSync(curSource, labOutputPath);
+                                } else {
+                                    fs.copyFileSync(curSource, path.join(labOutputPath, sFile));
+                                }
+                            });
+                        } else {
+                            copyFolderRecursiveSync(srcFile, labOutputPath);
+                        }
+                    } else {
+                        fs.copyFileSync(srcFile, destFile);
+                    }
+                }
+            });
+        }
     }
     console.log(`All labs for ID ${entryId} generated successfully in ${outputBaseDir}`);
 }
 
-function copyFolderRecursiveSync(source, target) {
-    let files = [];
+function copyFolderRecursiveSync(source, target) {    let files = [];
     const targetFolder = path.join(target, path.basename(source));
     if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder);
 
@@ -99,16 +121,19 @@ function copyFolderRecursiveSync(source, target) {
         files = fs.readdirSync(source);
         files.forEach(function (file) {
             const curSource = path.join(source, file);
-            if (fs.lstatSync(curSource).isDirectory()) {
+            const curDest = path.join(targetFolder, file);
+            const curStat = fs.lstatSync(curSource);
+            if (curStat.isDirectory()) {
                 copyFolderRecursiveSync(curSource, targetFolder);
+            } else if (curStat.isSymbolicLink()) {
+                if (fs.existsSync(curDest)) fs.unlinkSync(curDest);
+                fs.symlinkSync(fs.readlinkSync(curSource), curDest);
             } else {
-                fs.copyFileSync(curSource, path.join(targetFolder, file));
+                fs.copyFileSync(curSource, curDest);
             }
         });
     }
 }
-
-// ... (parseMarkdown и createTable остаются без изменений)
 
 function parseMarkdown(text) {
     const nodes = [];
@@ -173,12 +198,13 @@ function parseInlineText(text, fontSize = 28, forceBold = false) {
 }
 
 function parseMarkdownStyles(text, fontSize, forceBold) {
-    const parts = text.split(/(\*\*\*.*?\*\*\*|\*\*.*?\*\*|\*.*?\*)/g);
+    const parts = text.split(/(\*\*\*.*?\*\*\*|\*\*.*?\*\*|\*.*?\*|\`.*?\`)/g);
     const runs = [];
     parts.forEach(part => {
         if (part.startsWith('***')) runs.push(new TextRun({ text: part.slice(3, -3), bold: true, italic: true, size: fontSize }));
         else if (part.startsWith('**')) runs.push(new TextRun({ text: part.slice(2, -2), bold: true, size: fontSize }));
         else if (part.startsWith('*')) runs.push(new TextRun({ text: part.slice(1, -1), italic: true, size: fontSize }));
+        else if (part.startsWith('\`')) runs.push(new TextRun({ text: part.slice(1, -1), font: "Courier New", size: fontSize }));
         else if (part) runs.push(new TextRun({ text: part, size: fontSize, bold: forceBold }));
     });
     return runs;

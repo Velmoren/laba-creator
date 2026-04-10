@@ -1,0 +1,23 @@
+Generate an image of a Windows 11 desktop with a single dark terminal window. 
+Background: standard Windows 11 blue background (slightly blurred). 
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+novoselz@drum $ chmod +x *.sh
+novoselz@drum $ ./task1.sh "Lab 5" "Test"
+--- Script Arguments Analysis ---
+Total count: 2
+List: Lab 5 Test
+Param 1: Lab 5
+Param 2: Test
+novoselz@drum $ ./task2.sh
+Enter A: 5
+Enter B: 9
+Enter C: 2
+Calculation result for (5*2 + 9/3)*2 is: 26
+novoselz@drum $ ./task11.sh | tail -n 2
+DIR: /usr/local/bin | PERMS: drwxr-xr-x
+DIR: /usr/local/sbin | PERMS: drwxr-xr-x
+novoselz@drum $ 
+
+The image must be professional and focus on the terminal scripts execution.

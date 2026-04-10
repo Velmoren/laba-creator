@@ -1,0 +1,1 @@
+*/2 * * * * /home/trushkin/lab6/backup_cron.sh

@@ -1,0 +1,23 @@
+Generate an image of a Windows 11 desktop with a single dark terminal window. 
+Background: standard Windows 11 blue background (slightly blurred). 
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+novoselz@drum $ cat inventory.log
+[2024-05-21] TYPE:Server;OS:FreeBSD;Status:Online;Admin:novoselz
+[2024-05-21] TYPE:Switch;OS:IOS;Status:Online;Admin:admin
+[2024-05-21] TYPE:Workstation;OS:Windows;Status:Offline;Admin:novoselz
+[2024-05-21] TYPE:Router;OS:FreeBSD;Status:Online;Admin:root
+[2024-05-21] TYPE:Server;OS:Linux;Status:Online;Admin:novoselz
+novoselz@drum $ grep "OS:FreeBSD" inventory.log
+[2024-05-21] TYPE:Server;OS:FreeBSD;Status:Online;Admin:novoselz
+[2024-05-21] TYPE:Router;OS:FreeBSD;Status:Online;Admin:root
+novoselz@drum $ grep "Status:Online" inventory.log | grep -c "novoselz"
+2
+novoselz@drum $ tail -n 3 inventory.log | sort -r
+[2024-05-21] TYPE:Workstation;OS:Windows;Status:Offline;Admin:novoselz
+[2024-05-21] TYPE:Server;OS:Linux;Status:Online;Admin:novoselz
+[2024-05-21] TYPE:Router;OS:FreeBSD;Status:Online;Admin:root
+novoselz@drum $ 
+
+The image must be clean and focus on the command line output.

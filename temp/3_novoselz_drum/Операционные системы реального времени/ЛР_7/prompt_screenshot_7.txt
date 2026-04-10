@@ -1,0 +1,24 @@
+Generate an image of a Windows 11 desktop with a single dark terminal window. 
+Background: standard Windows 11 blue background (slightly blurred). 
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+novoselz@drum $ df -h | grep -v "devfs"
+Filesystem     Size    Used   Avail Capacity  Mounted on
+/dev/ada0p2     15G    7.2G    6.6G    52%    /
+/dev/ada0p3     50G     22G     24G    48%    /usr
+novoselz@drum $ su -
+Password:
+root@drum # mkdir /media/usb_drive
+root@drum # mount -t msdosfs /dev/da0s1 /media/usb_drive
+root@drum # cp ~/osrv_labs/lab7/report.txt /media/usb_drive/
+root@drum # df -h /media/usb_drive
+Filesystem     Size    Used   Avail Capacity  Mounted on
+/dev/da0s1     1.9G    120M    1.7G     7%    /media/usb_drive
+root@drum # umount /media/usb_drive
+root@drum # exit
+novoselz@drum $ du -sh ~/osrv_labs/
+1.2M    /home/novoselz/osrv_labs/
+novoselz@drum $ 
+
+The image focus must be on the disk management commands and the clean terminal look.

@@ -1,0 +1,25 @@
+Generate an image of a macOS desktop environment where a single terminal window is open. 
+The background of the desktop is a high-quality, slightly blurred photo of "blue ocean water". 
+The terminal window itself is dark and follows a minimalist FreeBSD style. 
+Inside the terminal, the background is solid black, and the font is a crisp, monospaced white VGA-style font (typical for FreeBSD console). 
+The window should not have any colorful title bars, buttons, or modern desktop icons. 
+Focus entirely on the terminal content.
+
+The text inside the terminal should show the following sequence of commands and their output:
+trushkin@macbus $ mkdir -p ~/lab1/project/docs
+trushkin@macbus $ echo "Original data" > ~/lab1/project/docs/source.txt
+trushkin@macbus $ ln ~/lab1/project/docs/source.txt ~/lab1/project/docs/hardlink
+trushkin@macbus $ ln -s ~/lab1/project/docs/source.txt ~/lab1/project/docs/softlink
+trushkin@macbus $ ls -li ~/lab1/project/docs/
+total 8
+123456 -rw-r--r--  2 trushkin  trushkin  14 May 20 10:00 hardlink
+123457 lrwxr-xr-x  1 trushkin  trushkin  22 May 20 10:01 softlink -> /home/trushkin/lab1/project/docs/source.txt
+123456 -rw-r--r--  2 trushkin  trushkin  14 May 20 10:00 source.txt
+trushkin@macbus $ rm ~/lab1/project/docs/source.txt
+trushkin@macbus $ cat ~/lab1/project/docs/softlink
+cat: /home/trushkin/lab1/project/docs/softlink: No such file or directory
+trushkin@macbus $ cat ~/lab1/project/docs/hardlink
+Original data
+trushkin@macbus $ 
+
+The image must look like a raw, minimalist FreeBSD terminal console embedded in a macOS environment. No taskbars, no icons, just the terminal window and the ocean background.

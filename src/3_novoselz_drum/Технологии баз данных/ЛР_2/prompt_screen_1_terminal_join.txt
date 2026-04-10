@@ -1,0 +1,7 @@
+An extremely realistic screenshot of a terminal window running a `psql` session. The environment is a macOS terminal with a dark theme. The prompt is `practice_db=#`. The user has entered a multi-line SQL query:
+`SELECT s.name, COUNT(t.grade) AS exam_count`
+`FROM subject s`
+`LEFT OUTER JOIN testing t ON s.sub_id = t.sub_id`
+`GROUP BY s.name`
+`HAVING COUNT(t.grade) > 0;`
+Below the query, an ASCII table is printed. The header is `name                  | exam_count`. A dashed line separates the header `------------------------+------------`. The rows are: `Проектирование БД       |          2`, `Компьютерные сети       |          1`, and `Основы алгоритмизации   |          1`. Below the table, it reads `(3 rows)`. The prompt `practice_db=#` appears again at the bottom. The font is Menlo, crisp white on a very dark translucent background. The layout and spacing perfectly match a real PostgreSQL CLI output.

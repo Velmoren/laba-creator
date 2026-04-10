@@ -1,3 +1,0 @@
--- Резервная копия БД ЛР2
-SET client_encoding = 'UTF8';
--- Данные таблиц subject, scholar, testing...
