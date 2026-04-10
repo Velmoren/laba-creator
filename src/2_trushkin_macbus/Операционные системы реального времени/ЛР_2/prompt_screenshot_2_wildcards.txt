@@ -1,0 +1,11 @@
+Generate an image of a macOS Sonoma desktop with a single dark terminal window.
+Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+trushkin@macbus $ cd ~/lab2
+trushkin@macbus $ tar -cvf data1_only.tar data1/*.txt
+a data1/file1.txt
+trushkin@macbus $ ls -lh data1_only.tar
+-rw-r--r--  1 trushkin  trushkin   2.0K May 20 10:20 data1_only.tar
+trushkin@macbus $ 

@@ -1,0 +1,15 @@
+Generate an image of a macOS Sonoma desktop with a single dark terminal window.
+Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+trushkin@macbus $ ./task4.sh
+Enter username to check: trushkin
+Match! You entered the current user.
+trushkin@macbus $ ./task5.sh
+Enter filename: task1.sh
+task1.sh: Bourne-Again shell script, ASCII text executable
+trushkin@macbus $ ./task11.sh | tail -n 2
+DIR: /usr/local/bin | PERMS: drwxr-xr-x
+DIR: /usr/local/sbin | PERMS: drwxr-xr-x
+trushkin@macbus $ 

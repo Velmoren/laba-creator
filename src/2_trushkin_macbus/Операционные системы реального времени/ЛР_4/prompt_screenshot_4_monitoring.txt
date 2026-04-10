@@ -1,0 +1,14 @@
+Generate an image of a macOS Sonoma desktop with a single dark terminal window.
+Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+trushkin@macbus $ who | wc -l
+       3
+trushkin@macbus $ tail -n 5 /var/log/messages
+May 20 13:00:01 macbus syslogd: kernel boot file is /boot/kernel/kernel
+May 20 13:05:22 macbus su: trushkin to root on /dev/pts/0
+May 20 13:10:45 macbus kernel: pid 12345 (loop), jid 0, uid 1001: exited on signal 9
+May 20 13:15:00 macbus crond[884]: (trushkin) CMD (/home/trushkin/lab6/backup_cron.sh)
+May 20 13:20:00 macbus sshd[1024]: Accepted publickey for trushkin from 192.168.1.50 port 50432 ssh2
+trushkin@macbus $ 

@@ -1,0 +1,14 @@
+Generate an image of a macOS Sonoma desktop with a single dark terminal window.
+Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+root@macbus # touch /home/trushkin/lab3/shared_resource.txt
+root@macbus # chown dev_user:developers /home/trushkin/lab3/shared_resource.txt
+root@macbus # chmod g+w /home/trushkin/lab3/shared_resource.txt
+root@macbus # ls -l /home/trushkin/lab3/shared_resource.txt
+-rw-rw-r--  1 dev_user  developers  0 May 20 12:00 /home/trushkin/lab3/shared_resource.txt
+root@macbus # chmod 600 /home/trushkin/lab3/shared_resource.txt
+root@macbus # ls -l /home/trushkin/lab3/shared_resource.txt
+-rw-------  1 dev_user  developers  0 May 20 12:00 /home/trushkin/lab3/shared_resource.txt
+root@macbus # 

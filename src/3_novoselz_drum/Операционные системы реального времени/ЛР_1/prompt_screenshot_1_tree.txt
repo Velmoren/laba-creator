@@ -1,0 +1,18 @@
+Generate an image of a Windows 11 desktop with a single dark terminal window.
+Background: standard Windows 11 blue background (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+novoselz@drum $ ls -R ~/workspace/fs_practice/
+/home/novoselz/workspace/fs_practice/:
+backups/
+data/
+
+/home/novoselz/workspace/fs_practice/backups:
+hard_copy
+soft_link
+
+/home/novoselz/workspace/fs_practice/data:
+primary.db
+settings.conf
+novoselz@drum $ 

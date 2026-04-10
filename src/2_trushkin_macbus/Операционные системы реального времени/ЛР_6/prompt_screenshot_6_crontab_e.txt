@@ -1,0 +1,14 @@
+Generate an image of a macOS Sonoma desktop with a single dark terminal window.
+Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text. This screenshot shows the 'vi' editor editing a crontab file.
+
+Terminal content (vi editing crontab):
+# Minute Hour Mday Month Wday Command
+*/2 * * * * /home/trushkin/lab6/backup_cron.sh >> /home/trushkin/lab6/cron.log 2>&1
+~
+~
+~
+~
+~
+~
+"/tmp/crontab.XXXXX" 2L, 92C

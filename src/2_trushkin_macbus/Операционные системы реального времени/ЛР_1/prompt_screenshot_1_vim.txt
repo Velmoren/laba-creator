@@ -1,0 +1,13 @@
+Generate an image of a macOS Sonoma desktop with a single dark terminal window.
+Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text. This screenshot shows the 'vim' text editor interface.
+
+Terminal content (vim interface):
+This is the README for Lab 1 project structure.
+~
+~
+~
+~
+~
+~
+"docs/README.md" [New] 1L, 47C written

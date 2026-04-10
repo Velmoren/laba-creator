@@ -126,7 +126,7 @@ function copyFolderRecursiveSync(source, target) {    let files = [];
             if (curStat.isDirectory()) {
                 copyFolderRecursiveSync(curSource, targetFolder);
             } else if (curStat.isSymbolicLink()) {
-                if (fs.existsSync(curDest)) fs.unlinkSync(curDest);
+                try { fs.unlinkSync(curDest); } catch(e) {}
                 fs.symlinkSync(fs.readlinkSync(curSource), curDest);
             } else {
                 fs.copyFileSync(curSource, curDest);

@@ -1,0 +1,13 @@
+Generate an image of a Windows 11 desktop with a single dark terminal window.
+Background: standard Windows 11 blue background (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+novoselz@drum $ cd ~/workspace/archiving
+novoselz@drum $ tar -cvf docs_backup.tar payload/*.txt
+a payload/system_config.txt
+a payload/text1.txt
+a payload/text2.txt
+novoselz@drum $ ls -lh docs_backup.tar
+-rw-r--r--  1 novoselz  novoselz   3.5K May 21 10:20 docs_backup.tar
+novoselz@drum $ 

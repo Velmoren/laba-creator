@@ -1,0 +1,18 @@
+Generate an image of a macOS Sonoma desktop with a single dark terminal window.
+Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+trushkin@macbus $ cd ~/lab2
+trushkin@macbus $ mkdir restore
+trushkin@macbus $ tar -xvf full_archive.tar -C restore/
+x data1/
+x data1/file1.txt
+x data1/hosts_backup
+x data2/
+x data2/file2.txt
+trushkin@macbus $ ls -l restore/data1/
+total 8
+-rw-r--r--  1 trushkin  trushkin  15 May 20 10:20 file1.txt
+-rw-r--r--  1 trushkin  trushkin  20 May 20 10:20 hosts_backup
+trushkin@macbus $ 

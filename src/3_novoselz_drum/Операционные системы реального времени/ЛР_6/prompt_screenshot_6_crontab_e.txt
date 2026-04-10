@@ -1,0 +1,14 @@
+Generate an image of a Windows 11 desktop with a single dark terminal window.
+Background: standard Windows 11 blue background (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text. This screenshot shows the 'vi' editor editing a crontab file.
+
+Terminal content (vi editing crontab):
+# Minute Hour Mday Month Wday Command
+*/2 * * * * /home/novoselz/workspace/cron_jobs/auto_archive.sh >> /home/novoselz/cron_status.log 2>&1
+~
+~
+~
+~
+~
+~
+"/tmp/crontab.XXXXX" 2L, 102C

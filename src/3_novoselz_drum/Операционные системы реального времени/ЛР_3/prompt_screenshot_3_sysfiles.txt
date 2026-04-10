@@ -1,0 +1,14 @@
+Generate an image of a Windows 11 desktop with a single dark terminal window.
+Background: standard Windows 11 blue background (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+novoselz@drum $ tail -n 3 /etc/passwd
+sshd:*:22:22:Secure Shell Daemon:/var/empty:/usr/sbin/nologin
+messagebus:*:556:556:D-BUS Daemon User:/nonexistent:/usr/sbin/nologin
+novoselz:*:1001:1001:Novoseltsev:/home/novoselz:/usr/local/bin/bash
+novoselz@drum $ tail -n 3 /etc/group
+sshd:*:22:
+messagebus:*:556:
+novoselz:*:1001:
+novoselz@drum $ 

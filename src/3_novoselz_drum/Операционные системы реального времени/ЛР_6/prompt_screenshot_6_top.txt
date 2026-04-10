@@ -1,0 +1,16 @@
+Generate an image of a Windows 11 desktop with a single dark terminal window.
+Background: standard Windows 11 blue background (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text. This screenshot shows the 'top' utility interface.
+
+Terminal content (top interface):
+last pid: 45678;  load averages:  0.15,  0.10,  0.08    up 2+14:22:30  14:30:15
+35 processes:  1 running, 34 sleeping
+CPU:  1.0% user,  0.0% nice,  0.5% system,  0.0% interrupt, 98.5% idle
+Mem: 145M Active, 350M Inact, 800M Wired, 500M Buf, 2048M Free
+Swap: 4096M Total, 4096M Free
+
+  PID USERNAME    THR PRI NICE   SIZE    RES STATE    C   TIME    WCPU COMMAND
+12345 novoselz      1  20    0    12M  2500K sleep    1   0:05   0.00% sys_daemon
+  884 root          1  20    0    10M  1500K sleep    0   0:02   0.00% cron
+  900 root          1  20    0    15M  3000K sleep    1   0:10   0.00% sshd
+45678 novoselz      1  20    0    14M  2800K CPU1     1   0:00   0.50% top

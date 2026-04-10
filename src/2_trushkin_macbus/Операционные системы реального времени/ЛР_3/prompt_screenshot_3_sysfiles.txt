@@ -1,0 +1,16 @@
+Generate an image of a macOS Sonoma desktop with a single dark terminal window.
+Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+trushkin@macbus $ tail -n 5 /etc/passwd
+sshd:*:22:22:Secure Shell Daemon:/var/empty:/usr/sbin/nologin
+messagebus:*:556:556:D-BUS Daemon User:/nonexistent:/usr/sbin/nologin
+trushkin:*:1001:1001:Trushkin:/home/trushkin:/usr/local/bin/bash
+dev_user:*:1002:1002:Developer User:/home/dev_user:/bin/sh
+trushkin@macbus $ tail -n 5 /etc/group
+sshd:*:22:
+messagebus:*:556:
+trushkin:*:1001:
+developers:*:1002:dev_user
+trushkin@macbus $ 

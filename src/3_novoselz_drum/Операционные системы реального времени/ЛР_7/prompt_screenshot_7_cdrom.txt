@@ -1,0 +1,17 @@
+Generate an image of a Windows 11 desktop with a single dark terminal window.
+Background: standard Windows 11 blue background (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+root@drum # mkdir -p /mnt/optical_disc
+root@drum # mount_cd9660 /dev/cd0 /mnt/optical_disc
+root@drum # df -h /mnt/optical_disc
+Filesystem     Size    Used   Avail Capacity  Mounted on
+/dev/cd0       650M    650M      0B   100%    /mnt/optical_disc
+root@drum # ls -l /mnt/optical_disc
+total 2048
+-r-xr-xr-x  1 root  wheel  1048576 May 21  2024 install.iso
+-r-xr-xr-x  1 root  wheel     1024 May 21  2024 readme.txt
+root@drum # umount /mnt/optical_disc
+root@drum # exit
+novoselz@drum $ 

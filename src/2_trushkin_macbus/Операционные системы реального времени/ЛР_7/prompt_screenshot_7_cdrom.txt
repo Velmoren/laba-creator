@@ -1,0 +1,17 @@
+Generate an image of a macOS Sonoma desktop with a single dark terminal window.
+Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+root@macbus # mkdir -p /mnt/cdrom
+root@macbus # mount_cd9660 /dev/cd0 /mnt/cdrom
+root@macbus # df -h /mnt/cdrom
+Filesystem     Size    Used   Avail Capacity  Mounted on
+/dev/cd0       650M    650M      0B   100%    /mnt/cdrom
+root@macbus # ls -l /mnt/cdrom
+total 2048
+-r-xr-xr-x  1 root  wheel  1048576 May 20  2024 install.iso
+-r-xr-xr-x  1 root  wheel     1024 May 20  2024 readme.txt
+root@macbus # umount /mnt/cdrom
+root@macbus # exit
+trushkin@macbus $ 

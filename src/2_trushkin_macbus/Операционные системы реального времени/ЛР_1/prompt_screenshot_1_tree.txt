@@ -1,0 +1,12 @@
+Generate an image of a macOS Sonoma desktop with a single dark terminal window.
+Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
+Terminal: Minimalist FreeBSD style, black background, white text.
+
+Terminal content:
+trushkin@macbus $ ls -li ~/lab1/project/docs/
+total 12
+987654 -rw-r--r--  2 trushkin  trushkin  47 May 20 09:15 README.md
+987655 -rw-r--r--  2 trushkin  trushkin  13 May 20 09:16 hardlink_to_source
+987656 -rw-r--r--  1 trushkin  trushkin  32 May 20 09:15 notes.txt
+987657 lrwxr-xr-x  1 trushkin  trushkin  10 May 20 09:16 softlink_to_source -> source.txt
+trushkin@macbus $ 
