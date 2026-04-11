@@ -1,7 +1,8 @@
-Generate an image of a Windows 11 desktop with a single dark terminal window.
-Background: standard Windows 11 blue background (slightly blurred).
-Terminal: Minimalist FreeBSD style, black background, white text.
-
+Generate an image of a Windows 11 desktop. 
+The background is the "standard Windows 11 blue background" (slightly blurred). 
+In the center, there is a single dark terminal window (PuTTY or Windows Terminal style). 
+The terminal content is minimalist FreeBSD: solid black background, white monospaced font. 
+No modern Windows icons, taskbars, or window borders are visible - just the terminal and the background.
 Terminal content:
 novoselz@drum $ ./script_3.sh
 Total files in home directory: 42
@@ -17,4 +18,6 @@ Files created today:
 -rw-r--r--  1 novoselz  novoselz  120 May 21 14:05 script_2.sh
 novoselz@drum $ ./script_8.sh server_assets.csv "FreeBSD"
 Found 2 occurrences of 'FreeBSD' in server_assets.csv.
-novoselz@drum $ 
+novoselz@drum $
+
+The image must look clean and focus on the terminal text.

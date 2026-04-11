@@ -1,7 +1,8 @@
-Generate an image of a macOS Sonoma desktop with a single dark terminal window.
-Background: standard macOS Sonoma abstract wallpaper (slightly blurred).
-Terminal: Minimalist FreeBSD style, black background, white text. This screenshot shows the 'top' utility interface.
-
+Generate an image of a macOS Sonoma desktop. 
+The background is the "standard macOS Sonoma abstract wallpaper" (slightly blurred). 
+In the center, there is a single dark terminal window (macOS Terminal.app style). 
+The terminal content is minimalist FreeBSD: solid black background, white monospaced font. 
+No Dock, menu bar, or window borders are visible - just the terminal and the background.
 Terminal content (top interface):
 last pid: 45678;  load averages:  0.15,  0.10,  0.08    up 2+14:22:30  14:30:15
 35 processes:  1 running, 34 sleeping
@@ -14,3 +15,5 @@ Swap: 4096M Total, 4096M Free
   884 root          1  20    0    10M  1500K sleep    0   0:02   0.00% cron
   900 root          1  20    0    15M  3000K sleep    1   0:10   0.00% sshd
 45678 trushkin      1  20    0    14M  2800K CPU1     1   0:00   0.50% top
+
+The image must look clean and focus on the terminal text.
