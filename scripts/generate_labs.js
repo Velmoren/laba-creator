@@ -1,15 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Table, TableRow, TableCell, BorderStyle, WidthType, TableLayoutType, ShadingType, VerticalAlign, ExternalHyperlink } = require('docx');
+const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Table, TableRow, TableCell, BorderStyle, WidthType, TableLayoutType, ShadingType, VerticalAlign, ExternalHyperlink, ImageRun } = require('docx');
 
-// Получаем ID из аргументов командной строки (по умолчанию 1)
 const entryId = process.argv[2] || '1';
 const PAGE_WIDTH_DXA = 9355;
 
 async function generateLabs() {
     console.log(`Generating Labs for Entry ID: ${entryId}...`);
     
-    // Ищем папку студента, которая начинается с [entryId]_ или равна [entryId]
     const srcRoot = 'src';
     const allDirs = fs.readdirSync(srcRoot).filter(d => fs.statSync(path.join(srcRoot, d)).isDirectory());
     const studentFolderName = allDirs.find(d => d === entryId || d.startsWith(`${entryId}_`));
@@ -45,7 +43,6 @@ async function generateLabs() {
                 const lrMatch = labDirName.match(/\d+/);
                 const lrNumber = lrMatch ? lrMatch[0] : 'X';
 
-                // Генерируем DOCX
                 const doc = new Document({
                     styles: {
                         default: {
@@ -63,7 +60,6 @@ async function generateLabs() {
                     sections: [{
                         properties: { page: { margin: { top: 1134, bottom: 1134, left: 1701, right: 850 } } },
                         children: [
-                            // ТИТУЛЬНЫЙ БЛОК (Упрощенный для методички)
                             new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "МИНЦИФРЫ РОССИИ", bold: true })] }),
                             new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "МТУСИ", bold: true })] }),
                             new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Кафедра ИСУА", bold: true })] }),
@@ -74,7 +70,7 @@ async function generateLabs() {
                             new Paragraph({ text: "\n\n\n\n\n\n" }),
                             new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Москва 2026", bold: true })] }),
                             new Paragraph({ text: "", pageBreakBefore: true }),
-                            ...parseMarkdown(content),
+                            ...parseMarkdown(content, labSourcePath),
                         ],
                     }],
                 });
@@ -83,26 +79,33 @@ async function generateLabs() {
                 fs.writeFileSync(path.join(labOutputPath, `Отчет_ЛР${lrNumber}.docx`), buffer);
             }
 
-            // Копируем все остальные файлы из src в dist (кроме .md и промптов)
             files.forEach(file => {
                 if (!file.endsWith('.md') && !file.startsWith('prompt_screenshot')) {
                     const srcFile = path.join(labSourcePath, file);
                     const destFile = path.join(labOutputPath, file);
                     
-                    if (fs.statSync(srcFile).isDirectory()) {
+                    const stat = fs.lstatSync(srcFile);
+                    if (stat.isDirectory()) {
                         if (file === 'source') {
-                            // Извлекаем содержимое папки source на уровень выше
                             fs.readdirSync(srcFile).forEach(sFile => {
                                 const curSource = path.join(srcFile, sFile);
-                                if (fs.statSync(curSource).isDirectory()) {
+                                const curDest = path.join(labOutputPath, sFile);
+                                const curStat = fs.lstatSync(curSource);
+                                if (curStat.isDirectory()) {
                                     copyFolderRecursiveSync(curSource, labOutputPath);
+                                } else if (curStat.isSymbolicLink()) {
+                                    try { fs.unlinkSync(curDest); } catch(e) {}
+                                    fs.symlinkSync(fs.readlinkSync(curSource), curDest);
                                 } else {
-                                    fs.copyFileSync(curSource, path.join(labOutputPath, sFile));
+                                    fs.copyFileSync(curSource, curDest);
                                 }
                             });
                         } else {
                             copyFolderRecursiveSync(srcFile, labOutputPath);
                         }
+                    } else if (stat.isSymbolicLink()) {
+                        try { fs.unlinkSync(destFile); } catch(e) {}
+                        fs.symlinkSync(fs.readlinkSync(srcFile), destFile);
                     } else {
                         fs.copyFileSync(srcFile, destFile);
                     }
@@ -113,12 +116,12 @@ async function generateLabs() {
     console.log(`All labs for ID ${entryId} generated successfully in ${outputBaseDir}`);
 }
 
-function copyFolderRecursiveSync(source, target) {    let files = [];
+function copyFolderRecursiveSync(source, target) {
     const targetFolder = path.join(target, path.basename(source));
     if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder);
 
     if (fs.lstatSync(source).isDirectory()) {
-        files = fs.readdirSync(source);
+        const files = fs.readdirSync(source);
         files.forEach(function (file) {
             const curSource = path.join(source, file);
             const curDest = path.join(targetFolder, file);
@@ -135,14 +138,37 @@ function copyFolderRecursiveSync(source, target) {    let files = [];
     }
 }
 
-function parseMarkdown(text) {
+function parseMarkdown(text, labSourcePath) {
     const nodes = [];
     const lines = text.split(/\r?\n/);
     let inTable = false, tableRows = [];
+    let inCodeBlock = false, codeContent = [];
+    
+    // Счетчики и отслеживание картинок
+    let imageCounter = 0;
+    const seenImages = new Map(); // путь -> номер
 
     for (let line of lines) {
         let trimmed = line.trim();
-        if (!trimmed) continue;
+
+        if (trimmed.startsWith('```')) {
+            if (inCodeBlock) {
+                nodes.push(new Paragraph({
+                    children: [new TextRun({ text: codeContent.join('\n'), font: "Courier New", size: 24 })],
+                    shading: { fill: "F2F2F2" },
+                    indent: { left: 720 }
+                }));
+                inCodeBlock = false; codeContent = [];
+            } else {
+                inCodeBlock = true;
+            }
+            continue;
+        }
+
+        if (inCodeBlock) {
+            codeContent.push(line);
+            continue;
+        }
 
         if (trimmed.startsWith('|')) {
             inTable = true;
@@ -152,6 +178,49 @@ function parseMarkdown(text) {
         } else if (inTable) {
             nodes.push(createTable(tableRows));
             inTable = false; tableRows = [];
+        }
+
+        if (trimmed.startsWith('![')) {
+            const match = trimmed.match(/!\[(.*?)\]\((.*?)\)/);
+            if (match) {
+                const altText = match[1] || "Скриншот выполнения";
+                const imgName = match[2];
+                const imagePath = path.join(labSourcePath, imgName);
+                
+                if (fs.existsSync(imagePath)) {
+                    if (seenImages.has(imagePath)) {
+                        // Повторное вхождение - вставляем ссылку
+                        const imgNum = seenImages.get(imagePath);
+                        nodes.push(new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ text: `(см. Скриншот ${imgNum})`, italic: true, color: "555555" })],
+                            spacing: { before: 100, after: 100 }
+                        }));
+                    } else {
+                        // Первое вхождение - вставляем картинку и номер
+                        imageCounter++;
+                        seenImages.set(imagePath, imageCounter);
+                        
+                        nodes.push(new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            spacing: { before: 200, after: 100 },
+                            children: [
+                                new ImageRun({
+                                    data: fs.readFileSync(imagePath),
+                                    transformation: { width: 500, height: 300 },
+                                }),
+                            ],
+                        }));
+                        // Подпись под картинкой
+                        nodes.push(new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            spacing: { after: 200 },
+                            children: [new TextRun({ text: `Скриншот ${imageCounter} – ${altText}`, italic: true, size: 24 })],
+                        }));
+                    }
+                    continue;
+                }
+            }
         }
 
         if (trimmed.startsWith('# ')) {
@@ -165,7 +234,7 @@ function parseMarkdown(text) {
         } else if (trimmed.match(/^\d+\./)) {
             const numMatch = trimmed.match(/^\d+\./)[0];
             nodes.push(new Paragraph({ children: [new TextRun({text: numMatch + ' ', size: 28}), ...parseInlineText(trimmed.slice(numMatch.length).trim(), 28)], indent: { left: 720, hanging: 360 } }));
-        } else {
+        } else if (trimmed) {
             nodes.push(new Paragraph({ children: parseInlineText(trimmed, 28), style: "Normal" }));
         }
     }

@@ -1,0 +1,9 @@
+Full-screen professional interface of Micro-Cap 9 software. 
+The window occupies 100% of the image area.
+UI Style: Classic Light Theme. White background for schematic and plots. Light gray grid lines. Black component symbols and text. Standard Windows XP-style window borders and menus.
+Analysis Mode: Stepping Mode
+
+Specific Content:
+A dialog box 'Stepping' is visible, varying 'C4' from 0.25u to 250u. Three Gain curves (red, blue, green) are shown on the main plot.
+
+High-resolution engineering CAD style. Sharp text and clear vector lines.

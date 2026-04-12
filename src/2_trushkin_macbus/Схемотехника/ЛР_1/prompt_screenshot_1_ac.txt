@@ -1,0 +1,9 @@
+Full-screen professional interface of Micro-Cap 9 software. 
+The window occupies 100% of the image area.
+UI Style: Classic Light Theme. White background for schematic and plots. Light gray grid lines. Black component symbols and text. Standard Windows XP-style window borders and menus.
+Analysis Mode: AC Analysis
+
+Specific Content:
+Magnitude Gain V(7)/V(4) in dB vs Frequency. Phase plot below. Cursors are at -3dB points. White background, black and red lines.
+
+High-resolution engineering CAD style. Sharp text and clear vector lines.

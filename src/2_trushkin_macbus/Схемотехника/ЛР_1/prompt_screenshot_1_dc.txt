@@ -1,0 +1,9 @@
+Full-screen professional interface of Micro-Cap 9 software. 
+The window occupies 100% of the image area.
+UI Style: Classic Light Theme. White background for schematic and plots. Light gray grid lines. Black component symbols and text. Standard Windows XP-style window borders and menus.
+Analysis Mode: Dynamic DC Analysis
+
+Specific Content:
+Single-stage BJT resistor amplifier circuit. Transistor Q1 (KT316A) shows a blue [LIN] label. V2 power source is 9V. Load resistor R6 is 1400 Ohms. Voltages and currents are displayed in blue text near the nodes.
+
+High-resolution engineering CAD style. Sharp text and clear vector lines.

@@ -1,0 +1,9 @@
+Full-screen professional interface of Micro-Cap 9 software. 
+The window occupies 100% of the image area.
+UI Style: Modern Dark Mode. Deep black background for both schematic and analysis windows. High-contrast white or cyan grid. Bright colored waveform lines (yellow, green, magenta). Sharp modern UI elements.
+Analysis Mode: Transient Analysis
+
+Specific Content:
+Input pulse (blue) and output pulse (yellow). Visible droop on the output pulse top. Percentage markers for delta distortion.
+
+High-resolution engineering CAD style. Sharp text and clear vector lines.

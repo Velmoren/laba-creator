@@ -1,0 +1,9 @@
+Full-screen professional interface of Micro-Cap 9 software. 
+The window occupies 100% of the image area.
+UI Style: Modern Dark Mode. Deep black background for both schematic and analysis windows. High-contrast white or cyan grid. Bright colored waveform lines (yellow, green, magenta). Sharp modern UI elements.
+Analysis Mode: AC Analysis
+
+Specific Content:
+Single Gain curve in neon yellow over a dark grid. Logarithmic frequency axis from 10Hz to 100MHz. Minimalist and sharp.
+
+High-resolution engineering CAD style. Sharp text and clear vector lines.

@@ -1,0 +1,9 @@
+Full-screen professional interface of Micro-Cap 9 software. 
+The window occupies 100% of the image area.
+UI Style: Classic Light Theme. White background for schematic and plots. Light gray grid lines. Black component symbols and text. Standard Windows XP-style window borders and menus.
+Analysis Mode: AC Comparison
+
+Specific Content:
+Two curves on one plot: 'Open Loop' (tall peak) and 'With NFB' (wide flat plateau). Legend is visible at the top right.
+
+High-resolution engineering CAD style. Sharp text and clear vector lines.

@@ -1,0 +1,9 @@
+Full-screen professional interface of Micro-Cap 9 software. 
+The window occupies 100% of the image area.
+UI Style: Modern Dark Mode. Deep black background for both schematic and analysis windows. High-contrast white or cyan grid. Bright colored waveform lines (yellow, green, magenta). Sharp modern UI elements.
+Analysis Mode: Dynamic DC (Variant 2.3)
+
+Specific Content:
+Two-stage amplifier schematic. Switches 2 and 3 are CLOSED. NFB path through R3. Black UI background with bright component symbols.
+
+High-resolution engineering CAD style. Sharp text and clear vector lines.

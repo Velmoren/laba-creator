@@ -4,14 +4,19 @@ const { execSync } = require('child_process');
 
 // Получаем ID из аргументов командной строки (по умолчанию 1)
 const entryId = process.argv[2] || '1';
-const distDir = path.join('dist', entryId);
 
-console.log(`Validating DOCX files for Entry ID: ${entryId}...`);
+const distRoot = 'dist';
+const allDirs = fs.readdirSync(distRoot).filter(d => fs.statSync(path.join(distRoot, d)).isDirectory());
+const studentFolderName = allDirs.find(d => d === entryId || d.startsWith(`${entryId}_`));
 
-if (!fs.existsSync(distDir)) {
-    console.error(`Error: Directory ${distDir} not found!`);
+if (!studentFolderName) {
+    console.error(`Error: Directory for student ID ${entryId} not found in dist/`);
     process.exit(1);
 }
+
+const distDir = path.join(distRoot, studentFolderName);
+
+console.log(`Validating DOCX files for Entry ID: ${entryId} (Folder: ${studentFolderName})...`);
 
 function findDocxFiles(dir) {
     const files = [];
@@ -19,7 +24,7 @@ function findDocxFiles(dir) {
     
     for (const item of items) {
         const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+        const stat = fs.lstatSync(fullPath);
         
         if (stat.isDirectory()) {
             files.push(...findDocxFiles(fullPath));
@@ -57,5 +62,5 @@ for (const file of docxFiles) {
     }
 }
 
-console.log(`\n${allValid ? '✅ All files are valid!' : '❌ Some files have issues!'}`);
+console.log(`\n${allValid ? '✅ All files for ID ${entryId} are valid!' : '❌ Some files for ID ${entryId} have issues!'}`);
 process.exit(allValid ? 0 : 1);

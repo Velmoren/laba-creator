@@ -1,0 +1,9 @@
+Full-screen professional interface of Micro-Cap 9 software. 
+The window occupies 100% of the image area.
+UI Style: Classic Light Theme. White background for schematic and plots. Light gray grid lines. Black component symbols and text. Standard Windows XP-style window borders and menus.
+Analysis Mode: Dynamic DC (Variant 2.2)
+
+Specific Content:
+Two-stage amplifier schematic. Switches 2, 3, 5, 6 are CLOSED (red dots). Feedback resistor R9 is connected. Clean white background.
+
+High-resolution engineering CAD style. Sharp text and clear vector lines.
