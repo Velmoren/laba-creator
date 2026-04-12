@@ -1,0 +1,18 @@
+{
+  "username": "veliev",
+  "device_name": "macbook",
+  "os": "macOS Sequoia",
+  "ui_theme": "Dark",
+  "background": "Sequoia Dynamic Dark Wallpaper",
+  "work_root_name": "dev_env",
+  "script_naming_style": "run_{n}.sh",
+  "writing_style": "Concise Professional",
+  "variant": 7,
+  "question_id": 7,
+  "terminal_font": "JetBrains Mono",
+  "preferred_editor": "nano",
+  "code_language": "Russian",
+  "cli_habits": "uses complex pipes and awk, skips dashes in tar",
+  "verbosity_level": "Advanced",
+  "indent_style": "2 spaces"
+}

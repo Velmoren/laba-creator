@@ -1,0 +1,13 @@
+{
+  "username": "trushkin",
+  "device_name": "macbus",
+  "os": "macOS Sonoma",
+  "ui_theme": "Light",
+  "background": "standard macOS Sonoma abstract wallpaper",
+  "work_root_name": "lab1/project",
+  "script_naming_style": "task{n}.sh",
+  "writing_style": "Academic Formal",
+  "variant": 10,
+  "question_id": 10,
+  "terminal_font": "SF Mono"
+}

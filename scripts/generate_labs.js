@@ -36,12 +36,13 @@ async function generateLabs() {
             if (!fs.existsSync(labOutputPath)) fs.mkdirSync(labOutputPath, { recursive: true });
 
             const files = fs.readdirSync(labSourcePath);
-            const mdFile = files.find(f => f.endsWith('.md'));
+            const mdFiles = files.filter(f => f.endsWith('.md'));
             
-            if (mdFile) {
+            for (const mdFile of mdFiles) {
                 const content = fs.readFileSync(path.join(labSourcePath, mdFile), 'utf8');
                 const lrMatch = labDirName.match(/\d+/);
                 const lrNumber = lrMatch ? lrMatch[0] : 'X';
+                const fileNameBase = path.basename(mdFile, '.md');
 
                 const doc = new Document({
                     styles: {
@@ -64,7 +65,7 @@ async function generateLabs() {
                             new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "МТУСИ", bold: true })] }),
                             new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Кафедра ИСУА", bold: true })] }),
                             new Paragraph({ text: "\n\n\n" }),
-                            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "ОТЧЕТ", bold: true, size: 36 })] }),
+                            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: fileNameBase.toUpperCase().includes('ОТЧЕТ') ? "ОТЧЕТ" : "ОТВЕТЫ НА КОНТРОЛЬНЫЕ ВОПРОСЫ", bold: true, size: 36 })] }),
                             new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: `К ЛАБОРАТОРНОЙ РАБОТЕ №${lrNumber}`, bold: true, size: 28 })] }),
                             new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: `\nпо дисциплине «${themeName}»`, italic: true })] }),
                             new Paragraph({ text: "\n\n\n\n\n\n" }),
@@ -76,7 +77,7 @@ async function generateLabs() {
                 });
 
                 const buffer = await Packer.toBuffer(doc);
-                fs.writeFileSync(path.join(labOutputPath, `Отчет_ЛР${lrNumber}.docx`), buffer);
+                fs.writeFileSync(path.join(labOutputPath, `${fileNameBase}.docx`), buffer);
             }
 
             files.forEach(file => {

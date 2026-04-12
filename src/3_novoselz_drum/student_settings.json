@@ -1,0 +1,13 @@
+{
+  "username": "novoselz",
+  "device_name": "drum",
+  "os": "Windows 11",
+  "ui_theme": "Dark",
+  "background": "standard Windows 11 blue background",
+  "work_root_name": "workspace",
+  "script_naming_style": "script_{n}.sh",
+  "writing_style": "Detailed Technical Diary",
+  "variant": 18,
+  "question_id": 18,
+  "terminal_font": "Consolas"
+}
