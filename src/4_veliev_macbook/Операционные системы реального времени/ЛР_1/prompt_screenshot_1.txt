@@ -1,0 +1,18 @@
+Full-screen high-resolution capture of a macOS Sequoia desktop.
+Wallpaper: Sequoia Dynamic Dark Wallpaper.
+Application: macOS Terminal.app taking up 90% of the screen, centered.
+Terminal UI: Dark mode, JetBrains Mono font, 14pt, translucent background (15% blur).
+Window title: "veliev — bash — 120x30".
+
+Terminal Content:
+veliev@macbook:~$ mkdir -p ~/dev_env/lab_01/sources ~/dev_env/lab_01/backups
+veliev@macbook:~$ cd ~/dev_env/lab_01
+veliev@macbook:~/dev_env/lab_01$ ls -la
+total 0
+drwxr-xr-x  4 veliev  staff  128 May 23 10:00 .
+drwxr-xr-x  3 veliev  staff   96 May 23 10:00 ..
+drwxr-xr-x  2 veliev  staff   64 May 23 10:00 backups
+drwxr-xr-x  2 veliev  staff   64 May 23 10:00 sources
+veliev@macbook:~/dev_env/lab_01$ _
+
+The image must be extremely sharp, focused on the terminal text. No desktop icons.

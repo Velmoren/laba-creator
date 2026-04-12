@@ -4,22 +4,41 @@ const https = require('https');
 const zlib = require('zlib');
 const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, Table, TableRow, TableCell, BorderStyle, WidthType, TableOfContents, ShadingType, VerticalAlign, TableLayoutType, ImageRun, ExternalHyperlink } = require('docx');
 
-// Получаем ID из аргументов командной строки (по умолчанию 1)
 const entryId = process.argv[2] || '1';
-const sourceDir = path.join('src', entryId, 'курсовая');
-const outputDir = path.join('dist', entryId);
-const outputDoc = path.join(outputDir, 'Курсовая_ФИНАЛ_ГОСТ.docx');
-
-if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
-
 const PAGE_WIDTH_DXA = 9355; 
 
 async function generateDoc() {
     console.log(`Generating Course Work for Entry ID: ${entryId}...`);
-    if (!fs.existsSync(sourceDir)) {
-        console.error(`Error: Source directory ${sourceDir} not found!`);
+    
+    const srcRoot = 'src';
+    const allDirs = fs.readdirSync(srcRoot).filter(d => fs.statSync(path.join(srcRoot, d)).isDirectory());
+    const studentFolderName = allDirs.find(d => d === entryId || d.startsWith(`${entryId}_`));
+
+    if (!studentFolderName) {
+        console.error(`Error: Student directory for ID ${entryId} not found in src/`);
         process.exit(1);
     }
+
+    const sourceDir = path.join(srcRoot, studentFolderName, 'Курсовая работа');
+    const outputDir = path.join('dist', studentFolderName, 'labs', 'Курсовая работа');
+    const outputDoc = path.join(outputDir, 'Курсовая_ФИНАЛ_ГОСТ.docx');
+
+    if (!fs.existsSync(sourceDir)) {
+        console.log(`Course work directory not found: ${sourceDir}. Skipping.`);
+        return;
+    }
+
+    if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+
+    // Чтение настроек
+    let settings = {};
+    const settingsPath = path.join(srcRoot, studentFolderName, 'student_settings.json');
+    if (fs.existsSync(settingsPath)) {
+        settings = JSON.parse(fs.readFileSync(settingsPath, 'utf8'));
+    }
+    
+    const theme = settings.coursework_theme || 'АИС «Компьютерные курсы»';
+    const studentName = settings.username || '_________________';
 
     const doc = new Document({
         styles: {
@@ -54,20 +73,18 @@ async function generateDoc() {
                 new Paragraph({ text: "\n\n" }),
                 new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: "Допустить к защите", bold: true }), new TextRun({ text: "\nЗав. кафедрой _______________", break: 1 }), new TextRun({ text: "\n«___» ____________ 2025 г.", break: 1 })] }),
                 new Paragraph({ text: "\n\n" }),
-                new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "КУРСОВАЯ РАБОТА", bold: true, size: 32 }), new TextRun({ text: "\nпо дисциплине «Базы данных»", break: 1 }), new TextRun({ text: "\n\nРазработка базы данных для АИС «Компьютерные курсы»", bold: true, break: 2, size: 32 })] }),
+                new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "КУРСОВАЯ РАБОТА", bold: true, size: 32 }), new TextRun({ text: "\nпо дисциплине «Базы данных»", break: 1 }), new TextRun({ text: `\n\nРазработка базы данных для ${theme}`, bold: true, break: 2, size: 32 })] }),
                 new Paragraph({ text: "\n\n" }),
-                new Paragraph({ alignment: AlignmentType.LEFT, indent: { left: 5000 }, children: [new TextRun({ text: "Выполнил: студент гр. ________" }), new TextRun({ text: "\n_________________ /____________/", break: 1 }), new TextRun({ text: "\n\nРуководитель: _______________", break: 2 }), new TextRun({ text: "\n_________________ /____________/", break: 1 })] }),
+                new Paragraph({ alignment: AlignmentType.LEFT, indent: { left: 5000 }, children: [new TextRun({ text: "Выполнил: студент гр. ________" }), new TextRun({ text: `\n${studentName} /____________/`, break: 1 }), new TextRun({ text: "\n\nРуководитель: _______________", break: 2 }), new TextRun({ text: "\n_________________ /____________/", break: 1 })] }),
                 new Paragraph({ text: "\n\n\n" }),
                 new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Москва 2025", bold: true })] }),
 
-                // Разрыв страницы через параграф вместо PageBreak
                 new Paragraph({ text: "", pageBreakBefore: true }),
                 new Paragraph({ text: "СОДЕРЖАНИЕ", heading: HeadingLevel.HEADING_1, alignment: AlignmentType.CENTER }),
                 new TableOfContents("Содержание", { hyperlink: true, headingStyleRange: "1-3" }),
-                // Разрыв страницы через параграф вместо PageBreak
                 new Paragraph({ text: "", pageBreakBefore: true }),
 
-                ...(await parseChapters()),
+                ...(await parseChapters(sourceDir)),
             ],
         }],
     });
@@ -108,18 +125,15 @@ async function renderDiagram(code) {
 }
 
 function parseInlineText(text, fontSize = 28, forceBold = false) {
-    // Поддержка ссылок [Название](URL)
     const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
     const runs = [];
     let lastIndex = 0;
     let match;
 
     while ((match = linkRegex.exec(text)) !== null) {
-        // Текст ДО ссылки
         if (match.index > lastIndex) {
             runs.push(...parseMarkdownStyles(text.substring(lastIndex, match.index), fontSize, forceBold));
         }
-        // Сама ссылка
         runs.push(new ExternalHyperlink({
             children: [new TextRun({ text: match[1], style: "Hyperlink", size: fontSize })],
             link: match[2],
@@ -127,7 +141,6 @@ function parseInlineText(text, fontSize = 28, forceBold = false) {
         lastIndex = linkRegex.lastIndex;
     }
 
-    // Текст ПОСЛЕ ссылок
     if (lastIndex < text.length) {
         runs.push(...parseMarkdownStyles(text.substring(lastIndex), fontSize, forceBold));
     }
@@ -200,13 +213,19 @@ function createCodeBlock(lines) {
     });
 }
 
-async function parseChapters() {
+async function parseChapters(sourceDir) {
     const chapters = ['03-Введение.md', '04-Глава1_Анализ_предметной_области.md', '05-Глава2_Проектирование_БД.md', '06-Глава3_Программная_реализация.md', '07-Заключение.md', '08-Список_источников.md', '09-Приложение_А.md', '10-Приложение_Б.md'];
     const nodes = [];
     
+    let imageCounter = 0;
+    const seenImages = new Map();
+
     for (const file of chapters) {
         const filePath = path.join(sourceDir, file);
-        if (!fs.existsSync(filePath)) continue;
+        if (!fs.existsSync(filePath)) {
+            console.log(`Warning: expected coursework file missing: ${file}`);
+            continue;
+        }
         const text = fs.readFileSync(filePath, 'utf8');
         const lines = text.split(/\r?\n/);
         let inCodeBlock = false, inMermaid = false, codeBuffer = [], inTable = false, tableRows = [];
@@ -235,7 +254,46 @@ async function parseChapters() {
             }
             if (inCodeBlock) { codeBuffer.push(line); continue; }
 
-            // Парсинг определений ссылок: [1]: url (Title)
+            if (trimmed.startsWith('![')) {
+                const match = trimmed.match(/!\[(.*?)\]\((.*?)\)/);
+                if (match) {
+                    const altText = match[1] || "Скриншот";
+                    const imgName = match[2];
+                    const imagePath = path.join(sourceDir, 'source', imgName);
+                    
+                    if (fs.existsSync(imagePath)) {
+                        if (seenImages.has(imagePath)) {
+                            const imgNum = seenImages.get(imagePath);
+                            nodes.push(new Paragraph({
+                                alignment: AlignmentType.CENTER,
+                                children: [new TextRun({ text: `(см. Скриншот ${imgNum})`, italic: true, color: "555555" })],
+                                spacing: { before: 100, after: 100 }
+                            }));
+                        } else {
+                            imageCounter++;
+                            seenImages.set(imagePath, imageCounter);
+                            
+                            nodes.push(new Paragraph({
+                                alignment: AlignmentType.CENTER,
+                                spacing: { before: 200, after: 100 },
+                                children: [
+                                    new ImageRun({
+                                        data: fs.readFileSync(imagePath),
+                                        transformation: { width: 500, height: 300 },
+                                    }),
+                                ],
+                            }));
+                            nodes.push(new Paragraph({
+                                alignment: AlignmentType.CENTER,
+                                spacing: { after: 200 },
+                                children: [new TextRun({ text: `Скриншот ${imageCounter} – ${altText}`, italic: true, size: 24 })],
+                            }));
+                        }
+                        continue;
+                    }
+                }
+            }
+
             const refLinkMatch = trimmed.match(/^\[(\d+)\]:\s+(https?:\/\/\S+)\s+\((.+)\)/);
             if (refLinkMatch) {
                 nodes.push(new Paragraph({

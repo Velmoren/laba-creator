@@ -1,0 +1,24 @@
+Full-screen high-resolution capture of a macOS Sequoia desktop.
+Wallpaper: Sequoia Dynamic Dark Wallpaper.
+Application: macOS Terminal.app.
+Terminal UI: Dark mode, JetBrains Mono font.
+Window title: "veliev — bash — 120x30".
+
+Terminal Content:
+veliev@macbook:~/dev_env/lab_01$ ln sources/main.cfg backups/link_v1
+veliev@macbook:~/dev_env/lab_01$ ln -s sources/main.cfg backups/link_v2
+veliev@macbook:~/dev_env/lab_01$ ls -liR
+total 0
+987654 drwxr-xr-x  2 veliev  staff  128 May 23 10:05 backups
+987653 drwxr-xr-x  2 veliev  staff   96 May 23 10:05 sources
+
+./backups:
+total 16
+987655 -rw-r--r--  2 veliev  staff  42 May 23 10:02 link_v1
+987656 lrwxr-xr-x  1 veliev  staff  16 May 23 10:05 link_v2 -> sources/main.cfg
+
+./sources:
+total 8
+987655 -rw-r--r--  2 veliev  staff  42 May 23 10:02 main.cfg
+
+veliev@macbook:~/dev_env/lab_01$ _

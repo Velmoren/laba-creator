@@ -1,0 +1,13 @@
+Full-screen high-resolution capture of a macOS Sequoia desktop.
+Wallpaper: Sequoia Dynamic Dark Wallpaper.
+Application: macOS Terminal.app.
+Terminal UI: Dark mode, JetBrains Mono font.
+Window title: "veliev — bash — 120x30".
+
+Terminal Content:
+veliev@macbook:~/dev_env/lab_04$ cat server_assets.csv | grep "FreeBSD" | awk -F';' '$3=="Status:Online" {print $2, $4}'
+OS:FreeBSD Admin:veliev
+OS:FreeBSD Admin:root
+veliev@macbook:~/dev_env/lab_04$ ps aux | grep -c "^veliev"
+45
+veliev@macbook:~/dev_env/lab_04$ _

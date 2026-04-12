@@ -1,0 +1,14 @@
+Full-screen high-resolution capture of a macOS Sequoia desktop.
+Wallpaper: Sequoia Dynamic Dark Wallpaper.
+Application: pgAdmin 4 interface taking up 90% of the screen.
+UI Theme: Dark mode.
+Window title: "pgAdmin 4 - Query Tool - DataCenter_DB".
+
+Content:
+The pgAdmin 4 interface shows a successful execution of a SELECT query from the view "Активное_оборудование_клиентов".
+The "Query" panel contains:
+SELECT * FROM Активное_оборудование_клиентов LIMIT 5;
+
+The "Data Output" panel below shows a grid with columns: "Название_компании", "ИНН", "Номер_договора", "Тип_оборудования", "Производитель", "Серийный_номер", "Статус".
+The data rows contain realistic information about servers and switches assigned to fictional companies.
+The interface must look highly professional and clear.

@@ -14,5 +14,6 @@
   "code_language": "Russian",
   "cli_habits": "uses complex pipes and awk, skips dashes in tar",
   "verbosity_level": "Advanced",
-  "indent_style": "2 spaces"
+  "indent_style": "2 spaces",
+  "coursework_theme": "АИС «Центр обработки данных»"
 }

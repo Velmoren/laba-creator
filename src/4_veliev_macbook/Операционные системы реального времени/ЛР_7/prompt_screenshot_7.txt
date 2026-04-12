@@ -1,0 +1,15 @@
+Full-screen high-resolution capture of a macOS Sequoia desktop.
+Wallpaper: Sequoia Dynamic Dark Wallpaper.
+Application: macOS Terminal.app.
+Terminal UI: Dark mode, JetBrains Mono font.
+Window title: "veliev — bash — 120x30".
+
+Terminal Content:
+veliev@macbook:~$ cd ~/dev_env/lab_07
+veliev@macbook:~/dev_env/lab_07$ sudo mkdir -p /mnt/external_ssd
+Password:
+veliev@macbook:~/dev_env/lab_07$ sudo mount /dev/da0s1 /mnt/external_ssd
+veliev@macbook:~/dev_env/lab_07$ ls -l /mnt/external_ssd
+total 1024
+-rw-r--r--  1 root  wheel  1048576 May 23 11:15 backup_2026.tar.gz
+veliev@macbook:~/dev_env/lab_07$ _

@@ -1,0 +1,20 @@
+Full-screen high-resolution capture of a macOS Sequoia desktop.
+Wallpaper: Sequoia Dynamic Dark Wallpaper.
+Application: macOS Terminal.app.
+Terminal UI: Dark mode, JetBrains Mono font.
+Window title: "veliev — bash — 120x30".
+
+Terminal Content:
+veliev@macbook:~$ cd ~/dev_env/lab_02
+veliev@macbook:~/dev_env/lab_02$ mkdir -p logs/raw archive
+veliev@macbook:~/dev_env/lab_02$ echo "system log data 1" > logs/raw/auth.log
+veliev@macbook:~/dev_env/lab_02$ echo "system log data 2" > logs/raw/sys.log
+veliev@macbook:~/dev_env/lab_02$ tar -cvf archive/logs_bundle.tar logs/
+a logs/
+a logs/raw/
+a logs/raw/auth.log
+a logs/raw/sys.log
+veliev@macbook:~/dev_env/lab_02$ ls -lh archive/
+total 20
+-rw-r--r--  1 veliev  staff    10K May 23 10:15 logs_bundle.tar
+veliev@macbook:~/dev_env/lab_02$ _

@@ -1,0 +1,24 @@
+Full-screen high-resolution capture of a macOS Sequoia desktop.
+Wallpaper: Sequoia Dynamic Dark Wallpaper.
+Application: macOS Terminal.app.
+Terminal UI: Dark mode, JetBrains Mono font.
+Window title: "veliev — nano crontab.XXXXX — 120x30".
+
+Terminal Content:
+  GNU nano 7.2                     /tmp/crontab.XXXXX
+# Backup configuration
+*/2 * * * * /home/veliev/dev_env/auto_archive.sh
+_
+
+
+
+
+
+
+
+
+
+
+                                [ Read 2 lines ]
+^G Help      ^O Write Out ^W Where Is  ^K Cut       ^T Execute   ^C Location
+^X Exit      ^R Read File ^\ Replace   ^U Paste     ^J Justify   ^_ Go To Line

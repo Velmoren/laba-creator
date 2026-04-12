@@ -1,0 +1,14 @@
+Full-screen high-resolution capture of a macOS Sequoia desktop.
+Wallpaper: Sequoia Dynamic Dark Wallpaper.
+Application: macOS Terminal.app.
+Terminal UI: Dark mode, JetBrains Mono font.
+Window title: "veliev — bash — 120x30".
+
+Terminal Content:
+veliev@macbook:~/dev_env/lab_02$ gzip -k archive/logs_bundle.tar
+veliev@macbook:~/dev_env/lab_02$ bzip2 -k archive/logs_bundle.tar
+veliev@macbook:~/dev_env/lab_02$ ls -lh archive/logs_bundle.tar* | awk '{print $5, $9}'
+10K archive/logs_bundle.tar
+1.2K archive/logs_bundle.tar.bz2
+1.5K archive/logs_bundle.tar.gz
+veliev@macbook:~/dev_env/lab_02$ _

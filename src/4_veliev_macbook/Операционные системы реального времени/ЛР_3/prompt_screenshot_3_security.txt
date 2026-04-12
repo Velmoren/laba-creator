@@ -1,0 +1,13 @@
+Full-screen high-resolution capture of a macOS Sequoia desktop.
+Wallpaper: Sequoia Dynamic Dark Wallpaper.
+Application: macOS Terminal.app.
+Terminal UI: Dark mode, JetBrains Mono font.
+Window title: "veliev — bash — 120x30".
+
+Terminal Content:
+veliev@macbook:~/dev_env/lab_03$ sudo chmod 640 security/security_audit.log
+veliev@macbook:~/dev_env/lab_03$ ls -l security/security_audit.log
+-rw-r-----  1 dev_user  wheel  0 May 23 10:25 security/security_audit.log
+veliev@macbook:~/dev_env/lab_03$ cat security/security_audit.log
+cat: security/security_audit.log: Permission denied
+veliev@macbook:~/dev_env/lab_03$ _
