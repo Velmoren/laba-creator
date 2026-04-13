@@ -1,0 +1,7 @@
+Create a high-fidelity screenshot of the "Отчет по устойчивости" (Sensitivity Report) sheet in Microsoft Excel on macOS Sequoia Dark Mode.
+The interface is entirely in Russian. 
+While Excel auto-generates this report, the screenshot should show the user has applied the "Colorful" theme to the report headers: the "Ячейки переменных" and "Ограничения" table headers might have a subtle colored fill to maintain consistency with the user's advanced aesthetic.
+
+The tables display comprehensive sensitivity data for the paint production problem. 
+The variables section lists Q_ext and Q_int with their Final Values and Objective Coefficients.
+The constraints section lists the resources (Продукт А, Продукт В, Спрос). It explicitly displays the "Теневая цена" (Shadow Price) for each constraint, showing positive values for bottlenecks and zeros for abundant resources. The Allowable Increase and Decrease columns are fully populated. The visual output must be sharp, simulating a professional data analysis environment.

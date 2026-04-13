@@ -1,0 +1,8 @@
+Create a precise, high-resolution screenshot of a Microsoft Excel spreadsheet on macOS Sonoma (Light theme) showing the initial setup for a Transportation Problem (Variant 2.5).
+The interface is entirely in Russian. The visual style is "Corporate" with dark navy blue headers (#1F4E78) and distinct black borders separating all data cells.
+
+The spreadsheet prominently features a 3x5 cost matrix. The row headers are labeled A1, A2, and A3 (representing supply quarries). The column headers are B1, B2, B3, B4, B5 (representing demand sites). Inside the matrix, specific transportation costs per unit are filled in (e.g., 3, 4, 5, 15, 24 for the first row).
+Directly below or adjacent to the cost matrix is a structurally identical "Shipment Matrix" for the variables, currently filled with zeros.
+On the right edge of the Shipment Matrix, there is a column calculating the Row Sums (using the =СУММ() formula), followed by an "=" sign column, and the Supply limits (15, 15, 15).
+At the bottom edge of the Shipment Matrix, there is a row calculating the Column Sums, followed by an "=" sign row, and the Demand requirements (11, 11, 11, 16, 11).
+A dedicated cell for "Total Cost" (Общая стоимость) is visible, containing the formula =СУММПРОИЗВ() linking the cost matrix and the shipment matrix. The image must look exceptionally structured and academic.

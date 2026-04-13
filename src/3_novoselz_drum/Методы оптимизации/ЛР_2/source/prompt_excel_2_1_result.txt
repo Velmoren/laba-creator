@@ -1,0 +1,8 @@
+Generate a full-screen, high-resolution screenshot of Microsoft Excel running on Windows 11 Dark Mode.
+The sheet displays a successfully solved broiler ration optimization problem (Variant 1.3).
+The language is English. The styling is strictly "Minimalist" (no cell shading, black gridlines only).
+
+The layout is horizontal. The variables representing different feed ingredients ('x' for Limestone, 'y' for Grain, 'z' for Soybeans) are arranged in a column on the left, displaying their optimal calculated weights in kilograms (e.g., real decimal values).
+To the right, the objective function cell, calculating the total cost using =SUMPRODUCT(), displays the minimized monetary value.
+Below or adjacent to it, the constraints matrix shows the nutritional requirements (Calcium, Protein, Fiber). The "LHS" column shows the exact percentages achieved in the optimal mix, directly compared to the "RHS" column constraints (e.g., Protein >= 22%).
+The image should look like a snapshot from an engineer's technical diary, focused purely on data and mathematical results.

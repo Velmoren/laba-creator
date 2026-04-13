@@ -1,0 +1,10 @@
+Create a meticulously detailed screenshot of a Microsoft Excel spreadsheet on Windows 11 Dark Mode.
+The interface is in English. The spreadsheet shows the initial setup for a 3x5 Transportation Problem (Variant 2.3).
+The style is "Minimalist" — stark black borders, no background shading, purely structural formatting.
+
+The sheet prominently features a "Cost Matrix" with rows A1, A2, A3 and columns B1 through B5, filled with specific integer shipping tariffs.
+Nearby, an identically structured "Shipment Matrix" is created for the changing variables, currently populated with zeros.
+Formulas are set up on the peripheries of the Shipment Matrix:
+- A column on the right uses the =SUM() function to calculate the total shipped from each row, placed next to an "=" sign and the Supply limits (60, 90, 140).
+- A row at the bottom uses the =SUM() function to calculate the total received by each column, placed above an "=" sign and the Demand requirements (40, 30, 90, 80, 50).
+A target cell labeled "Total Cost" contains the =SUMPRODUCT() formula, linking the Cost and Shipment matrices. The visual tone is highly analytical and clean.

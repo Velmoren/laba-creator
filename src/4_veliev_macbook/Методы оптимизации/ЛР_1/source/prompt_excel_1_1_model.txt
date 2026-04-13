@@ -1,0 +1,15 @@
+Create a stunning, high-resolution full-screen screenshot of Microsoft Excel running on a macOS Sequoia 15.0 desktop.
+The operating system is in Dark Mode, featuring the "Sequoia Dynamic Dark" wallpaper subtly visible if Excel isn't fully maximized. 
+The Excel interface itself is fully localized in Russian.
+The spreadsheet design utilizes a highly "Colorful" and ergonomic visual style:
+- The input variable cells are shaded in a bright, noticeable yellow (#FFFF00).
+- The target function cell (Objective) is highlighted in a vibrant green (#92D050).
+- The entire block of constraint cells (LHS, Signs, RHS) is shaded in a warm orange (#FFC000).
+- Headers use bold text.
+
+The spreadsheet displays a linear programming model for paint production (Variant 1.2). 
+The layout is strictly vertical. 
+At the top, the variables are named using semantic notation: Q_ext (Наружная) and Q_int (Внутренняя). The yellow input cells below them show initial values of 0.
+The green target cell below is labeled "Доход (руб.)" and contains the formula =СУММПРОИЗВ(). 
+At the bottom, the orange constraints matrix defines limits for "Продукт А", "Продукт В", and specific market demand rules (<= 6, <= 8, <= 1, <= 2).
+The image must capture the vibrant, color-coded workflow typical of an advanced user organizing complex data.

@@ -1,0 +1,9 @@
+Create a highly detailed, full-screen screenshot of Microsoft Excel on a Windows 11 Dark Mode desktop.
+The spreadsheet displays the solved optimization model for the factory production scenario (Variant 1.3).
+The interface is in English. The spreadsheet styling remains strictly "Minimalist" — pure black borders on a white grid, utilizing Arial font, with zero background color fills.
+
+The horizontal layout shows that the Solver has successfully executed. 
+The variable cells for 'x' and 'y' on the left now display the optimal integer values that maximize the factory's income, rather than their starting values.
+On the right side, the target cell ("Revenue"), driven by the =SUMPRODUCT() formula, displays the maximized financial output.
+The "LHS" column in the constraints section has updated automatically. It clearly demonstrates that the resource consumption numbers are tightly pressed against or exactly equal to some of the "RHS" limits (e.g., hitting the 4000 labor hours cap), visually proving the optimization.
+The overall aesthetic must reflect a serious, distraction-free technical workspace.

@@ -1,0 +1,9 @@
+Generate a full-screen screenshot of Microsoft Excel running on a macOS Sonoma operating system with the Light theme enabled.
+The spreadsheet contains the solved optimization model for Variant 1.5 (Dairy plant production of milk, kefir, and sour cream).
+The interface language is Russian. The visual formatting follows a strict "Corporate" style: dark blue column headers with bold white font, light gray input cells, and a soft blue target cell representing the maximized profit.
+
+The layout is vertical. The variables (x1, x2, x3) are positioned at the top of the sheet. Since the Solver algorithm has already been executed, the input cells contain the final, optimal numerical values representing the tonnage of each dairy product to be produced.
+The target cell clearly shows the maximum achievable profit calculated using the =СУММПРОИЗВ() function.
+Below, the constraints matrix includes rows for Raw Milk, Equipment hours, Sour Cream Automata hours, and the mandatory minimum milk production plan. 
+The "Fact" (Left Hand Side) column dynamically reflects the resource usage based on the optimal production plan, explicitly adhering to the <= and >= signs compared to the "Limit" (Right Hand Side) column.
+The screenshot must convey a professional, formal engineering analysis setting without any unrelated UI elements.

@@ -1,0 +1,15 @@
+Generate a highly realistic screenshot of the "Solver Parameters" dialog box in Microsoft Excel on Windows 11 Dark Mode.
+The dialog is positioned over the minimalist transportation problem spreadsheet. The interface is entirely in English.
+
+The dialog box settings are rigorously defined for routing optimization:
+- "Set Objective:" points to the cell calculating Total Cost.
+- The "Min" (Minimize) radio button is selected.
+- "By Changing Variable Cells:" indicates the absolute cell references for the 3x5 Shipment Matrix block.
+- "Subject to the Constraints:" lists the necessary balancing equations:
+  - The range of row sums exactly equals (=) the range of Supply values.
+  - The range of column sums exactly equals (=) the range of Demand values.
+  - There is a specific, manually added constraint visible in the list: e.g., $D$15 <= 3, simulating a traffic bottleneck on a specific route.
+- "Make Unconstrained Variables Non-Negative" is enabled.
+- "Select Solving Method:" is "Simplex LP".
+
+The screenshot must prioritize the sharp, clear rendering of the English text within the Windows 11 UI components.

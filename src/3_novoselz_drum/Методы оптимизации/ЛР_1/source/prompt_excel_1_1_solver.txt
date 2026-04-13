@@ -1,0 +1,16 @@
+Generate a high-definition screenshot focusing on the Microsoft Excel "Solver Parameters" dialog box on a Windows 11 Dark Mode operating system.
+The Excel interface language is strictly English. The dialog box has the distinctive square corners and dark title bar of Windows 11.
+
+The contents of the "Solver Parameters" dialog box are actively filled with data for optimizing a factory production line (Variant 1.3):
+- "Set Objective:" points to the Revenue cell.
+- The radio button "Max" is selected.
+- "By Changing Variable Cells:" indicates the cells for variables x and y.
+- The "Subject to the Constraints:" box is populated with multiple rules, reflecting complex factory conditions:
+  - LHS range <= RHS range (for resources like labor and metals).
+  - A specific limit like $C$3 <= 2250 (Max capacity for X).
+  - A specific minimum like $C$3 >= 600 (Order commitment).
+  - A sum minimum like $C$3 + $C$4 >= 1500 (Union agreement).
+- "Make Unconstrained Variables Non-Negative" is checked.
+- "Select Solving Method:" is set to "Simplex LP".
+
+The background should show the minimalist, uncolored spreadsheet grid slightly out of focus. The text inside the dialog must be perfectly legible and antialiased.

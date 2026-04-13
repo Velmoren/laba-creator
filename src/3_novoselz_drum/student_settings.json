@@ -9,5 +9,9 @@
   "writing_style": "Detailed Technical Diary",
   "variant": 18,
   "question_id": 18,
-  "terminal_font": "Consolas"
+  "terminal_font": "Consolas",
+  "excel_cell_style": "Minimalist",
+  "excel_language": "English",
+  "math_notation": "Alphabet",
+  "excel_layout": "Horizontal"
 }

@@ -1,0 +1,16 @@
+Create a high-resolution screenshot focusing on the Microsoft Excel "Поиск решения" (Solver) dialog box floating over a blurred spreadsheet background.
+The operating system is macOS Sonoma with the Light theme active. The dialog box has the classic macOS top bar with a drop shadow.
+The interface of the Solver add-in is entirely in Russian.
+
+The contents of the "Поиск решения" dialog box are meticulously filled out for a linear programming maximization problem (Variant 1.5):
+- The field "Оптимизировать целевую функцию:" contains the reference to the target cell, e.g., $D$5.
+- The radio button "Максимум" (Maximize) is selected.
+- The field "Изменяя ячейки переменных:" contains the range $C$3:$D$3.
+- The "В соответствии с ограничениями:" list box displays three distinct constraints:
+  $E$9 <= $G$9
+  $E$10 <= $G$10
+  $E$11 <= $G$11
+- There is a checked checkbox next to "Сделать переменные без ограничений неотрицательными" (Make Unconstrained Variables Non-Negative).
+- The dropdown menu "Выберите метод решения:" is expanded or showing the option "Поиск решения линейных задач симплекс-методом" (Simplex LP).
+
+The lighting and resolution must make the text inside the dialog box incredibly sharp, simulating an actual working session of an engineering student.

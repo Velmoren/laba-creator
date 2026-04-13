@@ -15,5 +15,9 @@
   "cli_habits": "uses complex pipes and awk, skips dashes in tar",
   "verbosity_level": "Advanced",
   "indent_style": "2 spaces",
-  "coursework_theme": "АИС «Центр обработки данных»"
+  "coursework_theme": "АИС «Центр обработки данных»",
+  "excel_cell_style": "Colorful",
+  "excel_language": "Russian",
+  "math_notation": "Semantic",
+  "excel_layout": "Vertical"
 }

@@ -1,0 +1,10 @@
+Create a full-screen, ultra-sharp screenshot of Microsoft Excel on a macOS Sonoma desktop (Light theme). 
+The spreadsheet displays the successfully solved optimization model for Variant 1.5 (Farmer's crop distribution).
+The table strictly adheres to the "Corporate" visual style: navy blue headers (#1F4E78), white text for headers, light gray input cells (#F2F2F2), and a pale blue target cell (#DDEBF7). All cells have thin, black, crisp borders.
+
+The key difference from the initial model is that the Solver has completed its run. 
+The input cells for the variables x1 (Кукуруза) and x2 (Соя) in cells C3 and D3 now display the optimal mathematical solution values instead of zeros (e.g., specific integer or decimal numbers calculated by the Simplex algorithm).
+The target cell (D5), which contains the =СУММПРОИЗВ() formula, now displays the maximized total revenue, a large numerical value.
+In the constraints block (rows 9, 10, and 11), the calculated Left Hand Side (LHS) values in column E have updated to reflect the resource consumption, and they clearly do not exceed the Right Hand Side (RHS) limits shown in column G (400, 60000, 21000).
+
+The interface is completely in Russian, emphasizing an academic, formal engineering environment. No background distractions.

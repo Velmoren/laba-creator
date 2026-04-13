@@ -1,0 +1,9 @@
+Create a full-screen, ultra-realistic screenshot of Microsoft Excel running on a Windows 11 desktop with Dark Mode enabled.
+The application interface, including the ribbon, menus, and window borders, is entirely in English and features the modern Windows 11 dark gray/black aesthetics.
+The visual style of the spreadsheet cells is strictly "Minimalist": there are absolutely no background color fills (no shading). The structure is defined solely by crisp, black cell borders and bold Arial font for headers.
+
+The spreadsheet illustrates a linear programming model (Variant 1.3 - Factory Details X and Y). 
+Crucially, the layout is horizontal. On the left side of the screen, the variable cells are laid out in a column, labeled with simple alphabetical notation: 'x' (for Details X) and 'y' (for Details Y). Next to them are the input cells, currently set to initial values (e.g., 600 and 0).
+On the right side of the screen, the Objective function and Constraints are constructed. A cell titled "Revenue" contains the English formula =SUMPRODUCT(). 
+Below it, the constraints matrix is laid out, featuring columns for "LHS" (Left Hand Side calculated via formulas), "Sign" (<=, >=), and "RHS" (Right Hand Side limits like 4000, 2250, 10000).
+The screenshot must convey a highly technical, bare-bones, data-driven environment typical of an advanced user keeping a technical diary. No desktop clutter.

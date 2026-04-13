@@ -1,0 +1,9 @@
+Create a full-screen, vibrant screenshot of Microsoft Excel on a macOS Sequoia Dark Mode operating system.
+The spreadsheet displays the optimal solution for the paint production model (Variant 1.2).
+The language is Russian. The formatting retains its strong "Colorful" aesthetic: yellow variable cells, a green target cell, and orange constraint cells.
+
+The Solver has finished its execution. 
+The yellow cells for the semantic variables Q_ext and Q_int now display the optimal calculated production volumes (real numbers) instead of zeros.
+The green target cell, driven by the =СУММПРОИЗВ() function, showcases the absolute maximum revenue achievable under the given conditions.
+In the orange constraints block, the calculated values in the "Факт" (Fact/LHS) column reflect the exact resource consumption, clearly demonstrating that no limits (6, 8, 1, 2) in the "Лимит" (Limit/RHS) column have been exceeded. 
+The image must perfectly blend the dark UI of the macOS framework with the brightly colored, solved Excel matrix.

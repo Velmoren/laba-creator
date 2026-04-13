@@ -1,0 +1,15 @@
+Generate a highly detailed screenshot of the "Поиск решения" (Solver) dialog box in Microsoft Excel on a macOS Sonoma desktop (Light theme).
+The dialog is hovering over the transportation problem spreadsheet (Variant 2.5). The application language is Russian.
+
+The Solver parameters are meticulously configured for a complex logistics network:
+- "Оптимизировать целевую функцию:" points to the Total Cost cell.
+- The "Минимум" (Minimize) radio button is actively selected.
+- "Изменяя ячейки переменных:" points to the entire 3x5 block of the Shipment Matrix.
+- The constraints list ("В соответствии с ограничениями:") is extensive and specific. It contains at least two visible multi-cell constraints:
+  1. A constraint ensuring that the range of Row Sums is exactly equal (=) to the range of Supply limits.
+  2. A constraint ensuring that the range of Column Sums is exactly equal (=) to the range of Demand requirements.
+  3. An additional, manual constraint: e.g., $C$15 <= 3, reflecting a specific route restriction.
+- The checkbox for non-negative variables is checked.
+- The solving method is set to "Поиск решения линейных задач симплекс-методом".
+
+The text rendering must be flawless, mimicking a real Retina display output of an engineer setting up a routing optimization task.

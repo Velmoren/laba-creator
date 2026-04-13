@@ -1,0 +1,9 @@
+Create a precise screenshot of an auto-generated "Sensitivity Report" sheet in Microsoft Excel.
+The environment is Windows 11 Dark Mode. The application language is English.
+The report is presented in its default, unstyled format (black text, standard gridlines, no custom formatting), reflecting the raw output of the Solver add-in.
+
+The report contains two distinct tables:
+1. "Variable Cells": This table lists the variables 'x' and 'y', showing their "Final Value", "Reduced Cost", "Objective Coefficient", "Allowable Increase", and "Allowable Decrease".
+2. "Constraints": This table lists the various factory limitations (Labor, Metal, Orders). The columns include "Final Value", "Shadow Price", "Constraint R.H. Side", "Allowable Increase", and "Allowable Decrease".
+
+Crucially, the "Shadow Price" column must contain at least one positive value (e.g., indicating the marginal value of an extra hour of labor or kg of metal), and the "Final Value" must align with the constraints. The text must be crisp, embodying a technical, analytical artifact.

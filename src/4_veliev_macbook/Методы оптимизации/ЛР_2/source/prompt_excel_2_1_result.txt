@@ -1,0 +1,8 @@
+Generate a full-screen screenshot of a solved Microsoft Excel optimization model on macOS Sequoia Dark Mode.
+The spreadsheet solves the metallurgical coal mixture problem (Variant 1.2).
+The language is Russian. The visual style is aggressively "Colorful" for maximum readability: yellow input parameters, a vibrant green target cell, and an orange constraints block.
+
+The layout is vertical. The semantic variables P_a, P_b, P_c (representing the proportion of coal sorts A, B, C) are located in the yellow cells at the top, displaying their optimal calculated decimal fractions.
+The green target cell uses =СУММПРОИЗВ() and displays the strictly minimized cost of the coal mixture.
+The orange constraints section below verifies the nutritional/chemical limits. The "Факт" column shows the calculated percentages of Phosphorus and Ash, precisely matching or staying strictly below the rigid constraints (<= 0.03% and <= 3.25%) shown in the "Лимит" column. The sum of the fractions (P_a + P_b + P_c) perfectly equals 1.
+The image must look highly professional, combining vivid data visualization with a dark OS theme.

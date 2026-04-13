@@ -9,5 +9,9 @@
   "writing_style": "Academic Formal",
   "variant": 10,
   "question_id": 10,
-  "terminal_font": "SF Mono"
+  "terminal_font": "SF Mono",
+  "excel_cell_style": "Corporate",
+  "excel_language": "Russian",
+  "math_notation": "Index",
+  "excel_layout": "Vertical"
 }

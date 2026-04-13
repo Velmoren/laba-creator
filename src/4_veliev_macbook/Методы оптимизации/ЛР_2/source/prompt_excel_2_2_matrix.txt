@@ -1,0 +1,10 @@
+Create a stunning, high-resolution screenshot of a Microsoft Excel spreadsheet on macOS Sequoia Dark Mode.
+The interface is in Russian. The sheet shows the complex setup for a 3x5 Transportation Problem (Variant 2.2).
+The "Colorful" formatting is actively used to define the logical zones of the matrix:
+- The 3x5 Cost Matrix (Тарифы) has light blue headers.
+- The 3x5 Shipment Matrix (Объемы перевозок) has its inner variable cells filled with bright yellow (#FFFF00).
+- The row calculating total shipments and the column calculating total receipts are highlighted in orange, showing the =СУММ() formulas.
+- The Supply (Предложение) limits (500, 300, 100) and Demand (Потребности) limits (150, 350, 200, 100, 100) are highlighted in a contrasting color.
+- The grand "Total Cost" (Общая стоимость) cell is highlighted in bright green.
+
+The screenshot captures an advanced user's perfectly organized workspace before the Solver algorithm is executed, with all variable cells in the yellow matrix currently set to zero.

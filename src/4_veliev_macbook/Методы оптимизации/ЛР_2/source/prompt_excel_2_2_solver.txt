@@ -1,0 +1,14 @@
+Generate a highly detailed screenshot of the "Поиск решения" (Solver) dialog box floating above a colorful transportation matrix in Microsoft Excel.
+The operating system is macOS Sequoia Dark Mode. The Excel language is Russian.
+
+The dialog box is meticulously configured for the logistics routing problem:
+- "Оптимизировать целевую функцию:" points to the green Total Cost cell.
+- The "Минимум" (Minimize) option is selected.
+- "Изменяя ячейки переменных:" targets the entire yellow 3x5 block of the Shipment Matrix.
+- "В соответствии с ограничениями:" shows the balancing rules:
+  - The range of calculated row sums equals (=) the range of Supply limits.
+  - The range of calculated column sums equals (=) the range of Demand limits.
+  - An additional, manual constraint like $D$15 <= 3 is clearly visible, representing a blocked or limited road segment.
+- The Simplex LP ("Поиск решения линейных задач симплекс-методом") is chosen from the dropdown.
+
+The visual clarity of the Russian text in the dark mode UI must be absolute, emphasizing the precision of the optimization setup.

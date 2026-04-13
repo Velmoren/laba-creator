@@ -81,7 +81,7 @@ async function generateLabs() {
             }
 
             files.forEach(file => {
-                if (!file.endsWith('.md') && !file.startsWith('prompt_screenshot')) {
+                if (!file.endsWith('.md') && !file.startsWith('prompt_')) {
                     const srcFile = path.join(labSourcePath, file);
                     const destFile = path.join(labOutputPath, file);
                     
@@ -98,7 +98,9 @@ async function generateLabs() {
                                     try { fs.unlinkSync(curDest); } catch(e) {}
                                     fs.symlinkSync(fs.readlinkSync(curSource), curDest);
                                 } else {
-                                    fs.copyFileSync(curSource, curDest);
+                                    if (!(sFile.endsWith('.txt') && sFile.startsWith('prompt_'))) {
+                                        fs.copyFileSync(curSource, curDest);
+                                    }
                                 }
                             });
                         } else {
@@ -186,33 +188,43 @@ function parseMarkdown(text, labSourcePath) {
             if (match) {
                 const altText = match[1] || "Скриншот выполнения";
                 const imgName = match[2];
-                const imagePath = path.join(labSourcePath, imgName);
                 
-                if (fs.existsSync(imagePath)) {
-                    if (seenImages.has(imagePath)) {
-                        // Повторное вхождение - вставляем ссылку
-                        const imgNum = seenImages.get(imagePath);
+                let actualImgName = imgName;
+                if (actualImgName.startsWith('prompt_')) {
+                    actualImgName = actualImgName.replace('prompt_', '');
+                }
+
+                const imagePaths = [
+                    path.join(labSourcePath, actualImgName),
+                    path.join(labSourcePath, 'source', actualImgName),
+                    path.join(labSourcePath, imgName),
+                    path.join(labSourcePath, 'source', imgName)
+                ];
+                
+                let foundImagePath = imagePaths.find(p => fs.existsSync(p));
+                
+                if (foundImagePath) {
+                    if (seenImages.has(foundImagePath)) {
+                        const imgNum = seenImages.get(foundImagePath);
                         nodes.push(new Paragraph({
                             alignment: AlignmentType.CENTER,
                             children: [new TextRun({ text: `(см. Скриншот ${imgNum})`, italic: true, color: "555555" })],
                             spacing: { before: 100, after: 100 }
                         }));
                     } else {
-                        // Первое вхождение - вставляем картинку и номер
                         imageCounter++;
-                        seenImages.set(imagePath, imageCounter);
+                        seenImages.set(foundImagePath, imageCounter);
                         
                         nodes.push(new Paragraph({
                             alignment: AlignmentType.CENTER,
                             spacing: { before: 200, after: 100 },
                             children: [
                                 new ImageRun({
-                                    data: fs.readFileSync(imagePath),
+                                    data: fs.readFileSync(foundImagePath),
                                     transformation: { width: 500, height: 300 },
                                 }),
                             ],
                         }));
-                        // Подпись под картинкой
                         nodes.push(new Paragraph({
                             alignment: AlignmentType.CENTER,
                             spacing: { after: 200 },
@@ -220,6 +232,47 @@ function parseMarkdown(text, labSourcePath) {
                         }));
                     }
                     continue;
+                } else {
+                    // Image not found, check for prompt .txt file
+                    let promptName = imgName.replace('.png', '.txt');
+                    if (!promptName.startsWith('prompt_')) {
+                        promptName = 'prompt_' + promptName;
+                    }
+                    
+                    const promptPath1 = path.join(labSourcePath, promptName);
+                    const promptPath2 = path.join(labSourcePath, 'source', promptName);
+                    
+                    let foundPromptPath = null;
+                    if (fs.existsSync(promptPath1)) foundPromptPath = promptPath1;
+                    else if (fs.existsSync(promptPath2)) foundPromptPath = promptPath2;
+                    
+                    if (foundPromptPath) {
+                        const promptText = fs.readFileSync(foundPromptPath, 'utf8');
+                        imageCounter++;
+                        seenImages.set(foundPromptPath, imageCounter);
+                        
+                        nodes.push(new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            spacing: { before: 200, after: 100 },
+                            children: [new TextRun({ text: `[ЗАГЛУШКА ИЗОБРАЖЕНИЯ ${imageCounter}: ПРОМПТ]`, bold: true, color: "FF0000" })]
+                        }));
+                        
+                        const promptLines = promptText.split(/\r?\n/);
+                        nodes.push(new Paragraph({
+                            children: [new TextRun({ text: promptLines.join('\n'), font: "Courier New", size: 20 })],
+                            shading: { fill: "F2F2F2" },
+                            indent: { left: 720 },
+                            spacing: { before: 100, after: 100 }
+                        }));
+                        
+                        nodes.push(new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            spacing: { after: 200 },
+                            children: [new TextRun({ text: `Скриншот ${imageCounter} – ${altText}`, italic: true, size: 24 })],
+                        }));
+                        
+                        continue;
+                    }
                 }
             }
         }

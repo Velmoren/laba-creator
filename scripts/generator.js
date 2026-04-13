@@ -259,11 +259,24 @@ async function parseChapters(sourceDir) {
                 if (match) {
                     const altText = match[1] || "Скриншот";
                     const imgName = match[2];
-                    const imagePath = path.join(sourceDir, 'source', imgName);
-                    
-                    if (fs.existsSync(imagePath)) {
-                        if (seenImages.has(imagePath)) {
-                            const imgNum = seenImages.get(imagePath);
+
+                    let actualImgName = imgName;
+                    if (actualImgName.startsWith('prompt_')) {
+                        actualImgName = actualImgName.replace('prompt_', '');
+                    }
+
+                    const imagePaths = [
+                        path.join(sourceDir, 'source', actualImgName),
+                        path.join(sourceDir, actualImgName),
+                        path.join(sourceDir, 'source', imgName),
+                        path.join(sourceDir, imgName)
+                    ];
+
+                    let foundImagePath = imagePaths.find(p => fs.existsSync(p));
+
+                    if (foundImagePath) {
+                        if (seenImages.has(foundImagePath)) {
+                            const imgNum = seenImages.get(foundImagePath);
                             nodes.push(new Paragraph({
                                 alignment: AlignmentType.CENTER,
                                 children: [new TextRun({ text: `(см. Скриншот ${imgNum})`, italic: true, color: "555555" })],
@@ -271,14 +284,14 @@ async function parseChapters(sourceDir) {
                             }));
                         } else {
                             imageCounter++;
-                            seenImages.set(imagePath, imageCounter);
-                            
+                            seenImages.set(foundImagePath, imageCounter);
+
                             nodes.push(new Paragraph({
                                 alignment: AlignmentType.CENTER,
                                 spacing: { before: 200, after: 100 },
                                 children: [
                                     new ImageRun({
-                                        data: fs.readFileSync(imagePath),
+                                        data: fs.readFileSync(foundImagePath),
                                         transformation: { width: 500, height: 300 },
                                     }),
                                 ],
@@ -290,11 +303,48 @@ async function parseChapters(sourceDir) {
                             }));
                         }
                         continue;
+                    } else {
+                        let promptName = imgName.replace('.png', '.txt');
+                        if (!promptName.startsWith('prompt_')) {
+                            promptName = 'prompt_' + promptName;
+                        }
+
+                        const promptPath1 = path.join(sourceDir, 'source', promptName);
+                        const promptPath2 = path.join(sourceDir, promptName);
+
+                        let foundPromptPath = null;
+                        if (fs.existsSync(promptPath1)) foundPromptPath = promptPath1;
+                        else if (fs.existsSync(promptPath2)) foundPromptPath = promptPath2;
+
+                        if (foundPromptPath) {
+                            const promptText = fs.readFileSync(foundPromptPath, 'utf8');
+                            imageCounter++;
+                            seenImages.set(foundPromptPath, imageCounter);
+
+                            nodes.push(new Paragraph({
+                                alignment: AlignmentType.CENTER,
+                                spacing: { before: 200, after: 100 },
+                                children: [new TextRun({ text: `[ЗАГЛУШКА ИЗОБРАЖЕНИЯ ${imageCounter}: ПРОМПТ]`, bold: true, color: "FF0000" })]
+                            }));
+
+                            const promptLines = promptText.split(/\r?\n/);
+                            nodes.push(new Paragraph({
+                                children: [new TextRun({ text: promptLines.join('\n'), font: "Courier New", size: 20 })],
+                                shading: { fill: "F2F2F2" },
+                                indent: { left: 720 },
+                                spacing: { before: 100, after: 100 }
+                            }));
+
+                            nodes.push(new Paragraph({
+                                alignment: AlignmentType.CENTER,
+                                spacing: { after: 200 },
+                                children: [new TextRun({ text: `Скриншот ${imageCounter} – ${altText}`, italic: true, size: 24 })],
+                            }));
+                            continue;
+                        }
                     }
                 }
-            }
-
-            const refLinkMatch = trimmed.match(/^\[(\d+)\]:\s+(https?:\/\/\S+)\s+\((.+)\)/);
+            }            const refLinkMatch = trimmed.match(/^\[(\d+)\]:\s+(https?:\/\/\S+)\s+\((.+)\)/);
             if (refLinkMatch) {
                 nodes.push(new Paragraph({
                     style: "Bibliography",

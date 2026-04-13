@@ -1,0 +1,11 @@
+Create a highly detailed, extremely realistic, full-screen screenshot of Microsoft Excel running on a macOS Sonoma desktop. 
+The operating system theme is Light mode. The window has standard macOS traffic light buttons (red, yellow, green) in the top left corner.
+The Excel interface is completely localized in Russian. The "Home" (Главная) ribbon tab is currently active. 
+The visual style of the spreadsheet is "Corporate": headers are a dark navy blue (Hex: #1F4E78) with bold, white font; input cells have a very light gray background (#F2F2F2) with solid black borders; the target function cell is shaded in a soft light blue (#DDEBF7). 
+
+The spreadsheet is displaying a linear programming model for agricultural optimization (Variant 1.5 - Corn and Soy). 
+The layout of the model is vertical. 
+At the top, cells C2 and D2 are labeled "x1 (Кукуруза)" and "x2 (Соя)". Below them, cells C3 and D3 show the current values: 0 and 0.
+Below that, cell C5 reads "Прибыль (ден. ед.)", and cell D5 contains the Excel formula =СУММПРОИЗВ(C3:D3; C6:D6). The coefficients 90 and 360 are entered in C6 and D6.
+Further down is the constraints block. Column E shows the calculated Left Hand Side (LHS) using =СУММПРОИЗВ. Column F shows the inequality signs (<=). Column G shows the Right Hand Side (RHS) limits: 400, 60000, and 21000.
+The image must focus on absolute clarity of the text and the strict, professional corporate layout of the table cells without any desktop icons visible in the background.

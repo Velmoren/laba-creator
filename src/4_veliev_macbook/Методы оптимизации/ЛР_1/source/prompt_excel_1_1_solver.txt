@@ -1,0 +1,12 @@
+Generate a highly detailed screenshot of the "Поиск решения" (Solver) dialog box floating above a colorful Excel spreadsheet on a macOS Sequoia Dark Mode desktop.
+The Excel interface is in Russian. The macOS window controls (red, yellow, green dots) are visible in the top left of the main window.
+
+The dialog box is completely configured for the paint production maximization problem (Variant 1.2):
+- "Оптимизировать целевую функцию:" points to the green target cell reference.
+- "Максимум" is selected.
+- "Изменяя ячейки переменных:" points to the yellow input cells range.
+- "В соответствии с ограничениями:" displays a list of constraints where the calculated LHS cells are restricted by the RHS cells (e.g., $E$10 <= $G$10, and specific demand constraints like $E$12 <= 1, $E$13 <= 2).
+- The non-negativity checkbox is active.
+- The method is set to "Поиск решения линейных задач симплекс-методом".
+
+The text rendering within the dialog box must be crystal clear and highly legible against the dark mode UI of macOS Sequoia.
