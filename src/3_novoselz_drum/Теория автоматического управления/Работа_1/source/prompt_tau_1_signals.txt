@@ -1,0 +1,10 @@
+Create a highly detailed, ultra-realistic full-screen screenshot of a mathematical plotting software (like MATLAB or a Python Jupyter Notebook with matplotlib) running on a Windows 11 desktop. 
+The operating system is in Dark Mode, with the standard Windows 11 taskbar at the bottom and a dark blue abstract wallpaper visible in the background. 
+The application window is dark-themed. 
+The main focus is a plot titled "Typical Control Signals in Laplace Analysis". 
+The plot shows four distinct lines on a single grid: 
+1. A sharp vertical spike at zero representing the Delta function.
+2. A constant horizontal line starting at t=0 representing the Step function 1(t).
+3. A straight diagonal line starting from the origin representing the Ramp function (t).
+4. A smooth, decaying curve starting at 1.0 and approaching zero representing the Exponential function e^-at. 
+The grid is fine and subtle. Legend is visible in the top right corner. The text labels and axis numbers are crisp and easy to read. High resolution, 4K quality, professional academic look.

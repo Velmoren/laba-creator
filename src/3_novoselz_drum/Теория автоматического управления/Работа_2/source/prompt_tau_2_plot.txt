@@ -1,0 +1,8 @@
+Generate a professional, full-screen screenshot of a mathematical analysis tool (like MATLAB or Python Matplotlib) on Windows 11 Dark Mode. 
+The screen displays the plot of the output signal y(t) = 1.2*e^(-t/3) - 1.2*e^(-2t). 
+The interface language is English. 
+The main plot is titled "System Response to Exponential Input e^-t/3". 
+The curve starts at the origin (0,0), rises to a peak value of approximately 0.7-0.8 around t=1.5 seconds, and then slowly decays back towards the zero baseline as time increases to 10-15 seconds. 
+The horizontal axis is "Time (t), sec", the vertical axis is "Output y(t)". 
+A clear grid is visible. The window is a modern Dark Theme application with rounded corners. The typography is sharp and clean. There are no other windows or icons on the desktop. 
+The colors of the plot line should be bright (e.g., cyan or yellow) to contrast with the dark background.

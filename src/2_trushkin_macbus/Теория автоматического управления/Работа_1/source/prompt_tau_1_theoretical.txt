@@ -1,0 +1,11 @@
+Create a high-resolution, full-screen screenshot of a professional Control Engineering software (like Simulink or a Python Matplotlib figure) running on a macOS Sonoma desktop. 
+The operating system is in Light Mode, showing the silver window borders and the characteristic "traffic light" window controls (red, yellow, green) in the top left. 
+The application window is clean and light-themed. 
+The main content is a plot titled "Transient Response Analysis (Var 10)". 
+The plot displays three theoretical curves: 
+1. A constant unit step input function.
+2. An exponential decay function.
+3. A linear ramp function. 
+All functions are clearly labeled using index notation (x1, x2, x3). 
+The grid is light gray. The axis labels are "Time, t" and "Amplitude". 
+The overall aesthetic is academic, crisp, and high-quality, typical of a Retina display. No desktop icons or extraneous UI elements are visible.

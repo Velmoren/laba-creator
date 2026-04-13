@@ -1,0 +1,8 @@
+Generate an ultra-realistic, detailed full-screen screenshot of a mathematical plotting interface on macOS Sonoma (Light theme). 
+The screen displays the transient response h(t) calculated from the equation y(t) = 2.5 - 5*e^-t + 2.5*e^-2t. 
+The plot is titled "Step Response of Second-Order System (Variant 10)". 
+The curve starts exactly at the origin (0,0), rises smoothly without any oscillations or overshoot (monotonic aperiodic process), and approaches a steady-state value of 2.5 on the vertical axis. 
+A horizontal dashed line is drawn at y=2.5 to indicate the asymptote. 
+The horizontal axis is "Time (t), seconds" and the vertical axis is "Amplitude y(t)". 
+The typography uses SF Mono for axis labels. The window is a native macOS application with rounded corners and a slight drop shadow. 
+The plot line is a crisp solid blue color. High resolution, professional engineering look.
