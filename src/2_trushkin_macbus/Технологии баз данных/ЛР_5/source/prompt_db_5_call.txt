@@ -1,0 +1,1 @@
+Full-screen screenshot of pgAdmin 4 running on macOS Sonoma (Light theme). Corporate visual style (dark blue headers, white text). Russian interface. Query Tool showing the call 'CALL CustomerInsert(...)'. The Data Output tab shows a 'NOTICE' message about the successful addition of a new client. macOS traffic light buttons are in the top left.

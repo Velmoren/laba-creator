@@ -1,0 +1,25 @@
+Create a highly detailed full-screen screenshot of an error handling scenario in pgAdmin 4 on Windows 11 (Dark theme).
+Interface Language: English. Visual Design: Minimalist.
+
+MAIN CONTENT:
+The 'Query Tool' window is split. The top half shows a PL/pgSQL block designed to test exception handling:
+'BEGIN
+    CALL NewCustomerWithTransaction('Ivanov', '495', '000-00-00', 'Unknown Artist', 'Non-existent Work', '1', 5000);
+EXCEPTION WHEN OTHERS THEN
+    RAISE NOTICE 'CUSTOM ERROR CAPTURED: % ', SQLERRM;
+END;'
+
+The 'Messages' tab at the bottom is selected. It displays a bold, high-contrast log output:
+'NOTICE: CUSTOM ERROR CAPTURED: Work "Non-existent Work" not found in the Gallery database.
+Total query runtime: 12 msec.
+Query returned successfully (with notices).'
+
+The pop-up notification toast in the bottom-right corner of the pgAdmin interface is visible, mirroring the error notice.
+
+BROWSER TREE:
+The 'Views' folder is expanded under the 'public' schema, showing the 'CustomerPurchases' view. 
+The 'Triggers' sub-folder for this view is also expanded, showing the 'INSTEAD OF' trigger 'trg_update_view_title'.
+
+DETAILS:
+The overall UI is clean. In Dark theme, the background is #2c2c2c. 
+The fonts are perfectly antialiased. The screenshot captures the exact moment after the error was handled by the system.

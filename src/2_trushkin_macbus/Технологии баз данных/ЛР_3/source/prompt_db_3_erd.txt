@@ -1,0 +1,15 @@
+Create a highly detailed, ultra-realistic full-screen screenshot of the pgAdmin 4 application interface running on a macOS Sonoma desktop. 
+The operating system is in Light Mode, featuring the characteristic silver window borders and the "traffic light" window control buttons (red, yellow, green) in the top left corner. 
+The desktop background is a slightly blurred, standard macOS Sonoma abstract wallpaper. 
+The pgAdmin 4 window is the central focus, localized in Russian. 
+The visual style is "Corporate": headers are dark navy blue (#1F4E78), font is sharp and professional.
+
+
+The Browser tree on the left side shows the 'Servers' node expanded, highlighting the 'test' database under 'PostgreSQL 15'. 
+The main dashboard area displays the ERD Tool (Entity-Relationship Diagram). 
+Three tables are visible: 'ARTIST' (with columns ArtistID, Name, Nationality), 'CUSTOMER' (with CustomerID, Name, AreaCode), and 'CUSTOMER_ARTIST_INT'. 
+Lines indicating Primary Key and Foreign Key relationships connect the tables. 
+The 'Properties' tab at the bottom shows the metadata for the currently selected 'CUSTOMER' table, including the 'CustID_Seq' sequence reference.
+
+
+The image must look like an actual screen capture from an engineer's workstation. The text inside the Query Tool and Browser tree must be crystal clear and readable. No desktop icons, no taskbars, no Windows elements. The focus is purely on the technical task.
