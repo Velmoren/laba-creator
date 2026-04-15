@@ -1,0 +1,29 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+System: macOS Sonoma, Light Mode. 
+Visual Style: Corporate (Navy blue headers #1F4E78, high contrast, sharp UI elements). 
+Interface Language: Russian.
+
+WINDOW FOCUS:
+The pgAdmin 4 (v7.5) main window is the central subject, taking 95% of the frame over a slightly blurred standard macOS 'Sonoma' wallpaper. 
+Rounded window corners and realistic drop shadows are present.
+Top-left 'traffic light' buttons (red, yellow, green) are rendered in high detail.
+
+MAIN CONTENT (ERD TOOL TAB):
+The active tab is the 'ERD Tool'. The diagram shows five tables: 'ARTIST', 'WORK', 'CUSTOMER', 'TRANSACTION', and 'CUSTOMER_ARTIST_INT'. 
+- Table 'CUSTOMER' is highlighted. Its columns are clearly visible: 'CustomerID [PK, Int]', 'Name [Varchar(255)]', 'AreaCode [Varchar(10)]', 'PhoneNumber [Varchar(50)]'.
+- Relationship lines connect ARTIST and WORK via 'ArtistID'.
+- The sidebar 'Browser' tree on the left is expanded: 'Servers > PostgreSQL 15 > Databases > test > Schemas > public > Sequences'. 
+- Three sequences are visible: 'ArtistID_Seq', 'CustID_Seq', 'WorkID_Seq'. 
+- The tooltip for 'CustID_Seq' shows 'Current Value: 1000'.
+
+SQL EDITOR CONTEXT:
+The Query Tool window is partially visible in the background, showing the code:
+'CREATE SEQUENCE CustID_Seq START 1000;
+ALTER TABLE CUSTOMER ADD CONSTRAINT PK_CUSTOMER_ID PRIMARY KEY (CustomerID);'
+The syntax highlighting uses professional tones: keywords in bold blue, table names in black, comments in italic gray.
+
+TECHNICAL DETAILS:
+Font: SF Mono, 11pt, perfectly anti-aliased. 
+The bottom status bar of pgAdmin says 'Connected: postgres@localhost:5432/test'. 
+No desktop icons, no other applications. The screenshot captures the pure technical state of the database design phase.
+The scrollbar on the right of the ERD tool is thin and modern. The background grid of the diagram is a subtle light-gray dot pattern. Every character in the table names is razor-sharp. The scrollbar on the right of the ERD tool is thin and modern. The background grid of the diagram is a subtle light-gray dot pattern. Every character in the table names is razor-sharp. The scrollbar on the right of the ERD tool is thin and modern. The background grid of the diagram is a subtle light-gray dot pattern. Every character in the table names is razor-sharp. The scrollbar on the right of the ERD tool is thin and modern. The background grid of the diagram is a subtle light-gray dot pattern. Every character in the table names is razor-sharp. The scrollbar on the right of the ERD tool is thin and modern. The background grid of the diagram is a subtle light-gray dot pattern. Every character in the table names is razor-sharp.

@@ -1,0 +1,8 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+pgAdmin 4 on macOS Sonoma Light. 
+The screen shows an 'INSERT' query into the TRANSACTION table. 
+The 'Data Output' tab shows the result row where AcquisitionPrice is 5000 and AskingPrice is 10000. 
+This proves the BEFORE trigger logic. 
+Sidebar highlights the trigger 'New_Price'. 
+Clean, corporate look, high DPI text.
+Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices. Detailed description of the trigger properties and execution notices.

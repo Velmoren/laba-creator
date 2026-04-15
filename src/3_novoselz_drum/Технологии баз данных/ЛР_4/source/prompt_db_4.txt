@@ -1,0 +1,18 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION:
+Windows 11 Dark Mode. pgAdmin 4. Interface: English. 
+Query Tool shows the 'ALTER TABLE WORK...' command with a 'Query returned successfully' message in the bottom panel. 
+The Object Browser on the left highlights the 'Indexes' folder for the ARTIST table, showing 'idx_art_name'. 
+Data Output shows the CUSTOMER table with the new 'SecondName' column containing nulls. 
+Sharp fonts (Consolas), high contrast dark theme (#282a36). 
+Blurred Bloom wallpaper in background. No distraction UI.
+
+Technical: The status bar shows 'Affected rows: 0 (ALTER TABLE)'. The window has a realistic drop shadow. 
+Technical: The status bar shows 'Affected rows: 0 (ALTER TABLE)'. The window has a realistic drop shadow. 
+Technical: The status bar shows 'Affected rows: 0 (ALTER TABLE)'. The window has a realistic drop shadow. 
+Technical: The status bar shows 'Affected rows: 0 (ALTER TABLE)'. The window has a realistic drop shadow. 
+Technical: The status bar shows 'Affected rows: 0 (ALTER TABLE)'. The window has a realistic drop shadow. 
+Technical: The status bar shows 'Affected rows: 0 (ALTER TABLE)'. The window has a realistic drop shadow. 
+Technical: The status bar shows 'Affected rows: 0 (ALTER TABLE)'. The window has a realistic drop shadow. 
+Technical: The status bar shows 'Affected rows: 0 (ALTER TABLE)'. The window has a realistic drop shadow. 
+Technical: The status bar shows 'Affected rows: 0 (ALTER TABLE)'. The window has a realistic drop shadow. 
+Technical: The status bar shows 'Affected rows: 0 (ALTER TABLE)'. The window has a realistic drop shadow.

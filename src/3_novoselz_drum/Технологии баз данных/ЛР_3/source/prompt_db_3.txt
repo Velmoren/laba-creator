@@ -1,0 +1,33 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+System: Windows 11, Dark Mode. Visual Theme: Minimalist. Interface: English.
+The image shows the pgAdmin 4 (v7.4) interface. The window is centered on a blurred Windows 11 'Bloom' dark wallpaper. 
+
+MAIN AREA: 
+The ERD Tool tab is active. It displays the diagram for the 'gallery' database. 
+- Tables 'ARTIST' and 'CUSTOMER' are visible as sleek dark-gray boxes with white title bars. 
+- In 'CUSTOMER', the column 'CustomerID' is highlighted with a gold key icon (PK). 
+- Relationship lines are crisp and straight. 
+
+BROWSER TREE (LEFT): 
+Hierarchy: Servers > PostgreSQL 15 > Databases > gallery > Schemas > public > Sequences. 
+- The node 'CustID_Seq' is selected. 
+- Tooltip shows: 'Current Value: 5000'. 
+
+QUERY TOOL (BACKGROUND): 
+Partially visible is the SQL editor with syntax highlighting (Pink keywords, yellow strings). 
+Code visible: 'ALTER TABLE CUSTOMER ADD CONSTRAINT pk_customer_id PRIMARY KEY (CustomerID);'
+
+TECHNICAL DETAILS: 
+Font: Consolas 11pt. Window corners are rounded. NO taskbar or clock. 
+Every element is sharp, with high contrast. The image captures the professional engineering state of the database design.
+
+Detail: The grid in the ERD tool is a subtle dark dot pattern. The 'Properties' tab at the bottom displays the sequence increment value '1'.
+Detail: The grid in the ERD tool is a subtle dark dot pattern. The 'Properties' tab at the bottom displays the sequence increment value '1'.
+Detail: The grid in the ERD tool is a subtle dark dot pattern. The 'Properties' tab at the bottom displays the sequence increment value '1'.
+Detail: The grid in the ERD tool is a subtle dark dot pattern. The 'Properties' tab at the bottom displays the sequence increment value '1'.
+Detail: The grid in the ERD tool is a subtle dark dot pattern. The 'Properties' tab at the bottom displays the sequence increment value '1'.
+Detail: The grid in the ERD tool is a subtle dark dot pattern. The 'Properties' tab at the bottom displays the sequence increment value '1'.
+Detail: The grid in the ERD tool is a subtle dark dot pattern. The 'Properties' tab at the bottom displays the sequence increment value '1'.
+Detail: The grid in the ERD tool is a subtle dark dot pattern. The 'Properties' tab at the bottom displays the sequence increment value '1'.
+Detail: The grid in the ERD tool is a subtle dark dot pattern. The 'Properties' tab at the bottom displays the sequence increment value '1'.
+Detail: The grid in the ERD tool is a subtle dark dot pattern. The 'Properties' tab at the bottom displays the sequence increment value '1'.

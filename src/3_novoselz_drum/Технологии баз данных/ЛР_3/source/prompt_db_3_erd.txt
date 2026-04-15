@@ -1,1 +1,0 @@
-Full-screen screenshot of pgAdmin 4 on Windows 11 (Dark Mode). Minimalist visual style (high contrast, white grid on dark gray). English interface. The main dashboard shows the ERD tool window. Tables are gray boxes with white text. Lines connecting tables indicate relationships. The overall UI is dark themed.

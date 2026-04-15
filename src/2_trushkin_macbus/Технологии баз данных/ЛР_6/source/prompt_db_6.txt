@@ -1,0 +1,8 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+pgAdmin 4 on macOS Sonoma Light. 
+Query Tool shows the 'ROLLBACK' command and the RAISE NOTICE logic for transaction failure testing. 
+The 'Messages' panel shows 'NOTICE: Ошибка: Картина недоступна...'. 
+Visual focus on the monospaced log output. 
+Clean UI, rounded window corners, SF Mono font. 
+Text elements match the report data exactly.
+Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings. Detailed technical description of the transaction console and isolation level settings.

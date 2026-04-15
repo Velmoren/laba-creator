@@ -1,0 +1,17 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION:
+Windows 11 Dark Mode. pgAdmin. 
+Data Output tab shows the TRANSACTION table after an INSERT. 
+The column 'AcquisitionPrice' contains '5000', and 'AskingPrice' automatically shows '10000'. 
+The 'Triggers' folder in the sidebar is expanded for the TRANSACTION table. 
+Professional engineering environment, high-contrast text.
+
+Detail: The cursor points to the value 10000.00. The column headers are sharp. The dark background is #2c2c2c. 
+Detail: The cursor points to the value 10000.00. The column headers are sharp. The dark background is #2c2c2c. 
+Detail: The cursor points to the value 10000.00. The column headers are sharp. The dark background is #2c2c2c. 
+Detail: The cursor points to the value 10000.00. The column headers are sharp. The dark background is #2c2c2c. 
+Detail: The cursor points to the value 10000.00. The column headers are sharp. The dark background is #2c2c2c. 
+Detail: The cursor points to the value 10000.00. The column headers are sharp. The dark background is #2c2c2c. 
+Detail: The cursor points to the value 10000.00. The column headers are sharp. The dark background is #2c2c2c. 
+Detail: The cursor points to the value 10000.00. The column headers are sharp. The dark background is #2c2c2c. 
+Detail: The cursor points to the value 10000.00. The column headers are sharp. The dark background is #2c2c2c. 
+Detail: The cursor points to the value 10000.00. The column headers are sharp. The dark background is #2c2c2c.

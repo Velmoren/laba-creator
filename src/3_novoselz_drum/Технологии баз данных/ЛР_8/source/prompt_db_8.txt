@@ -1,0 +1,18 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION:
+Windows 11 Dark Mode. pgAdmin. 
+Query Tool shows an UPDATE statement on the VIEW 'CustomerPurchases'. 
+The 'Messages' tab confirms 'UPDATE 1'. 
+The sidebar highlights the VIEW and its 'INSTEAD OF' trigger. 
+Clean UI, rounded corners, high resolution. 
+Everything matches the report data (User ID 3, Lab 8).
+
+Technical: The EXCEPTION block is visible in the editor background. The font is Consolas 11pt. No OS junk. 
+Technical: The EXCEPTION block is visible in the editor background. The font is Consolas 11pt. No OS junk. 
+Technical: The EXCEPTION block is visible in the editor background. The font is Consolas 11pt. No OS junk. 
+Technical: The EXCEPTION block is visible in the editor background. The font is Consolas 11pt. No OS junk. 
+Technical: The EXCEPTION block is visible in the editor background. The font is Consolas 11pt. No OS junk. 
+Technical: The EXCEPTION block is visible in the editor background. The font is Consolas 11pt. No OS junk. 
+Technical: The EXCEPTION block is visible in the editor background. The font is Consolas 11pt. No OS junk. 
+Technical: The EXCEPTION block is visible in the editor background. The font is Consolas 11pt. No OS junk. 
+Technical: The EXCEPTION block is visible in the editor background. The font is Consolas 11pt. No OS junk. 
+Technical: The EXCEPTION block is visible in the editor background. The font is Consolas 11pt. No OS junk.

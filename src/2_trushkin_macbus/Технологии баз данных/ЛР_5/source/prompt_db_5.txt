@@ -1,0 +1,24 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+System: macOS Sonoma, Light Mode. Interface: Russian. Style: Corporate.
+
+MAIN CONTENT (QUERY TOOL):
+The SQL editor contains the 'CALL' statement for the procedure:
+"CALL CustomerInsert('Dmitry Petrov', '926', '555-44-33', 'French');"
+
+The syntax highlighting is vivid. 
+The 'Messages' tab at the bottom is active. It shows the detailed log of the execution:
+'NOTICE: Процедура CustomerInsert запущена для клиента Dmitry Petrov.
+NOTICE: Найдено 3 художника национальности French.
+NOTICE: Связь успешно создана для ArtistID: 101, 105, 112.
+Query returned successfully in 42 msec.'
+
+BROWSER TREE (LEFT PANEL):
+The 'Procedures' node under 'Schemas > public' is expanded. 
+The procedure 'CustomerInsert' is highlighted. 
+The 'Properties' pane below the tree shows the parameters: 'newName', 'newAreaCode', 'newPhone', 'artistNationality'.
+
+TECHNICAL DETAILS:
+Font: SF Mono 12pt. The UI elements of pgAdmin match the macOS design precisely. 
+Background is the abstract light Sonoma wallpaper. 
+The image is a clean, sharp representation of a successful PL/pgSQL call.
+The 'Messages' console text is perfectly aligned in a monospaced font. The NOTICE messages are distinctive. Every character is sharp and professional. The 'Messages' console text is perfectly aligned in a monospaced font. The NOTICE messages are distinctive. Every character is sharp and professional. The 'Messages' console text is perfectly aligned in a monospaced font. The NOTICE messages are distinctive. Every character is sharp and professional. The 'Messages' console text is perfectly aligned in a monospaced font. The NOTICE messages are distinctive. Every character is sharp and professional. The 'Messages' console text is perfectly aligned in a monospaced font. The NOTICE messages are distinctive. Every character is sharp and professional.

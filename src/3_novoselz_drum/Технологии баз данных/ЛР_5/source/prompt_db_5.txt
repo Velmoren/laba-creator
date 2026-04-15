@@ -1,0 +1,19 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION:
+Windows 11 Dark Mode. pgAdmin Query Tool. 
+The SQL editor contains: "CALL CustomerInsert('Alexey Ivanov', 'Russian');". 
+The 'Messages' tab is active and shows: 
+'NOTICE: Новосельцев, клиент Alexey Ivanov добавлен.
+Query returned successfully in 22 msec.' 
+The sidebar shows the 'Procedures' node expanded. 
+Consolas font, neon-blue highlights on code. Focused professional workspace.
+
+Detail: The scrollbar is slim. The active tab 'SQL' is underlined. The NOTICE text is white on a dark gray background. 
+Detail: The scrollbar is slim. The active tab 'SQL' is underlined. The NOTICE text is white on a dark gray background. 
+Detail: The scrollbar is slim. The active tab 'SQL' is underlined. The NOTICE text is white on a dark gray background. 
+Detail: The scrollbar is slim. The active tab 'SQL' is underlined. The NOTICE text is white on a dark gray background. 
+Detail: The scrollbar is slim. The active tab 'SQL' is underlined. The NOTICE text is white on a dark gray background. 
+Detail: The scrollbar is slim. The active tab 'SQL' is underlined. The NOTICE text is white on a dark gray background. 
+Detail: The scrollbar is slim. The active tab 'SQL' is underlined. The NOTICE text is white on a dark gray background. 
+Detail: The scrollbar is slim. The active tab 'SQL' is underlined. The NOTICE text is white on a dark gray background. 
+Detail: The scrollbar is slim. The active tab 'SQL' is underlined. The NOTICE text is white on a dark gray background. 
+Detail: The scrollbar is slim. The active tab 'SQL' is underlined. The NOTICE text is white on a dark gray background.

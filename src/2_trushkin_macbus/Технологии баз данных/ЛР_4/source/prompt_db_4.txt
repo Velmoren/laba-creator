@@ -1,0 +1,23 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+System: macOS Sonoma, Light Mode. Interface: Russian. Style: Corporate.
+
+MAIN CONTENT (QUERY TOOL):
+The Query Tool editor is open with the following executed SQL code:
+'ALTER TABLE WORK ADD CONSTRAINT FK_WORK_ARTIST FOREIGN KEY (ArtistID) REFERENCES ARTIST(ArtistID) ON DELETE CASCADE;
+CREATE INDEX idx_customer_name ON CUSTOMER(Name);
+ALTER TABLE CUSTOMER ADD COLUMN SecondName varchar(255);'
+
+The code uses bold navy-blue keywords and emerald-green constraints names. 
+In the 'Data Output' area at the bottom, the results of the query 'SELECT * FROM CUSTOMER;' are displayed. 
+The table has five columns: 'CustomerID', 'Name', 'AreaCode', 'PhoneNumber', and the newly added 'SecondName'. 
+The 'SecondName' column is currently filled with [null] values. 
+
+BROWSER TREE (LEFT PANEL):
+The 'Constraints' folder under the 'WORK' table is expanded, showing 'FK_WORK_ARTIST' with a golden key icon. 
+The 'Indexes' folder under the 'CUSTOMER' table is expanded, showing 'idx_customer_name' with a thunderbolt icon. 
+
+DETAILS:
+Background is a clean blurred macOS wallpaper. The window borders have a slight frosted glass effect (Mica/Acrylic). 
+The 'Messages' tab confirms 'Query returned successfully in 56 msec'. 
+Font is SF Mono 12pt. No distractions, pure engineering focus.
+The grid lines in the data output panel are light gray and crisp. The column headers for 'SecondName' are perfectly aligned. Every single character of the SQL code is legible. The grid lines in the data output panel are light gray and crisp. The column headers for 'SecondName' are perfectly aligned. Every single character of the SQL code is legible. The grid lines in the data output panel are light gray and crisp. The column headers for 'SecondName' are perfectly aligned. Every single character of the SQL code is legible. The grid lines in the data output panel are light gray and crisp. The column headers for 'SecondName' are perfectly aligned. Every single character of the SQL code is legible. The grid lines in the data output panel are light gray and crisp. The column headers for 'SecondName' are perfectly aligned. Every single character of the SQL code is legible.

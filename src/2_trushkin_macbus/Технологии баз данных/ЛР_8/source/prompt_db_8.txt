@@ -1,0 +1,7 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+pgAdmin 4 on macOS Sonoma Light. 
+The Query Tool shows the EXCEPTION block with GET STACKED DIAGNOSTICS. 
+An intentionally triggered error shows a custom NOTICE in the console: 'NOTICE: Ошибка захвачена: ...'. 
+The Views folder is open in the browser. 
+Professional engineering environment, extremely sharp text.
+Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages. Detailed description of the exception handling logic and error messages.

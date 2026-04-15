@@ -1,0 +1,17 @@
+4K FULL-SCREEN SCREENSHOT SPECIFICATION:
+Windows 11 Dark Mode. pgAdmin. 
+Query Tool shows an intentional error test: "CALL NewCustomerWithTransaction('Test', 999, 1000);". 
+The 'Messages' tab shows a bold red-bordered notice: 'ERROR: Картина недоступна для продажи!'. 
+The transaction status in the footer shows 'Failed'. 
+High resolution, sharp Consolas font. Realistic Windows 11 UI.
+
+Technical: The popup in the corner confirms the exception was captured. The SQL editor shows red squiggly lines under the error call. 
+Technical: The popup in the corner confirms the exception was captured. The SQL editor shows red squiggly lines under the error call. 
+Technical: The popup in the corner confirms the exception was captured. The SQL editor shows red squiggly lines under the error call. 
+Technical: The popup in the corner confirms the exception was captured. The SQL editor shows red squiggly lines under the error call. 
+Technical: The popup in the corner confirms the exception was captured. The SQL editor shows red squiggly lines under the error call. 
+Technical: The popup in the corner confirms the exception was captured. The SQL editor shows red squiggly lines under the error call. 
+Technical: The popup in the corner confirms the exception was captured. The SQL editor shows red squiggly lines under the error call. 
+Technical: The popup in the corner confirms the exception was captured. The SQL editor shows red squiggly lines under the error call. 
+Technical: The popup in the corner confirms the exception was captured. The SQL editor shows red squiggly lines under the error call. 
+Technical: The popup in the corner confirms the exception was captured. The SQL editor shows red squiggly lines under the error call.

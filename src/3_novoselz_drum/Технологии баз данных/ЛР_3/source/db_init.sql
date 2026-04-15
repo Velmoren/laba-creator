@@ -1,2 +1,0 @@
-CREATE SEQUENCE global_art_seq START 1;
-CREATE TABLE ARTIST (...);
