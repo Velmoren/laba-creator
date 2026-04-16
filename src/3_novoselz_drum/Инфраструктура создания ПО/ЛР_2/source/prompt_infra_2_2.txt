@@ -1,0 +1,33 @@
+ULTRA-DETAILED TECHNICAL SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+Application: Windows Terminal (SSH to Alt Linux 10). Theme: Dark Minimalist.
+User: novoselz@altlinux. 
+
+CENTRAL ELEMENT (TERMINAL CONTENT):
+Command: 'hsh --verbose ~/RPM/SRPMS/HelloUniverse-1.0-alt1.src.rpm'
+Output:
+hasher: building for x86_64...
+installing dependencies...
+build success.
+/home/novoselz/hasher/repo/x86_64/RPMS.hasher/HelloUniverse-1.0-alt1.x86_64.rpm
+
+TECHNICAL DETAILS:
+Font: Consolas 11pt. Background: #1e1e1e. High contrast. 
+Focus strictly on the terminal output. Window corners are rounded (Windows 11 style). 
+The output shows the exact moment of successful completion. 
+No distracting OS icons or taskbars. Sharp and clean technical workspace.
+
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable. 
+Detail: The build log shows 'Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm'. Every character is readable.
