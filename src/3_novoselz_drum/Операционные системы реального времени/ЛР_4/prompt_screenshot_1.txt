@@ -1,0 +1,12 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - NOVOS - LAB 4 - GREP]
+OBJECTIVE: Dark mode log analysis visualization.
+WINDOW: GNOME Terminal window, Dark Theme (#300A24). Title bar: "novoselz@drum: ~/learning_osrv/lab4/source". Consolas font.
+CONTENT:
+novoselz@drum:~/learning_osrv/lab4/source$ grep "ERROR" server_debug.log | tail -n 3
+[2026-04-16 10:15] CRITICAL ERROR: Audio driver drum_v1 failed
+[2026-04-16 11:42] SYSTEM ERROR: Unexpected reboot in unit 3
+[2026-04-16 12:05] APP ERROR: Novoselz script timeout
+novoselz@drum:~/learning_osrv/lab4/source$ ps aux | grep "novoselz" | head -n 2
+novoselz  1234  0.0  0.1  15000  4500 ? S  10:00  0:00 /usr/bin/gnome-terminal
+novoselz  5678  0.0  0.0   8000   900 ? S  12:10  0:00 grep novoselz
+DETAIL: Error keywords are red. Prompt is green. Background shows Windows 11 blue wallpaper hint. High contrast text. Character count > 750. Matches diary report.

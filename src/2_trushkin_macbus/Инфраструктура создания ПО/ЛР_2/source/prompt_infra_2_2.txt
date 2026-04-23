@@ -1,0 +1,42 @@
+ULTRA-DETAILED TECHNICAL SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+Application: macOS Terminal.app (Light Mode) on macOS Sonoma.
+Window title: "trushkin@macbus: ~/workspace — ssh altlinux — 80x24".
+Environment: SSH session to Alt Linux host.
+
+TERMINAL CONTENT:
+The prompt: [trushkin@altlinux ~]$ hsh --verbose ~/RPM/SRPMS/HelloUniverse-1.0-alt1.src.rpm
+
+THE VOLUMINOUS VERBOSE OUTPUT:
+hasher: building for x86_64
+hasher: using default configuration /etc/hasher-priv/system
+hasher: initializing chroot...
+hasher: installing BuildRequires...
+Reading Package Lists...
+Building Dependency Tree...
+The following NEW packages will be installed:
+  gcc make glibc-devel-static binutils
+0 upgraded, 4 newly installed, 0 removed.
+Fetched 4.2 MB in 1s (3.8 MB/s)
+Committing changes...
+hasher: unpacking source package...
+hasher: executing rpmbuild...
+Executing(%prep)...
+Executing(%build)...
+Executing(%install)...
+Wrote: /home/trushkin/hasher/repo/x86_64/RPMS.hasher/HelloUniverse-1.0-alt1.x86_64.rpm
+hasher: cleaning up...
+hasher: build successful.
+
+VISUAL STYLING:
+- Text is set in "SF Mono", 11.5pt. 
+- Line spacing is standard (1.2).
+- The 'hasher:' prefix is highlighted in a distinct but professional dark green (#006400) to separate system messages from build logs.
+- The white background (#FFFFFF) has no texture, emphasizing the technical text.
+- The macOS window border is thin and elegant.
+- The system menu bar is not visible, only the application window.
+- The output shows realistic file sizes and transfer speeds.
+- The timestamp of the build (not visible but implied by the flow) feels recent.
+- All characters are anti-aliased and perfectly legible.
+- The window shadow is soft and diffuse, creating a sense of depth on the light Sonoma desktop.
+- No 'distracting' desktop icons are visible in the background.
+- Focus is 100% on the terminal content.

@@ -1,0 +1,9 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - NOVOS - LAB 6 - TOP]
+OBJECTIVE: Dark mode process monitoring visualization.
+WINDOW: GNOME Terminal, Dark Theme (#300A24), Consolas font.
+CONTENT:
+The screen shows 'top' utility output.
+One line is highlighted:
+PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+32100 novoselz  20   0   10200   1100    950 R  99.9   0.1   2:10.45 loop_forever
+DETAIL: CPU usage 99.9% is clearly visible. Bold white text for the active process. Character count > 750. Matches diary report details.

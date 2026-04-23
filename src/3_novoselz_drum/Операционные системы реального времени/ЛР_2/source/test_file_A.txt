@@ -1,0 +1,4 @@
+# Novoselz Research Data
+# Lab 2: Archiving tests
+# File A: Content for testing compression ratios.
+# Status: OK.

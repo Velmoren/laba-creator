@@ -1,0 +1,4 @@
+# Infrastructure data source
+# Cluster info for Lab 2
+# Nodes: 3
+# State: Ready

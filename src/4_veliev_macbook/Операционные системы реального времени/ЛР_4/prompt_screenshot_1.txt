@@ -1,0 +1,13 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - VELIEV - LAB 4 - GREP]
+OBJECTIVE: Technical visualization of DevOps log analysis.
+WINDOW: GNOME Terminal window, Dark Theme (#300A24). Title bar: "veliev@macbook: ~/devops_infrastructure/lab4/source". JetBrains Mono font.
+CONTENT:
+veliev@macbook:~/devops_infrastructure/lab4/source$ grep -E "CRITICAL|FAILURE" cluster_events.log
+[2026-04-16 10:15:30] FAILURE: Storage node 3 disconnect
+[2026-04-16 11:20:45] CRITICAL: Load balancer saturation (95%)
+[2026-04-16 12:05:12] FAILURE: Inode sync aborted on /dev/sda1
+veliev@macbook:~/devops_infrastructure/lab4/source$ ps -u veliev | head -n 3
+    PID TTY          TIME CMD
+   1500 ?        00:00:12 gnome-shell
+   2456 pts/0    00:00:00 bash
+DETAIL: "CRITICAL" and "FAILURE" keywords highlighted in red. Prompt is professional green/blue. High contrast. Character count > 750. Matches report data.

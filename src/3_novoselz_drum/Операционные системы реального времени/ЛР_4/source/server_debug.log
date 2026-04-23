@@ -1,0 +1,6 @@
+[2026-04-16 09:00] INFO: Drum session started
+[2026-04-16 10:15] CRITICAL ERROR: Audio driver drum_v1 failed
+[2026-04-16 11:00] INFO: Backup created
+[2026-04-16 11:42] SYSTEM ERROR: Unexpected reboot in unit 3
+[2026-04-16 12:05] APP ERROR: Novoselz script timeout
+[2026-04-16 12:10] INFO: Cleanup complete

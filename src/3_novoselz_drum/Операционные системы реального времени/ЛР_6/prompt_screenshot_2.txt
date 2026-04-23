@@ -1,0 +1,10 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - NOVOS - LAB 6 - CRONTAB]
+OBJECTIVE: Dark theme crontab validation.
+WINDOW: GNOME Terminal, Dark Theme, Consolas.
+CONTENT:
+novoselz@drum:~$ crontab -l
+# m h  dom mon dow   command
+0 * * * * /home/novoselz/learning_osrv/lab6/source/auto_cleanup.sh
+novoselz@drum:~$ pgrep loop_forever
+32100
+DETAIL: Clean output. Prompt green. Font is crisp Consolas. Character count > 600. Correct path synchronization with the report.

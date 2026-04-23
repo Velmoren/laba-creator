@@ -1,0 +1,10 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - VELIEV - LAB 6 - CRON]
+OBJECTIVE: Professional cron validation.
+WINDOW: GNOME Terminal, Dark Theme, JetBrains Mono font.
+CONTENT:
+veliev@macbook:~$ crontab -l
+# DEVOPS INFRASTRUCTURE CRONTAB
+*/30 * * * * /home/veliev/devops_infrastructure/lab6/source/ops_auto_sync.sh
+veliev@macbook:~$ pgrep ops_monitor
+30456
+DETAIL: Clean and minimalist output. Prompt green/blue. High fidelity rendering. Character count > 600. Correct path synchronization.

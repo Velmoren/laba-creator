@@ -1,0 +1,9 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - NOVOS - LAB 2 - SIZES]
+OBJECTIVE: Technical comparison of file sizes in Dark Mode.
+WINDOW: GNOME Terminal, Dark Theme (#300A24), Consolas font. Title: "novoselz@drum: ~".
+CONTENT:
+novoselz@drum:~$ ls -lh novoselz_backup.tar*
+-rw-r--r-- 1 novoselz novoselz 450K Apr 16 13:00 novoselz_backup.tar
+-rw-r--r-- 1 novoselz novoselz  95K Apr 16 13:02 novoselz_backup.tar.gz
+-rw-r--r-- 1 novoselz novoselz  78K Apr 16 13:05 novoselz_backup.tar.bz2
+DETAIL: Archive filenames are highlighted in bright red. Size column is the focus. Dark, sleek Ubuntu UI. Windows 11 taskbar slightly visible at the bottom of the whole screen capture. Character count > 700. Synchronized with diary text.

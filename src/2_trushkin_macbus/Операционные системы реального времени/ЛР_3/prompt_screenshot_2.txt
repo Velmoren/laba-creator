@@ -1,0 +1,9 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - TRUSHKIN - LAB 3 - LS]
+OBJECTIVE: Visual validation of file permissions and group ownership.
+WINDOW: GNOME Terminal, Light UI Theme (#F2F1F0), SF Mono font.
+CONTENT:
+trushkin@macbus:~$ ls -l security_audit.log
+-rwxr-x--- 1 trushkin research_grp 342 Apr 16 14:00 security_audit.log
+trushkin@macbus:~$ id trushkin
+uid=1000(trushkin) gid=1000(trushkin) groups=1000(trushkin),27(sudo),1002(research_grp)
+DETAIL: The permissions string "-rwxr-x---" is clearly visible. Directory background hint shows the macOS Sonoma abstract wallpaper. High contrast black text. Prompt is professional green. Character count > 700. Synchronized with report analysis.

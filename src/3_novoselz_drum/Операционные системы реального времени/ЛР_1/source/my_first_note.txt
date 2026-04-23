@@ -1,0 +1,4 @@
+Hello Ubuntu World!
+This is Novoselz (Entry 3).
+I am learning OSRV today.
+Inodes are quite interesting.

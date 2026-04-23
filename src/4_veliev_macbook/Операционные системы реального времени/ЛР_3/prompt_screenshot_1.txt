@@ -1,0 +1,14 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - VELIEV - LAB 3 - ADDUSER]
+OBJECTIVE: Dark mode professional user management.
+WINDOW: GNOME Terminal, Dark Theme (#300A24), JetBrains Mono font.
+CONTENT:
+veliev@macbook:~$ sudo adduser devops_junior
+Adding user 'devops_junior' ...
+Adding new group 'devops_junior' (1001) ...
+Creating home directory '/home/devops_junior' ...
+New password: 
+passwd: password updated successfully
+Full Name []: Junior DevOps Engineer
+Room Number []: 707
+Is the information correct? [Y/n] y
+DETAIL: Minimalist and clean terminal log. Shadow effect on the window. macOS Sequoia background hint. Character count > 700. Synchronized with Veliev diary.

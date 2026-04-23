@@ -1,5 +1,0 @@
-ID:001;Name:Laptop;Price:1500;Seller:Ivanov
-ID:002;Name:Mouse;Price:25;Seller:Petrov
-ID:003;Name:Monitor;Price:300;Seller:Ivanov
-ID:004;Name:Keyboard;Price:50;Seller:Sidorov
-ID:005;Name:Webcam;Price:80;Seller:Petrov

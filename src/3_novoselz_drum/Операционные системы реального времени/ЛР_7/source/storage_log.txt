@@ -1,0 +1,7 @@
+# Novoselz Storage Audit Log
+# Final Lab Report
+# 
+Project: learning_osrv
+Disk: /dev/sda1
+Usage: 45%
+Recommendation: Storage optimal.

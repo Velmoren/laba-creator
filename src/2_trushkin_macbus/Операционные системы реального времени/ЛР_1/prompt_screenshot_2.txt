@@ -1,0 +1,10 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - TRUSHKIN - LAB 1 - LS]
+OBJECTIVE: Technical proof of inode matching in Ubuntu.
+WINDOW: GNOME Terminal, Light UI Theme (#F2F1F0), SF Mono font.
+CONTENT:
+trushkin@macbus:~$ ls -li academic_v7/lab1/workspace/
+total 8
+778899 -rw-r--r-- 2 trushkin trushkin 115 Apr 16 12:00 hl_research
+778899 -rw-r--r-- 2 trushkin trushkin 115 Apr 16 12:00 research_data.txt
+778910 lrwxrwxrwx 1 trushkin trushkin  17 Apr 16 12:05 sl_research -> research_data.txt
+DETAIL: The number 778899 is clearly visible for both primary and hard link. Prompt is green (#4E9A06), directory blue (#3465A4). High resolution rendering. Character count > 700. Matches technical analysis in the report.

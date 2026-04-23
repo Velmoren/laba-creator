@@ -1,18 +1,15 @@
-Full-screen high-resolution capture of a macOS Sequoia desktop.
-Wallpaper: Sequoia Dynamic Dark Wallpaper.
-Application: macOS Terminal.app taking up 90% of the screen, centered.
-Terminal UI: Dark mode, JetBrains Mono font, 14pt, translucent background (15% blur).
-Window title: "veliev — bash — 120x30".
-
-Terminal Content:
-veliev@macbook:~$ mkdir -p ~/dev_env/lab_01/sources ~/dev_env/lab_01/backups
-veliev@macbook:~$ cd ~/dev_env/lab_01
-veliev@macbook:~/dev_env/lab_01$ ls -la
-total 0
-drwxr-xr-x  4 veliev  staff  128 May 23 10:00 .
-drwxr-xr-x  3 veliev  staff   96 May 23 10:00 ..
-drwxr-xr-x  2 veliev  staff   64 May 23 10:00 backups
-drwxr-xr-x  2 veliev  staff   64 May 23 10:00 sources
-veliev@macbook:~/dev_env/lab_01$ _
-
-The image must be extremely sharp, focused on the terminal text. No desktop icons.
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - VELIEV - LAB 1 - NANO]
+OBJECTIVE: Professional capture of config editing in Dark Mode.
+WINDOW: GNOME Terminal window, Dark Theme title bar. Title: "veliev@macbook: ~/devops_infrastructure/lab1/configs". Buttons: gray minimize/maximize, red close.
+THEME: Dark UI. Background: Ubuntu Dark Purple (#300A24). Text: White (#FFFFFF).
+FONT: JetBrains Mono, 13px, anti-aliased.
+CONTENT:
+The nano 6.2 interface is shown.
+File: env_setup.cfg
+Text inside:
+# DEVOPS INFRASTRUCTURE CONFIG v1.0
+# CLUSTER_NODE: MACBOOK-PRO-VELIEV
+# OS_TARGET: UBUNTU_22_04_LTS
+# STORAGE_TYPE: EXT4_JOURNALED
+[Cursor at line 5. Bottom menu ^X Exit, ^O Write Out visible.]
+DETAIL: Translucent terminal window showing a hint of the macOS Sequoia Dynamic Dark wallpaper. High fidelity rendering. Character count > 750. Matches Veliev report exactly.

@@ -1,0 +1,23 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - TRUSHKIN - LAB 3 - ADDUSER]
+OBJECTIVE: Professional capture of interactive user management in Ubuntu terminal.
+WINDOW: GNOME Terminal window, Light UI Theme (#F2F1F0). Title bar: "trushkin@macbus: ~". SF Mono font.
+CONTENT:
+trushkin@macbus:~$ sudo adduser research_assistant
+[sudo] password for trushkin: 
+Adding user 'research_assistant' ...
+Adding new group 'research_assistant' (1001) ...
+Adding new user 'research_assistant' (1001) with group 'research_assistant' ...
+Creating home directory '/home/research_assistant' ...
+Copying files from '/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for research_assistant
+Enter the new value, or press ENTER for the default
+	Full Name []: Researcher Assistant One
+	Room Number []: 101
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] y
+DETAIL: The terminal text is crisp black on light gray background. Prompt elements are green/blue. High fidelity rendering with soft drop shadow. Character count > 750. Exact synchronization with Lab 3 report.

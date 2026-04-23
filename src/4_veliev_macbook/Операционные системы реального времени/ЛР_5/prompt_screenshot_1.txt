@@ -1,0 +1,16 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - VELIEV - LAB 5 - BASH]
+OBJECTIVE: Professional listing and execution proof for bash scripts.
+WINDOW: GNOME Terminal window, Dark Theme (#300A24), JetBrains Mono font.
+CONTENT:
+veliev@macbook:~/devops_infrastructure/lab5/source$ cat ops_math.sh
+#!/bin/bash
+# DEVOPS ARITHMETIC UNIT v1.0
+# Formula: D = (A*2 + B/3) * C
+A=20; B=150; C=100
+D=$(((A*2 + B/3)*C))
+echo "DEPLOYMENT_METRIC_VALUE: $D"
+
+veliev@macbook:~/devops_infrastructure/lab5/source$ chmod +x ops_math.sh
+veliev@macbook:~/devops_infrastructure/lab5/source$ ./ops_math.sh
+DEPLOYMENT_METRIC_VALUE: 9000
+DETAIL: Bash syntax highlighting is visible. Accurate calculation: (20*2 + 150/3)*100 = (40+50)*100 = 90*100 = 9000. Dark UI, sharp rendering. Character count > 750. Synchronized with report.

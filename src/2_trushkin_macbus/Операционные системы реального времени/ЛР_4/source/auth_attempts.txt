@@ -1,0 +1,4 @@
+Apr 16 09:00:12 macbus sshd[1234]: Invalid user guest from 192.168.1.50
+Apr 16 09:05:45 macbus sshd[1235]: Invalid user admin from 10.0.0.1
+Apr 16 09:10:22 macbus sshd[1236]: Invalid user test from 172.16.0.5
+Apr 16 10:00:01 macbus sshd[1237]: Accepted password for trushkin from 127.0.0.1

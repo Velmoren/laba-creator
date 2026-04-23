@@ -1,0 +1,16 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - NOVOS - LAB 5 - BASH]
+OBJECTIVE: Script listing and execution in Dark Mode.
+WINDOW: GNOME Terminal, Dark Theme (#300A24), Consolas font.
+CONTENT:
+novoselz@drum:~/learning_osrv/lab5/source$ cat calc_drum.sh
+#!/bin/bash
+# Мой калькулятор для ЛР 5
+# Считаю по формуле из методички
+A=10; B=180; C=25
+D=$(((A*2 + B/3)*C))
+echo "Привет, Novoselz! Результат твоих расчетов: $D"
+
+novoselz@drum:~/learning_osrv/lab5/source$ chmod +x calc_drum.sh
+novoselz@drum:~/learning_osrv/lab5/source$ ./calc_drum.sh
+Привет, Novoselz! Результат твоих расчетов: 2000
+DETAIL: Bash syntax highlighting visible in 'cat' output (e.g. # comments in gray). Calculation: (10*2 + 180/3)*25 = (20+60)*25 = 80*25 = 2000. Dark UI, sharp text. Character count > 750. Consistent with report.

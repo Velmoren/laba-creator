@@ -1,0 +1,17 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - NOVOS - LAB 3 - ADDUSER]
+OBJECTIVE: Dark mode interactive user creation.
+WINDOW: GNOME Terminal, Dark Theme (#300A24), Consolas font.
+CONTENT:
+novoselz@drum:~$ sudo adduser lab_helper
+[sudo] password for novoselz: 
+Adding user 'lab_helper' ...
+Adding new group 'lab_helper' (1001) ...
+Adding new user 'lab_helper' (1001) with group 'lab_helper' ...
+Creating home directory '/home/lab_helper' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Full Name []: Assistant Novoselz
+Room Number []: 303
+Is the information correct? [Y/n] y
+DETAIL: Clear, crisp text. Shadow on window. Consistent with Novoselz diary style. Character count > 750.

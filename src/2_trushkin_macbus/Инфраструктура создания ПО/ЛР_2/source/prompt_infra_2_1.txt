@@ -1,0 +1,45 @@
+ULTRA-DETAILED TECHNICAL SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+Application: macOS Terminal.app (Light Mode) on macOS Sonoma.
+Window context: Active terminal window with "trushkin — hsh-shell — SF Mono 12pt" in title bar.
+Background: Ivory White (#FAFAFA) with subtle blurred transparency.
+Font: SF Mono Regular, 12pt, perfectly anti-aliased.
+
+TERMINAL CONTENT (INSIDE HASHER CHROOT):
+The prompt: [trushkin@hasher /]$ rpmbuild -bb /usr/src/RPM/SPECS/HelloUniverse.spec
+(Note: the username in prompt is set to 'trushkin' to match the student environment).
+
+THE LOG OUTPUT:
+Executing(%prep): /bin/sh -e /usr/src/RPM/tmp/rpm-tmp.1024
++ umask 022
++ cd /usr/src/RPM/BUILD
++ /bin/gzip -dc /usr/src/RPM/SOURCES/HelloUniverse-1.0.tar.gz
++ /bin/tar -xvvf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd HelloUniverse-1.0
++ /bin/chmod -Rf a+rX,u+w,g-w,o-w .
+Executing(%build): /bin/sh -e /usr/src/RPM/tmp/rpm-tmp.2048
++ umask 022
++ cd /usr/src/RPM/BUILD
++ cd HelloUniverse-1.0
++ gcc -O2 -g -Wall hello.c -o HelloUniverse
+Executing(%install): /bin/sh -e /usr/src/RPM/tmp/rpm-tmp.4096
++ umask 022
++ cd /usr/src/RPM/BUILD
++ cd HelloUniverse-1.0
++ mkdir -p /usr/src/RPM/BUILDROOT/HelloUniverse-1.0-alt1.x86_64/usr/bin
++ cp HelloUniverse /usr/src/RPM/BUILDROOT/HelloUniverse-1.0-alt1.x86_64/usr/bin/
+Processing files: HelloUniverse-1.0-alt1
+Wrote: /usr/src/RPM/RPMS/x86_64/HelloUniverse-1.0-alt1.x86_64.rpm
+
+VISUAL DETAILS:
+- Commands are styled with a clean black bold font.
+- Macros like Executing(%prep) are highlighted in a professional dark slate blue (#2F4F4F).
+- The path /usr/src/RPM/... is consistent throughout the build.
+- The window has the macOS 'Light Mode' appearance: grey title bar, black text on white.
+- The traffic lights (Red/Yellow/Green) are bright and saturated.
+- No artifacts or compression noise. The text is razor-sharp.
+- A thin grey line separates the title bar from the content area.
+- Scrollbar is visible but inactive, matching the length of the output.
+- The cursor is a blinking grey rectangle at the bottom prompt.
+- Background wallpaper behind the window: Abstract Sonoma Light (soft peach and sky blue waves).

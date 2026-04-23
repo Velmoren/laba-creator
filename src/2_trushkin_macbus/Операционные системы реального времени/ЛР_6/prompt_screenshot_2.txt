@@ -1,0 +1,11 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - TRUSHKIN - LAB 6 - CRON]
+OBJECTIVE: Verification of cron schedule.
+WINDOW: GNOME Terminal, Light UI Theme.
+CONTENT:
+trushkin@macbus:~$ crontab -l
+# Academic Research Cron Jobs
+# m h  dom mon dow   command
+0 0 * * * /home/trushkin/trushkin_research/lab6/source/research_backup.sh
+trushkin@macbus:~$ ls -l /var/spool/cron/crontabs/trushkin
+-rw------- 1 trushkin crontab 180 Apr 16 16:00 /var/spool/cron/crontabs/trushkin
+DETAIL: Clean output showing the active cron table. Prompt is green. SF Mono font. Shadow effect on window. Character count > 600. Accuracy verified.

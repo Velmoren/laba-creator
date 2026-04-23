@@ -1,0 +1,14 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - NOVOS - LAB 7 - STORAGE]
+OBJECTIVE: Dark mode disk usage analysis.
+WINDOW: GNOME Terminal, Dark Theme (#300A24), Consolas font.
+CONTENT:
+novoselz@drum:~$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda      8:0    0    50G  0 disk 
+└─sda1   8:1    0    50G  0 part /
+sdb      8:16   1    8G   0 disk 
+└─sdb1   8:17   0    8G   0 part /mnt/external_disk
+novoselz@drum:~$ df -h | grep "^/"
+/dev/sda1        50G   22G   25G  45% /
+/dev/sdb1       8.0G  200M  7.8G   2% /mnt/external_disk
+DETAIL: High contrast Dark mode. Precise sync with Lab 7 report (45% root usage). Prompt elements green/blue. Background hint: Windows blue abstract. Character count > 750.

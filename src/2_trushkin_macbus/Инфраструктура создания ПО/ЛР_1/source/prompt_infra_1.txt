@@ -1,0 +1,66 @@
+ULTRA-DETAILED TECHNICAL SCREENSHOT SPECIFICATION (2500+ CHARACTERS):
+Application: macOS Terminal.app (Light Mode) on macOS Sonoma 14.4.
+Window context: Standard macOS window with rounded corners, silver metallic border, and three distinct traffic-light buttons (red, yellow, green) in the top-left corner.
+The window title bar displays: "trushkin — trushkin@macbus: ssh altlinux — 80x24".
+Background: Pure white (#FFFFFF) with 95% opacity.
+Font: SF Mono Regular, 12pt, perfectly anti-aliased. Text color is #1a1a1a (Deep charcoal).
+
+TERMINAL CONTENT (SSH SESSION TO ALT LINUX):
+The screen shows a history of three main operations performed via SSH.
+
+1. FIRST BLOCK (INSTALLATION):
+The prompt: [trushkin@altlinux ~]$ sudo apt-get install HelloUniverse
+The system asks for a password (hidden). 
+Then, APT output:
+Reading Package Lists... Done
+Building Dependency Tree... Done
+The following NEW packages will be installed:
+  HelloUniverse (1.0-alt1)
+0 upgraded, 1 newly installed, 0 removed and 0 not upgraded.
+Need to get 14.2 kB of archives.
+After this operation, 42.0 kB of additional disk space will be used.
+Get:1 http://ftp.altlinux.org/pub/distributions/ALTLinux/p10/branch/x86_64 classic/RPMS.classic/ HelloUniverse 1.0-alt1 [14.2 kB]
+Fetched 14.2 kB in 0s (156 kB/s)
+Committing changes...
+Preparing...                     ################################# [100%]
+Updating / installing...
+1: HelloUniverse-1.0-alt1        ################################# [100%]
+Running /usr/lib/rpm/post_install-menu... Done
+
+2. SECOND BLOCK (EXECUTION):
+The prompt: [trushkin@altlinux ~]$ HelloUniverse
+The command output:
+Hello, Universe! Architecture: x86_64
+Session ID: 77a1-bf22-c901
+
+3. THIRD BLOCK (REMOVAL):
+The prompt: [trushkin@altlinux ~]$ sudo apt-get remove HelloUniverse
+Reading Package Lists... Done
+Building Dependency Tree... Done
+The following packages will be REMOVED:
+  HelloUniverse*
+0 upgraded, 0 newly installed, 1 removed and 0 not upgraded.
+After this operation, 42.0 kB disk space will be freed.
+Do you want to continue? [Y/n] Y
+Committing changes...
+Preparing...                     ################################# [100%]
+Cleaning up / removing...
+1: HelloUniverse-1.0-alt1        ################################# [100%]
+Running /usr/lib/rpm/post_uninstall-menu... Done
+
+VISUAL DETAILS & ACCENTS:
+- Command names 'sudo', 'apt-get', 'HelloUniverse' are highlighted in a soft cobalt blue (#004080) to indicate syntax recognition.
+- The '#' progress bars are rendered with uniform spacing.
+- The cursor is a thin vertical grey bar after the last prompt.
+- Scrollbar on the right is the minimalist macOS style (rounded grey pill).
+- Shadow: The terminal window casts a soft, large drop shadow against a subtle abstract macOS Sonoma wallpaper (swirls of light blue and orange).
+- Every character is sharp, optimized for 4K display. No chromatic aberration or artificial noise.
+- Bottom status bar of the terminal shows "UTF-8" and "SSH" labels in small light grey text.
+- Metadata: The system clock in the macOS menu bar (partially visible at top right) shows "14:22:15".
+- Focus: The window is clearly active, with the title text bolded.
+
+TECHNICAL INTEGRITY:
+- Paths like /usr/lib/rpm are accurate for Alt Linux.
+- Architecture x86_64 matches the student's system context.
+- The version 1.0-alt1 is typical for Alt Linux packaging standards.
+- No text is cut off at the edges. Padding between text and window borders is exactly 10 pixels.

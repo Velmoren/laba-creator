@@ -1,0 +1,14 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - TRUSHKIN - LAB 7 - STORAGE]
+OBJECTIVE: Technical storage overview in Ubuntu terminal.
+WINDOW: GNOME Terminal window, Light UI Theme (#F2F1F0). Title: "trushkin@macbus: ~". SF Mono font.
+CONTENT:
+trushkin@macbus:~$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda      8:0    0    64G  0 disk 
+└─sda1   8:1    0    64G  0 part /
+sdb      8:16   1   7.5G  0 disk 
+└─sdb1   8:17   0   7.5G  0 part /mnt/research_volume
+trushkin@macbus:~$ df -h | grep "^/dev/"
+/dev/sda1        64G   27G   34G  42% /
+/dev/sdb1       7.5G  1.2G  6.3G  16% /mnt/research_volume
+DETAIL: High density of information. The prompt shows professional green/blue colors. In the background, macOS Sonoma wallpaper is visible through the translucent terminal window. Character count > 750. Sync with Lab 7 report data (42% root usage).

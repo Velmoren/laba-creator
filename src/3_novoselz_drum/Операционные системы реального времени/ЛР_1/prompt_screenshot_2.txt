@@ -1,0 +1,10 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - NOVOS - LAB 1 - LINKS]
+OBJECTIVE: Student proof of inode matching in Dark Mode.
+WINDOW: GNOME Terminal, Dark Theme (#300A24), Consolas font.
+CONTENT:
+novoselz@drum:~$ ls -li learning_osrv/lab1/practice/
+total 8
+556677 -rw-r--r-- 2 novoselz novoselz 102 Apr 16 12:00 hard_copy
+556677 -rw-r--r-- 2 novoselz novoselz 102 Apr 16 12:00 data_origin.txt
+556688 lrwxrwxrwx 1 novoselz novoselz  15 Apr 16 12:05 soft_link -> data_origin.txt
+DETAIL: The number 556677 is clearly visible and identical for the first two entries. Prompt is green, paths are blue. Soft link highlighted in cyan. High resolution. Character count > 700. Matches technical analysis.

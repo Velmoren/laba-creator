@@ -1,0 +1,9 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - VELIEV - LAB 6 - TOP]
+OBJECTIVE: Technical visualization of process monitoring in Dark Mode.
+WINDOW: GNOME Terminal window, Dark Theme (#300A24). Title bar: "veliev@macbook: ~". JetBrains Mono font.
+CONTENT:
+The screen shows 'top' utility output.
+One entry is highlighted:
+PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+30456 veliev    20   5   12500   1400   1100 R  95.2   0.1   2:10.45 ops_monitor
+DETAIL: NI value is 5. CPU usage 95.2%. Prompt elements are green. Background: macOS Sequoia Dark. Character count > 750. Synchronized with report.

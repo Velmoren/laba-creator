@@ -1,0 +1,9 @@
+[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - VELIEV - LAB 2 - SIZES]
+OBJECTIVE: Professional comparison of compression levels.
+WINDOW: GNOME Terminal, Dark Theme (#300A24), JetBrains Mono font. Title: "veliev@macbook: ~".
+CONTENT:
+veliev@macbook:~$ ls -lh infra_backup.tar*
+-rw-r--r-- 1 veliev veliev 580K Apr 16 13:00 infra_backup.tar
+-rw-r--r-- 1 veliev veliev 128K Apr 16 13:02 infra_backup.tar.gz
+-rw-r--r-- 1 veliev veliev 104K Apr 16 13:05 infra_backup.tar.bz2
+DETAIL: Archive filenames are bright red (#CC0000). The terminal is slightly transparent. Sharp font rendering. Prompt is green and blue. Character count > 700. Synchronized with Veliev report data.
