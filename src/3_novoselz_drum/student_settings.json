@@ -10,6 +10,8 @@
   "variant": 18,
   "question_id": 18,
   "terminal_font": "Consolas",
+  "terminal_window_design": "GNOME Terminal",
+  "terminal_style": "Dark Theme background (#300A24), Ubuntu Consolas font, white text, blue path (~).",
   "excel_cell_style": "Minimalist",
   "excel_language": "English",
   "math_notation": "Alphabet",

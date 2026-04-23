@@ -10,6 +10,8 @@
   "variant": 10,
   "question_id": 10,
   "terminal_font": "SF Mono",
+  "terminal_window_design": "GNOME Terminal window with a clean light gray title bar",
+  "terminal_style": "Light UI Theme. Background color: White/Light Gray (#F2F1F0). Text color: Black (#333333)",
   "excel_cell_style": "Corporate",
   "excel_language": "Russian",
   "math_notation": "Index",

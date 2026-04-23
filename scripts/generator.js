@@ -286,13 +286,18 @@ async function parseChapters(sourceDir) {
                             imageCounter++;
                             seenImages.set(foundImagePath, imageCounter);
 
+                            const imgBuffer = fs.readFileSync(foundImagePath);
+                            const dims = getImageDimensions(imgBuffer);
+                            const targetWidth = 600;
+                            const targetHeight = Math.round(dims.height * (targetWidth / dims.width));
+
                             nodes.push(new Paragraph({
                                 alignment: AlignmentType.CENTER,
                                 spacing: { before: 200, after: 100 },
                                 children: [
                                     new ImageRun({
-                                        data: fs.readFileSync(foundImagePath),
-                                        transformation: { width: 500, height: 300 },
+                                        data: imgBuffer,
+                                        transformation: { width: targetWidth, height: targetHeight },
                                     }),
                                 ],
                             }));
@@ -390,6 +395,28 @@ async function parseChapters(sourceDir) {
         }
     }
     return nodes;
+}
+
+function getImageDimensions(buffer) {
+    try {
+        if (buffer[0] === 0x89 && buffer[1] === 0x50 && buffer[2] === 0x4E && buffer[3] === 0x47) {
+            return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+        }
+        if (buffer[0] === 0xFF && buffer[1] === 0xD8) {
+            let offset = 2;
+            while (offset < buffer.length) {
+                const marker = buffer.readUInt16BE(offset);
+                offset += 2;
+                if (marker >= 0xFFC0 && marker <= 0xFFC3) {
+                    offset += 3;
+                    return { height: buffer.readUInt16BE(offset), width: buffer.readUInt16BE(offset + 2) };
+                }
+                const length = buffer.readUInt16BE(offset);
+                offset += length;
+            }
+        }
+    } catch (e) { console.error("Error detecting dimensions:", e); }
+    return { width: 600, height: 400 };
 }
 
 generateDoc().catch(err => console.error(err));

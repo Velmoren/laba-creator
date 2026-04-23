@@ -1,0 +1,14 @@
+[SCREENSHOT PROMPT FOR UBUNTU GNOME TERMINAL]
+SUBJECT: A realistic, uncropped, high-resolution screenshot of a GNOME Terminal window on Ubuntu 22.04 LTS.
+BACKGROUND: The terminal window is floating over a slightly blurred "Sequoia Dynamic Dark Wallpaper".
+WINDOW DESIGN: Classic GNOME Terminal window. Semi-transparent dark header bar with window controls on the right. Window title reads "veliev@macbook: ~". Soft drop shadow behind the window.
+TERMINAL STYLE: Solid dark purple background (#300A24). Bright white, perfectly anti-aliased "Ubuntu Mono" font. Size 12pt. Left-aligned text. No UI hallucinations.
+PROMPT COLORING: The prompt string "veliev@macbook:~$" has the user and host "veliev@macbook" in light green (#8AE234), the colon ":" in white, the path "~" in light blue (#729FCF), and the dollar sign "$" in white.
+EXACT TERMINAL TEXT:
+veliev@macbook:~$ ln lab1_nano.txt projects/lab1/hard_link
+veliev@macbook:~$ ln -s /home/veliev/lab1_nano.txt projects/lab1/soft_link
+veliev@macbook:~$ ls -li lab1_nano.txt projects/lab1/
+401234 -rw-r--r-- 2 veliev veliev 19 Apr 23 10:10 lab1_nano.txt
+401234 -rw-r--r-- 2 veliev veliev 19 Apr 23 10:10 projects/lab1/hard_link
+401235 lrwxrwxrwx 1 veliev veliev 26 Apr 23 10:11 projects/lab1/soft_link -> /home/veliev/lab1_nano.txt
+VISUAL DETAILS: The image must be dominated by the terminal window. Focus 100% on rendering the exact text provided with perfect monospaced alignment. No extra desktop elements like taskbars or docks. The spacing between lines is standard terminal height. Ensure all characters in the EXACT TERMINAL TEXT block are reproduced perfectly without any AI-generated gibberish or substitutions.

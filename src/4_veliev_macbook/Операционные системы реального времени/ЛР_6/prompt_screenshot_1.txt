@@ -1,9 +1,19 @@
-[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - VELIEV - LAB 6 - TOP]
-OBJECTIVE: Technical visualization of process monitoring in Dark Mode.
-WINDOW: GNOME Terminal window, Dark Theme (#300A24). Title bar: "veliev@macbook: ~". JetBrains Mono font.
-CONTENT:
-The screen shows 'top' utility output.
-One entry is highlighted:
-PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-30456 veliev    20   5   12500   1400   1100 R  95.2   0.1   2:10.45 ops_monitor
-DETAIL: NI value is 5. CPU usage 95.2%. Prompt elements are green. Background: macOS Sequoia Dark. Character count > 750. Synchronized with report.
+[SCREENSHOT PROMPT FOR UBUNTU GNOME TERMINAL]
+SUBJECT: A realistic, uncropped, high-resolution screenshot of a GNOME Terminal window on Ubuntu 22.04 LTS.
+BACKGROUND: The terminal window is floating over a slightly blurred "Sequoia Dynamic Dark Wallpaper".
+WINDOW DESIGN: Classic GNOME Terminal window. Semi-transparent dark header bar with window controls on the right. Window title reads "veliev@macbook: ~". Soft drop shadow behind the window.
+TERMINAL STYLE: Solid dark purple background (#300A24). Bright white, perfectly anti-aliased "Ubuntu Mono" font. Size 12pt. Left-aligned text. No UI hallucinations.
+PROMPT COLORING: The prompt string "veliev@macbook:~$" has the user and host "veliev@macbook" in light green (#8AE234), the colon ":" in white, the path "~" in light blue (#729FCF), and the dollar sign "$" in white.
+EXACT TERMINAL TEXT:
+veliev@macbook:~$ top
+
+top - 10:15:30 up 1 day,  2:30,  1 user,  load average: 0.08, 0.04, 0.01
+Tasks: 220 total,   1 running, 219 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.5 us,  0.5 sy,  0.0 ni, 98.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7950.4 total,   4230.1 free,   1540.2 used,   2180.1 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   6100.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   1234 veliev    20   0   12450   3420   2100 S   0.0   0.1   0:00.05 bash
+   5678 veliev    20   0   15600   4500   3200 R   0.0   0.1   0:00.10 top
+VISUAL DETAILS: The image must be dominated by the terminal window. Focus 100% on rendering the exact text provided with perfect monospaced alignment. No extra desktop elements like taskbars or docks. The spacing between lines is standard terminal height. Ensure all characters in the EXACT TERMINAL TEXT block are reproduced perfectly without any AI-generated gibberish or substitutions.

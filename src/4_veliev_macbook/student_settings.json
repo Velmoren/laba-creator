@@ -1,6 +1,6 @@
 {
   "username": "veliev",
-  "device_name": "macbook",
+  "device_name": "desode",
   "os": "macOS Sequoia",
   "ui_theme": "Dark",
   "background": "Sequoia Dynamic Dark Wallpaper",
@@ -9,7 +9,9 @@
   "writing_style": "Concise Professional",
   "variant": 7,
   "question_id": 7,
-  "terminal_font": "JetBrains Mono",
+  "terminal_font": "Ubuntu Mono",
+  "terminal_window_design": "GNOME Terminal 3.44.0 on Ubuntu 22.04 LTS. Sequoia Dynamic Dark background. Title: veliev@desode: ~",
+  "terminal_style": "Dark Purple background (#300A24), Ubuntu Mono font, white text, blue path (~).",
   "preferred_editor": "nano",
   "code_language": "Russian",
   "cli_habits": "uses complex pipes and awk, skips dashes in tar",

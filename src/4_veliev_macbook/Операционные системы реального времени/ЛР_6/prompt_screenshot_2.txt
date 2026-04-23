@@ -1,10 +1,11 @@
-[SCRENSHOT PROMPT FOR UBUNTU 22.04 LTS - VELIEV - LAB 6 - CRON]
-OBJECTIVE: Professional cron validation.
-WINDOW: GNOME Terminal, Dark Theme, JetBrains Mono font.
-CONTENT:
-veliev@macbook:~$ crontab -l
-# DEVOPS INFRASTRUCTURE CRONTAB
-*/30 * * * * /home/veliev/devops_infrastructure/lab6/source/ops_auto_sync.sh
-veliev@macbook:~$ pgrep ops_monitor
-30456
-DETAIL: Clean and minimalist output. Prompt green/blue. High fidelity rendering. Character count > 600. Correct path synchronization.
+[SCREENSHOT PROMPT FOR UBUNTU GNOME TERMINAL]
+SUBJECT: A realistic, uncropped, high-resolution screenshot of a GNOME Terminal window on Ubuntu 22.04 LTS.
+BACKGROUND: The terminal window is floating over a slightly blurred "Sequoia Dynamic Dark Wallpaper".
+WINDOW DESIGN: Classic GNOME Terminal window. Semi-transparent dark header bar with window controls on the right. Window title reads "veliev@macbook: ~". Soft drop shadow behind the window.
+TERMINAL STYLE: Solid dark purple background (#300A24). Bright white, perfectly anti-aliased "Ubuntu Mono" font. Size 12pt. Left-aligned text. No UI hallucinations.
+PROMPT COLORING: The prompt string "veliev@macbook:~$" has the user and host "veliev@macbook" in light green (#8AE234), the colon ":" in white, the path "~" in light blue (#729FCF), and the dollar sign "$" in white.
+EXACT TERMINAL TEXT:
+veliev@macbook:~$ sudo renice +10 -p 1234
+[sudo] password for veliev: 
+1234 (process ID) old priority 0, new priority 10
+VISUAL DETAILS: The image must be dominated by the terminal window. Focus 100% on rendering the exact text provided with perfect monospaced alignment. No extra desktop elements like taskbars or docks. The spacing between lines is standard terminal height. Ensure all characters in the EXACT TERMINAL TEXT block are reproduced perfectly without any AI-generated gibberish or substitutions.

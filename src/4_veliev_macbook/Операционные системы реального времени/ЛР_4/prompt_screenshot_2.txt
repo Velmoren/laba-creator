@@ -1,0 +1,14 @@
+[SCREENSHOT PROMPT FOR UBUNTU GNOME TERMINAL]
+SUBJECT: A realistic, uncropped, high-resolution screenshot of a GNOME Terminal window on Ubuntu 22.04 LTS.
+BACKGROUND: The terminal window is floating over a slightly blurred "Sequoia Dynamic Dark Wallpaper".
+WINDOW DESIGN: Classic GNOME Terminal window. Semi-transparent dark header bar with window controls on the right. Window title reads "veliev@macbook: ~". Soft drop shadow behind the window.
+TERMINAL STYLE: Solid dark purple background (#300A24). Bright white, perfectly anti-aliased "Ubuntu Mono" font. Size 12pt. Left-aligned text. No UI hallucinations.
+PROMPT COLORING: The prompt string "veliev@macbook:~$" has the user and host "veliev@macbook" in light green (#8AE234), the colon ":" in white, the path "~" in light blue (#729FCF), and the dollar sign "$" in white.
+EXACT TERMINAL TEXT:
+veliev@macbook:~$ tail -n 3 system_data.txt
+003 CPU_Core Inactive Price: 150
+004 Net_Interface Active Price: 40
+005 Power_Supply Active Price: 60
+veliev@macbook:~$ tail -c 15 system_data.txt
+tive Price: 60
+VISUAL DETAILS: The image must be dominated by the terminal window. Focus 100% on rendering the exact text provided with perfect monospaced alignment. No extra desktop elements like taskbars or docks. The spacing between lines is standard terminal height. Ensure all characters in the EXACT TERMINAL TEXT block are reproduced perfectly without any AI-generated gibberish or substitutions.

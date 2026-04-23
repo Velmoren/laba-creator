@@ -156,11 +156,9 @@ function parseMarkdown(text, labSourcePath) {
 
         if (trimmed.startsWith('```')) {
             if (inCodeBlock) {
-                nodes.push(new Paragraph({
-                    children: [new TextRun({ text: codeContent.join('\n'), font: "Courier New", size: 24 })],
-                    shading: { fill: "F2F2F2" },
-                    indent: { left: 720 }
-                }));
+                nodes.push(new Paragraph({ text: "" })); // Отступ перед блоком
+                nodes.push(createCodeBlock(codeContent));
+                nodes.push(new Paragraph({ text: "" })); // Отступ после блока
                 inCodeBlock = false; codeContent = [];
             } else {
                 inCodeBlock = true;
@@ -215,13 +213,18 @@ function parseMarkdown(text, labSourcePath) {
                         imageCounter++;
                         seenImages.set(foundImagePath, imageCounter);
                         
+                        const imgBuffer = fs.readFileSync(foundImagePath);
+                        const dims = getImageDimensions(imgBuffer);
+                        const targetWidth = 600;
+                        const targetHeight = Math.round(dims.height * (targetWidth / dims.width));
+
                         nodes.push(new Paragraph({
                             alignment: AlignmentType.CENTER,
                             spacing: { before: 200, after: 100 },
                             children: [
                                 new ImageRun({
-                                    data: fs.readFileSync(foundImagePath),
-                                    transformation: { width: 500, height: 300 },
+                                    data: imgBuffer,
+                                    transformation: { width: targetWidth, height: targetHeight },
                                 }),
                             ],
                         }));
@@ -283,6 +286,8 @@ function parseMarkdown(text, labSourcePath) {
             nodes.push(new Paragraph({ children: parseInlineText(trimmed.replace('## ', ''), 28, true), heading: HeadingLevel.HEADING_2, style: "Heading2" }));
         } else if (trimmed.startsWith('### ')) {
             nodes.push(new Paragraph({ children: parseInlineText(trimmed.replace('### ', ''), 28, true), heading: HeadingLevel.HEADING_3 }));
+        } else if (trimmed.startsWith('#### ')) {
+            nodes.push(new Paragraph({ children: parseInlineText(trimmed.replace('#### ', ''), 28, true), heading: HeadingLevel.HEADING_4 }));
         } else if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
             nodes.push(new Paragraph({ children: [new TextRun({text: '• ', size: 28}), ...parseInlineText(trimmed.slice(2).trim(), 28)], indent: { left: 720, hanging: 360 } }));
         } else if (trimmed.match(/^\d+\./)) {
@@ -358,6 +363,76 @@ function createTable(rowsData) {
             }))
         }))
     });
+}
+
+function createCodeBlock(lines) {
+    return new Table({
+        width: { size: PAGE_WIDTH_DXA, type: WidthType.DXA },
+        layout: TableLayoutType.FIXED,
+        columnWidths: [PAGE_WIDTH_DXA],
+        rows: [new TableRow({
+            children: [new TableCell({
+                width: { size: PAGE_WIDTH_DXA, type: WidthType.DXA },
+                children: lines.map(line => {
+                    const isCommand = line.includes('~$ ') || line.includes('# ');
+                    return new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: line,
+                                font: "Consolas",
+                                size: 20,
+                                color: isCommand ? "2E7D32" : "333333", // Зеленый для команд, темно-серый для вывода
+                                bold: isCommand
+                            })
+                        ],
+                        spacing: { line: 240 },
+                        alignment: AlignmentType.LEFT,
+                        indent: { firstLine: 0 }
+                    });
+                }),
+                shading: { fill: "F8F9FA" }, // Светлый пастельный фон
+                margins: { top: 200, bottom: 200, left: 200, right: 200 },
+                borders: {
+                    top: { style: BorderStyle.SINGLE, size: 4, color: "E9ECEF" },
+                    bottom: { style: BorderStyle.SINGLE, size: 4, color: "E9ECEF" },
+                    left: { style: BorderStyle.SINGLE, size: 4, color: "E9ECEF" },
+                    right: { style: BorderStyle.SINGLE, size: 4, color: "E9ECEF" }
+                }
+            })]
+        })]
+    });
+}
+
+function getImageDimensions(buffer) {
+    try {
+        // PNG: offset 16 is width, 20 is height (4 bytes each)
+        if (buffer[0] === 0x89 && buffer[1] === 0x50 && buffer[2] === 0x4E && buffer[3] === 0x47) {
+            return {
+                width: buffer.readUInt32BE(16),
+                height: buffer.readUInt32BE(20)
+            };
+        }
+        // JPEG: look for SOF markers
+        if (buffer[0] === 0xFF && buffer[1] === 0xD8) {
+            let offset = 2;
+            while (offset < buffer.length) {
+                const marker = buffer.readUInt16BE(offset);
+                offset += 2;
+                if (marker >= 0xFFC0 && marker <= 0xFFC3) {
+                    offset += 3; // skip length and precision
+                    return {
+                        height: buffer.readUInt16BE(offset),
+                        width: buffer.readUInt16BE(offset + 2)
+                    };
+                }
+                const length = buffer.readUInt16BE(offset);
+                offset += length;
+            }
+        }
+    } catch (e) {
+        console.error("Error detecting image dimensions:", e);
+    }
+    return { width: 600, height: 400 }; // Fallback
 }
 
 generateLabs();
