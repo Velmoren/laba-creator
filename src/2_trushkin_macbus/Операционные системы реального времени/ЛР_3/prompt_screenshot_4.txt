@@ -1,0 +1,13 @@
+[SCREENSHOT PROMPT FOR UBUNTU GNOME TERMINAL]
+SUBJECT: A realistic, uncropped, high-resolution screenshot of a GNOME Terminal window on Ubuntu 22.04 LTS.
+BACKGROUND: The terminal window is floating over a slightly blurred "standard macOS Sonoma abstract wallpaper".
+WINDOW DESIGN: GNOME Terminal window with a clean light gray title bar with window controls on the right. Window title reads "trushkin@macbus: ~". Soft drop shadow behind the window.
+TERMINAL STYLE: Light UI Theme. Background color: White/Light Gray (#F2F1F0). Text color: Black (#333333). "SF Mono" font, perfectly anti-aliased. Size 12pt. Left-aligned text. No UI hallucinations.
+PROMPT COLORING: The prompt string "trushkin@macbus:~$" has the user and host "trushkin@macbus" in dark green (#4E9A06), the colon ":" in dark gray, the path "~" in dark blue (#3465A4), and the dollar sign "$" in dark gray.
+EXACT TERMINAL TEXT:
+trushkin@macbus:~$ touch classified.dat
+trushkin@macbus:~$ sudo chown trushkin:researchers classified.dat
+trushkin@macbus:~$ chmod 660 classified.dat
+trushkin@macbus:~$ ls -l classified.dat
+-rw-rw---- 1 trushkin researchers 0 Apr 23 12:30 classified.dat
+VISUAL DETAILS: Focus 100% on rendering the exact text provided with perfect monospaced alignment. Focus on file permissions string and group ownership. Ensure all characters in the EXACT TERMINAL TEXT block are reproduced perfectly. Length requirement filler text for AI consistency: Make sure the font is completely legible against the light gray background. Contrast must be optimal.

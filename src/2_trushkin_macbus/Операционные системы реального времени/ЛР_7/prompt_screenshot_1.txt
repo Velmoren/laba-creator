@@ -1,0 +1,13 @@
+[SCREENSHOT PROMPT FOR UBUNTU GNOME TERMINAL]
+SUBJECT: A realistic, uncropped, high-resolution screenshot of a GNOME Terminal window on Ubuntu 22.04 LTS.
+BACKGROUND: The terminal window is floating over a slightly blurred "standard macOS Sonoma abstract wallpaper".
+WINDOW DESIGN: GNOME Terminal window with a clean light gray title bar with window controls on the right. Window title reads "trushkin@macbus: ~". Soft drop shadow behind the window.
+TERMINAL STYLE: Light UI Theme. Background color: White/Light Gray (#F2F1F0). Text color: Black (#333333). "SF Mono" font, perfectly anti-aliased. Size 12pt. Left-aligned text. No UI hallucinations.
+PROMPT COLORING: The prompt string "trushkin@macbus:~$" has the user and host "trushkin@macbus" in dark green (#4E9A06), the colon ":" in dark gray, the path "~" in dark blue (#3465A4), and the dollar sign "$" in dark gray.
+EXACT TERMINAL TEXT:
+trushkin@macbus:~$ sudo mkdir -p /mnt/usb_drive
+[sudo] password for trushkin: 
+trushkin@macbus:~$ sudo mount /dev/sdb1 /mnt/usb_drive
+trushkin@macbus:~$ mount | grep sdb1
+/dev/sdb1 on /mnt/usb_drive type ext4 (rw,relatime)
+VISUAL DETAILS: Focus 100% on rendering the exact text provided with perfect monospaced alignment. The grep result highlights 'sdb1'. Authentic Ubuntu output. Ensure all characters in the EXACT TERMINAL TEXT block are reproduced perfectly. Length requirement filler text for AI consistency: Make sure the font is completely legible against the light gray background. Contrast must be optimal.

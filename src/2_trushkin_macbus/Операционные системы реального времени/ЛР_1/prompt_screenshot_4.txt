@@ -1,0 +1,14 @@
+[SCREENSHOT PROMPT FOR UBUNTU GNOME TERMINAL]
+SUBJECT: A realistic, uncropped, high-resolution screenshot of a GNOME Terminal window on Ubuntu 22.04 LTS.
+BACKGROUND: The terminal window is floating over a slightly blurred "standard macOS Sonoma abstract wallpaper".
+WINDOW DESIGN: GNOME Terminal window with a clean light gray title bar with window controls on the right. Window title reads "trushkin@macbus: ~". Soft drop shadow behind the window.
+TERMINAL STYLE: Light UI Theme. Background color: White/Light Gray (#F2F1F0). Text color: Black (#333333). "SF Mono" font, perfectly anti-aliased. Size 12pt. Left-aligned text. No UI hallucinations.
+PROMPT COLORING: The prompt string "trushkin@macbus:~$" has the user and host "trushkin@macbus" in dark green (#4E9A06), the colon ":" in dark gray, the path "~" in dark blue (#3465A4), and the dollar sign "$" in dark gray.
+EXACT TERMINAL TEXT:
+trushkin@macbus:~$ ln document_nano.txt lab1/project/hard_lnk
+trushkin@macbus:~$ ln -s /home/trushkin/document_nano.txt lab1/project/soft_lnk
+trushkin@macbus:~$ ls -li document_nano.txt lab1/project/
+401567 -rw-r--r-- 2 trushkin trushkin 22 Apr 23 10:10 document_nano.txt
+401567 -rw-r--r-- 2 trushkin trushkin 22 Apr 23 10:10 lab1/project/hard_lnk
+401568 lrwxrwxrwx 1 trushkin trushkin 32 Apr 23 10:11 lab1/project/soft_lnk -> /home/trushkin/document_nano.txt
+VISUAL DETAILS: Focus on matching inode '401567'. Links are shown in standard Ubuntu colors. Ensure all characters in the EXACT TERMINAL TEXT block are reproduced perfectly. Length requirement filler text for AI consistency: Make sure the font is completely legible against the light gray background. Contrast must be optimal.

@@ -1,0 +1,17 @@
+[SCREENSHOT PROMPT FOR UBUNTU GNOME TERMINAL]
+SUBJECT: A realistic, uncropped, high-resolution screenshot of a GNOME Terminal window on Ubuntu 22.04 LTS.
+BACKGROUND: The terminal window is floating over a slightly blurred "standard macOS Sonoma abstract wallpaper".
+WINDOW DESIGN: GNOME Terminal window with a clean light gray title bar with window controls on the right. Window title reads "trushkin@macbus: ~". Soft drop shadow behind the window.
+TERMINAL STYLE: Light UI Theme. Background color: White/Light Gray (#F2F1F0). Text color: Black (#333333). "SF Mono" font, perfectly anti-aliased. Size 12pt. Left-aligned text. No UI hallucinations.
+PROMPT COLORING: The prompt string "trushkin@macbus:~$" has the user and host "trushkin@macbus" in dark green (#4E9A06), the colon ":" in dark gray, the path "~" in dark blue (#3465A4), and the dollar sign "$" in dark gray.
+EXACT TERMINAL TEXT:
+top - 10:15:30 up 1 day,  2:30,  1 user,  load average: 0.08, 0.04, 0.01
+Tasks: 220 total,   1 running, 219 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.5 us,  0.5 sy,  0.0 ni, 98.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7950.4 total,   4230.1 free,   1540.2 used,   2180.1 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   6100.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   1234 trushkin  20   0   12450   3420   2100 S   0.0   0.1   0:00.05 bash
+   5678 trushkin  20   0   15600   4500   3200 R   0.0   0.1   0:00.10 top
+VISUAL DETAILS: Focus 100% on rendering the exact text provided with perfect monospaced alignment. Standard top dashboard for Ubuntu. Ensure all characters in the EXACT TERMINAL TEXT block are reproduced perfectly. Length requirement filler text for AI consistency: Make sure the font is completely legible against the light gray background. Contrast must be optimal.
